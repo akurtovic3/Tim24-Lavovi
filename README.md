@@ -27,19 +27,19 @@ elektronska trgovina prihvacane u potpunosti u zajednici. Osnovne funkcije Rent 
 
 **Rezervacija**
 
-Sistem prvo omogućava klijentu da se registruje za rezervaciju. Dalje, nakon uspješne registracije korisnik dobiva username i password, te ima priliku da vidi detelja opisa za određeno vozilo. Prilikom rezervacije vozila koje nije dostupno korisnik se obavještava i nudi mu se izbor sličnih vozila. Sistem pruža korisniku opciju pretraživanja vozila po specifičnim kriterijima. Nakon što korisnik izabere željeno vozilo pojavljuje se dijalog za upis broja kartice. Tek kada korisnik unese važecu kreditnu karticu sistem mu pruza jedinstveni broj narudžbe pomoću kojeg kasnije mjenja navedenu rezervaciju po želji, kao naprimjer ako želi povećati broj dana rezervacije. Korisnik nakon uspjesne rezervacije dobiva poruku na broj mobitela koji je upisao prilikom registracije. Sistem će omogućiti osoblju da vrši update informacija vezanih za rezervaciju. Na kraju ostaje opcija da korisnik pomocu jedinstvenog broja otkaže rezervaciju.
+Sistem prvo omogućava klijentu da se registruje za rezervaciju. Dalje, nakon uspješne registracije korisnik dobiva username i password, te ima priliku da vidi detelja opisa za određeno vozilo. Prilikom rezervacije vozila koje nije dostupno korisnik se obavještava i nudi mu se izbor sličnih vozila. Sistem pruža korisniku opciju pretraživanja vozila po specifičnim kriterijima. Nakon što korisnik izabere željeno vozilo pojavljuje se dijalog za upis broja kartice. Tek kada korisnik unese važecu kreditnu karticu sistem mu pruza jedinstveni broj narudžbe pomoću kojeg kasnije mijenja navedenu rezervaciju po želji, kao naprimjer ako želi povećati broj dana rezervacije. Korisnik nakon uspjesne rezervacije dobiva poruku na broj mobitela koji je upisao prilikom registracije. Sistem će omogućiti osoblju da vrši update informacija vezanih za rezervaciju. Na kraju ostaje opcija da korisnik pomocu jedinstvenog broja otkaže rezervaciju.
 
 
 
 **Prijava**
 
-Sistem dozvoljava menadžeru i osoblju prijavu na sistem koristeći username i password. Nakon uspjesne prijave sistem pruza odredene opcije u zavisnosti da li se prijavio menadžer ili zaposlenik. Omogucena je i opcija promjene lozinke kako za menadžera tako i za osoblje. Nakon završenih duznosti na sistemu osoblje i menadžer se odjavljuju sa sistema pomoću opcije "odjavi se".
+Sistem dozvoljava menadžeru, osoblju i serviseru prijavu na sistem koristeći username i password. Nakon uspješne prijave sistem pruža odredene opcije u zavisnosti da li se prijavio menadžer ili zaposlenik. Omogućena je i opcija promjene lozinke kako za menadžera tako i za osoblje. Nakon završenih dužnosti na sistemu osoblje i menadžer se odjavljuju sa sistema pomoću opcije "odjavi se".
 
 
 
 **Vozila**
 
-Na početku osoblje registruje vozila koja su u ponudi. Za već postojeća vozila osoblje mjenja informacije po želji. Omogućena je i pretraga po specifičnim opcijama kao sto su broj pređenih kilometara. Menadžer nabavlja nova vozila i sklapa ugovore sa auto-kompanijama. Nakon ažuriranja ili kreiranja novog vozila osoblje/menadžer može napustiti prostor za rad s vozilima uz pomoc opcije "izlaz".
+Na početku osoblje registruje vozila koja su u ponudi. Za već postojeća vozila osoblje mijenja informacije po želji. Omogućena je i pretraga po specifičnim opcijama kao sto su broj pređenih kilometara, vrsta goriva, vrsta mjenjača itd. Menadžer nabavlja nova vozila i sklapa ugovore sa auto-kompanijama. Nakon ažuriranja ili kreiranja novog vozila osoblje/menadžer može napustiti prostor za rad s vozilima uz pomoc opcije "izlaz".
 
 
 
@@ -63,11 +63,11 @@ Prilikom rentanja osoblje registrira klijenta u listu rezervacija. Ako bude potr
 
 - Osoblje upravlja detaljima klijenata pomocu zapisa o rezervaciji
 
-- Klijenti mogu mjenjati vlastite podatke
+- Klijenti mogu mijenjati vlastite podatke
 
-- Osoblje moze dobiti dnevni, sedmicni i mjesecne izvjestaj o vozilima
+- Osoblje moze dobiti dnevni, sedmični i mjesečni izvještaj o vozilima
 
-- Klijentu je omoguceno da izabere vozilo i napravi rezervaciju
+- Klijentu je omogućeno da izabere vozilo i napravi rezervaciju
 
 - Opcija obaveznog snimanja pomocu puta koji klijent bude presao s vozilom da bi se u slucaju stete ili kazne sankcionisao klijent u vidu dodatne naplate
 
@@ -77,8 +77,11 @@ Prilikom rentanja osoblje registrira klijenta u listu rezervacija. Ako bude potr
 
 - Prilikom uspješne rezervacije korisniku se šalje poruka na mobilni uređaj
 
+- 24 sata prije isteka vremena iznajmljivanja vozila, korisniku se šalje poruka upozorenja na mobilni uređaj
+
 - Opcija VIP pomocu koje korisnik iznajmljuje VIP vozilo uz osobnog vozaca
 
+- Sistem automatski upozorava servisera ukoliko je vozilu došlo vrijeme za redovan servis, zamjenu ulja…
 
 
 
@@ -91,14 +94,4 @@ Prilikom rentanja osoblje registrira klijenta u listu rezervacija. Ako bude potr
 2. Uposlenik/Osoblje je osoba koja radi za firmu Rent-a-car i radi na poslovima iznajmljivanja, rezervacije, naplaćivanja i izdavanja vozila
 3. Supervizor/Menadžer - Supervizor ima zadatak da nadgleda primopredaju vozila, nabavlja vozila, te vrši manipulaciju nad podacima o osoblju
 4. Vozač - Vozač ima zadatak da po želji klijenta vrši usluge vožnje po unaprijed određenim rutama
-
-
-
-
- 
-
-
-
- 
-
-
+5. Serviser - Osoba zadužena za servis vozila i unosa trenutnih karakteristika vozila u sistem 

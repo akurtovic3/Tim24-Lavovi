@@ -1,4 +1,7 @@
-![alt tag](https://image.ibb.co/m4JzBF/Asset_1.png)
+<p align="center">
+<img src="https://image.ibb.co/m4JzBF/Asset_1.png">
+</p>
+
 # Tim24-Lavovi
 
 # Tema: Rent a car

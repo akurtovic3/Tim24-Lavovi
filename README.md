@@ -1,4 +1,5 @@
-﻿# Tim24-Lavovi
+![alt tag](https://image.ibb.co/m4JzBF/Asset_1.png)
+# Tim24-Lavovi
 
 # Tema: Rent a car
 
@@ -12,8 +13,9 @@
 
 ## Opis teme
 
-Rent a car sistem omogućuje osobi da rezerviše vozilo tako sto uplati određenu svotu novca kompaniji koja izdaje vozila i kontroliše transakciju putem interneta. Potencijal Rent a car sistema je najviše iskorišten u razvijenim zemljama kao sto su Engleska i Australija gdje je  
-elektronska trgovina prihvacane u potpunosti u zajednici. Osnovne funkcije Rent a car sistema ( u daljem tekstu RACS) su da vodi zapis o vozilima, osoblju, te naravno o klijentima i rezervaciji. RACS pruza korisne informacije osoblju kompanije kao što su dnevni izvještaji o vozilima koja će biti dodjeljenja određenom klijentu. U isto vrijeme RACS pruža informacije i izvršava menadžment vozila koristeći informacije o broju pređenih kilometara, te cijeni samog vozila. Potencijalne prednosti koje bi kompanija mogla imati ako se odluči implementirati ovaj sistem kao sastavni dio biznisa su: ušteda vremena, ušteda prostora, reducirani troškovi, pouzdanost i sigurnost. Kompanije koje  ne koriste sličan sistem bi se mogle naći u problemima koji su upravo suprotnost navedenih beneficija kao sto su veliki troškovi, potreba za osiguravanjem prostora velike površine na kojem bi se mogla eksponirati vozila, naravno dolazi i do bespotrebne potrošnje vremena. S naglaskom na navedene beneficije i nedostatke u slučaju da se kompanija odluči da ne osigura novi način poslovanja kao sto je RACS, vjerujemo da je ovaj sistem pravo rjesenje.
+Rent a car sistem omogućuje brz i efikasan način da krajnji korisnik iznajmi automobil na određeni vremenski period.
+Osoba rezerviše vozilo tako sto uplati određenu svotu novca kompaniji koja izdaje vozila i kontroliše transakciju putem interneta. Potencijal Rent a car sistema je najviše iskorišten u razvijenim zemljama kao sto su Engleska i Australija gdje je  
+elektronska trgovina prihvacane u potpunosti u zajednici. Osnovne funkcije Rent a car sistema (u daljem tekstu RACS) su da vodi zapis o vozilima, osoblju, te naravno o klijentima i rezervacijama. RACS pruža korisne informacije osoblju kompanije kao što su dnevni izvještaji o vozilima koja će biti dodjeljenja određenom klijentu. U isto vrijeme RACS pruža informacije i izvršava menadžment vozila koristeći informacije o broju pređenih kilometara, te cijeni samog vozila. Potencijalne prednosti koje bi kompanija mogla imati ako se odluči implementirati ovaj sistem kao sastavni dio biznisa su: ušteda vremena, ušteda prostora, reducirani troškovi, pouzdanost i sigurnost. Kompanije koje  ne koriste sličan sistem bi se mogle naći u problemima koji su upravo suprotnost navedenih beneficija kao sto su veliki troškovi, potreba za osiguravanjem prostora velike površine na kojem bi se mogla eksponirati vozila, naravno dolazi i do bespotrebne potrošnje vremena. S naglaskom na navedene beneficije i nedostatke u slučaju da se kompanija odluči da ne osigura novi način poslovanja kao sto je RACS, vjerujemo da je ovaj sistem pravo rjesenje.
 
 
 

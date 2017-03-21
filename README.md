@@ -1,4 +1,4 @@
-<p align="center">
+﻿<p align="center">
 <img src="https://image.ibb.co/m4JzBF/Asset_1.png">
 </p>
 
@@ -93,5 +93,4 @@ Prilikom rentanja osoblje registrira klijenta u listu rezervacija. Ako bude potr
 1. Korisnik usluga je osoba koja ima mogućnost iznajmljivanja i rezervacije vozila 
 2. Uposlenik/Osoblje je osoba koja radi za firmu Rent-a-car i radi na poslovima iznajmljivanja, rezervacije, naplaćivanja i izdavanja vozila
 3. Supervizor/Menadžer - Supervizor ima zadatak da nadgleda primopredaju vozila, nabavlja vozila, te vrši manipulaciju nad podacima o osoblju
-4. Vozač - Vozač ima zadatak da po želji klijenta vrši usluge vožnje po unaprijed određenim rutama
-5. Serviser - Osoba zadužena za servis vozila i unosa trenutnih karakteristika vozila u sistem 
+4. Vozač - Vozač ima zadatak da po želji klijenta vrši usluge vožnje po unaprijed određenim rutama 

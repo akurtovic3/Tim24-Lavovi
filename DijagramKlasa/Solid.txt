@@ -1,10 +1,21 @@
 1.  Single Responsibility Principle-SRP
-Ako zelimo da izvrsimo modifikaciju prikaza izvjestaja, onda cemo da samo izmijenimo klasu PDFGenerator, a necemo imati potrebu da mijenjamo ostale klase. Na ovaj nacin smo postigli da svaka klasa ima pojedinacnu odgovornost.
+	Po SRP principu klase trebaju da znaju samo o jednoj stvari, tj. da imaju pojedinacnu odgovornost.
+	Primjer iz projekta:
+	Ako zelimo da izvrsimo modifikaciju prikaza izvjestaja, onda cemo da samo izmijenimo klasu PDFGenerator, a 	necemo imati potrebu da mijenjamo ostale klase. 
 
 2.  Open Closed Principle-OCP
+	Po OCP principu bi entiteti softvera trebali biti otvoreni za nadogradnju, ali zatvoreni za modifikacije. 	Primjer za OCP je slican kao prikazani primjer u DIP principu. 
 
 3.  Liskov Substitution Principle-LSP
-Ako 
-eli
+	Po LSP principu podtipovi moraju biti zamjenjivi njihovim osnovnim tipovima.
+	Primjer iz projekta:
+	Za slucaj da je nasa apstraktna klasa Osoba imala funkciju setPlata(), onda bi i naslijedjena klasa Korisnik 	morala da implementira tu funkciju. Ali korisnik nema platu, pa bi jedino rjesenje bilo da mu platu postavimo na 	"0 KM". Samim vracanjem nule pretpostavljamo da je setPlata() opravdana funkcija za pozivanje i da je moguce 		Korisniku da postavimo platu. Do ove konfuzije ne bi doslo da se koristio LSP princip, sto smo mi i ucinili, pa 	nam dijagram klasa ne narusava LSP princip.
 
 4.  Interface Segregation Principle-ISP
+	Po ISP principu klijenti ne treba da ovise o metodama koje nece upotrebljavati. ISP princip podrazumjeva da se 			korisnici zastite od metoda koje ne trebaju, dajuci im interfejse prema onim metodama koje su im potrebne. ISP			princip nije narusen u nasem dijagramu klasa.
+
+5.  Dependency Inversion Principle-DIP
+	Po DIP principu ne treba ovisiti od konkretnih klasa, te prilikom nasljedjivanja treba razmotriti slucaj da je 			osnovna klasa apstraktna. 
+	Primjer iz projekta:
+	U nasem projektu imamo klase Menadzer, Uposlenik i Korisnik koje se nasledjuju iz apstraktne klase Osoba. Na 			ovaj nacin 	smo postigli da sistem nece biti osjetljiv na promjene, tj. nas model visokog nivoa ne ovisi od 		modela niskog nivoa, vec 	ovise od apstrakcija, cime smo zadovoljili DIP princip.
+	

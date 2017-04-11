@@ -1,0 +1,10 @@
+1.  Single Responsibility Principle-SRP
+Ako zelimo da izvrsimo modifikaciju prikaza izvjestaja, onda cemo da samo izmijenimo klasu PDFGenerator, a necemo imati potrebu da mijenjamo ostale klase. Na ovaj nacin smo postigli da svaka klasa ima pojedinacnu odgovornost.
+
+2.  Open Closed Principle-OCP
+
+3.  Liskov Substitution Principle-LSP
+Ako 
+eli
+
+4.  Interface Segregation Principle-ISP

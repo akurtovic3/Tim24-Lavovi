@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="ProjekatRentACar.Views.FormaRegistracijaKorisnika"
+    x:Class="ProjekatRentACar.Views.FormaRegistracijaUposlenika"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:ProjekatRentACar.Views"
@@ -9,6 +9,7 @@
 
     <Grid Name="MainGrid"  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Center">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -35,11 +36,18 @@
         <TextBox MaxWidth="500" Margin="5,10,5,10" Grid.Row="3" Grid.ColumnSpan="2" PlaceholderText="Kontakt Broj"></TextBox>
         <TextBox MaxWidth="500" Margin="5,10,5,10" Grid.Row="4" Grid.ColumnSpan="2" PlaceholderText="Email"></TextBox>
         <ComboBox HorizontalAlignment="Stretch" MaxWidth="500" Grid.ColumnSpan="2" Margin="5,10,5,10" Grid.Row="5" PlaceholderText="Država">
-            <ComboBoxItem Name="cbx1" >Bosna I Hercegovina</ComboBoxItem> </ComboBox>
+            <ComboBoxItem Name="cbx1" >Bosna I Hercegovina</ComboBoxItem>
+        </ComboBox>
         <TextBox MaxWidth="500" Margin="5,10,5,10" Grid.Row="6" Grid.ColumnSpan="2" PlaceholderText="Adresa"></TextBox>
         <TextBox MaxWidth="500" Margin="5,10,5,10" Grid.Row="7" Grid.ColumnSpan="2" PlaceholderText="Poštanski broj"></TextBox>
-        <Button Background="DarkRed" Foreground="White" HorizontalAlignment="Stretch" Margin="5,10,5,10" Grid.Row="8" Grid.ColumnSpan="2" Content="Registriraj me"></Button>
-        
+        <TextBlock Text="Pocetak radnog odnosa" VerticalAlignment="Center" Grid.Column="0" Grid.Row="8"></TextBlock>
+        <DatePicker Grid.Row="8" Grid.Column="1"
+                    
+                    Margin="5,10,5,10"
+                    HorizontalAlignment="Stretch"></DatePicker>
+
+        <Button Background="DarkRed" Foreground="White" HorizontalAlignment="Stretch" Margin="5,10,5,10" Grid.Row="9" Grid.ColumnSpan="2" Content="Registriraj Uposlenika"></Button>
+
 
     </Grid>
 </Page>

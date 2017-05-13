@@ -102,17 +102,32 @@
     <Compile Include="Views\FormaOdabirLokacijeIDatuma.xaml.cs">
       <DependentUpon>FormaOdabirLokacijeIDatuma.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\FormaONama.xaml.cs">
+      <DependentUpon>FormaONama.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormaPlacanje.xaml.cs">
       <DependentUpon>FormaPlacanje.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\FormaPomocIKontakt.xaml.cs">
       <DependentUpon>FormaPomocIKontakt.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\FormaPostavke.xaml.cs">
+      <DependentUpon>FormaPostavke.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormaPrijava.xaml.cs">
       <DependentUpon>FormaPrijava.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\FormaPrivatnost.xaml.cs">
+      <DependentUpon>FormaPrivatnost.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormaRegistracijaKorisnika.xaml.cs">
       <DependentUpon>FormaRegistracijaKorisnika.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormaRegistracijaUposlenika.xaml.cs">
+      <DependentUpon>FormaRegistracijaUposlenika.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormaUvjetiKoristenja.xaml.cs">
+      <DependentUpon>FormaUvjetiKoristenja.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -151,6 +166,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\FormaONama.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\FormaPlacanje.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -159,11 +178,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\FormaPostavke.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\FormaPrijava.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\FormaPrivatnost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\FormaRegistracijaKorisnika.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FormaRegistracijaUposlenika.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FormaUvjetiKoristenja.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

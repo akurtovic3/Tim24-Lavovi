@@ -1,0 +1,68 @@
+﻿<Page
+    x:Class="ProjekatRentACar.Views.FormaKorisnickiRacun"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjekatRentACar.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="using:ProjekatRentACar.Models"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Key="VoziloDataTemplate" x:DataType="model:Proba">
+            <StackPanel Margin="5" Height="Auto" Width="Auto" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel>
+                    <Image Height="100" Width="100" Source="{x:Bind SlikaPath}" ></Image>
+                    <TextBlock Margin="5" Text="{x:Bind Naziv}"></TextBlock>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Margin="5,5,5,15" Text="{x:Bind OdDatum}"></TextBlock>
+                    <TextBlock Margin="5,5,5,5" Text="{x:Bind DoDatum}"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+
+
+    <ScrollViewer>
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        
+        <StackPanel>
+            <Image Height="150" Width="150" Source="/Assets/kartice.png"></Image>
+            <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal">
+                <Image Opacity="0.5" Margin="5" Source="/Assets/bronze-medal.png"></Image>
+                <Image Opacity="0.5" Margin="5" Source="/Assets/bronze-medal.png"></Image>
+                <Image Margin="5" Source="/Assets/bronze-medal.png"></Image>
+            </StackPanel>
+        </StackPanel>
+        
+        
+
+        <StackPanel Grid.Column="1">
+            <TextBlock Text="Ime: NekoIme" Margin="10"></TextBlock>
+            <TextBlock Text="Prezime: NekoPrezime" Margin="10"></TextBlock>
+            <TextBlock Text="Datum rodjenja: 07.maj.1996" Margin="10"></TextBlock>
+            <TextBlock Text="Broj telefona: 061111111" Margin="10"></TextBlock>
+            <TextBlock Text="Email: mailkorisnika@gmail.com" Margin="10"></TextBlock>
+            <TextBlock Text="Država: BiH" Margin="10"></TextBlock>
+            <TextBlock Text="Ulica: Safeta Zajke" Margin="10"></TextBlock>
+            <TextBlock Text="Poštanski broj: 71000" Margin="10"></TextBlock>
+            </StackPanel>
+
+            <GridView  BorderBrush="DarkRed" BorderThickness="2" Grid.Column="3"
+                 ItemTemplate="{StaticResource VoziloDataTemplate}" 
+                  ItemsSource="{x:Bind probe}">
+            </GridView>
+    </Grid>
+    </ScrollViewer>
+</Page>

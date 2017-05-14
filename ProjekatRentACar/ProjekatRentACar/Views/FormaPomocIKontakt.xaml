@@ -1,0 +1,57 @@
+﻿<Page
+    x:Class="ProjekatRentACar.Views.FormaPomocIKontakt"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjekatRentACar.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock 
+            Text="E-mail podrška"
+            FontSize="32"
+            Margin="20,15,0,5"
+        ></TextBlock>
+        <Button 
+            Content="Rezervacije"
+            Margin="20,15,20,0"
+            HorizontalAlignment="Stretch"
+            HorizontalContentAlignment="Left"
+            Height="Auto"
+            Background="Transparent"
+            BorderThickness="0"
+            FontSize="24"
+        ></Button>
+        <Button 
+            Content="Briga o korisnicima"
+            Margin="20,0,20,0"
+            HorizontalAlignment="Stretch"
+            HorizontalContentAlignment="Left"
+            Height="Auto"
+            Background="Transparent"
+            BorderThickness="0"
+            FontSize="24"
+        ></Button>
+        <Button 
+            Content="Tehnička podrška"
+            Margin="20,0,20,0"
+            HorizontalAlignment="Stretch"
+            HorizontalContentAlignment="Left"
+            Height="Auto"
+            Background="Transparent"
+            BorderThickness="0"
+            FontSize="24"
+        ></Button>
+        <TextBlock 
+            Text="Telefonska podrška"
+            FontSize="32"
+            Margin="20,15,0,5"
+        ></TextBlock>
+        <TextBlock 
+            Text="033123456"
+            Margin="30,0,20,0"
+            FontSize="24"
+        ></TextBlock>
+    </StackPanel>
+</Page>

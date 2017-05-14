@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="ProjekatRentACar.Views.FormaPostavke"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjekatRentACar.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <StackPanel Margin="10,5,5,5" Height="Auto" Width="Auto">
+        <TextBlock  Text="Valuta" FontSize="24"></TextBlock>
+            <ComboBox MaxWidth="500"  Margin="5,10,5,10"  PlaceholderText="Valuta">
+                <ComboBoxItem Name="cbx" >Bosna i Hercegovina- KM</ComboBoxItem>
+            </ComboBox>
+     </StackPanel>
+        <StackPanel Margin="10,30,5,5" Height="Auto" Width="Auto">
+            <TextBlock  Text="Lokacijske usluge" FontSize="24"></TextBlock>
+            <ToggleSwitch></ToggleSwitch>
+        </StackPanel>
+    
+  
+    <StackPanel Margin="10,30,5,5" Height="Auto" Width="Auto">
+        <TextBlock  Text="Notifikacije" FontSize="24"></TextBlock>
+        <ToggleSwitch></ToggleSwitch>
+    </StackPanel>
+    </StackPanel>
+
+
+
+
+
+</Page>

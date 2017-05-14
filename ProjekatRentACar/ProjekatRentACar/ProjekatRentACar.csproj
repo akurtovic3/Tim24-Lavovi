@@ -95,11 +95,39 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Proba.cs" />
+    <Compile Include="Views\FormaKorisnickiRacun.xaml.cs">
+      <DependentUpon>FormaKorisnickiRacun.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormaOdabirLokacijeIDatuma.xaml.cs">
       <DependentUpon>FormaOdabirLokacijeIDatuma.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\FormaONama.xaml.cs">
+      <DependentUpon>FormaONama.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormaPlacanje.xaml.cs">
+      <DependentUpon>FormaPlacanje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormaPomocIKontakt.xaml.cs">
+      <DependentUpon>FormaPomocIKontakt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormaPostavke.xaml.cs">
+      <DependentUpon>FormaPostavke.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormaPrijava.xaml.cs">
       <DependentUpon>FormaPrijava.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormaPrivatnost.xaml.cs">
+      <DependentUpon>FormaPrivatnost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormaRegistracijaKorisnika.xaml.cs">
+      <DependentUpon>FormaRegistracijaKorisnika.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormaRegistracijaUposlenika.xaml.cs">
+      <DependentUpon>FormaRegistracijaUposlenika.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormaUvjetiKoristenja.xaml.cs">
+      <DependentUpon>FormaUvjetiKoristenja.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -113,6 +141,9 @@
     <None Include="ProjekatRentACar_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\bronze-medal.png" />
+    <Content Include="Assets\kartice.png" />
+    <Content Include="Assets\polo.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -127,11 +158,47 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\FormaKorisnickiRacun.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\FormaOdabirLokacijeIDatuma.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\FormaONama.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FormaPlacanje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FormaPomocIKontakt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FormaPostavke.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\FormaPrijava.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FormaPrivatnost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FormaRegistracijaKorisnika.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FormaRegistracijaUposlenika.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FormaUvjetiKoristenja.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -141,7 +208,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

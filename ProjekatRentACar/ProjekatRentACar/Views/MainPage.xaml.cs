@@ -26,7 +26,7 @@ namespace ProjekatRentACar
         public MainPage()
         {
             this.InitializeComponent();
-            MainFrame.Navigate(typeof(FormaPostavke));
+            MainFrame.Navigate(typeof(FormaListaVozila));
         }
 
         private void NavigationButton_Click(object sender, RoutedEventArgs e)

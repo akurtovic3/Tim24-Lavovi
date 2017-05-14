@@ -95,9 +95,16 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\ListaVozilaProba.cs" />
     <Compile Include="Models\Proba.cs" />
+    <Compile Include="Views\FormaInformacije.xaml.cs">
+      <DependentUpon>FormaInformacije.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormaKorisnickiRacun.xaml.cs">
       <DependentUpon>FormaKorisnickiRacun.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormaListaVozila.xaml.cs">
+      <DependentUpon>FormaListaVozila.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\FormaOdabirLokacijeIDatuma.xaml.cs">
       <DependentUpon>FormaOdabirLokacijeIDatuma.xaml</DependentUpon>
@@ -126,6 +133,9 @@
     <Compile Include="Views\FormaRegistracijaUposlenika.xaml.cs">
       <DependentUpon>FormaRegistracijaUposlenika.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\FormaUnosNovogVozila.xaml.cs">
+      <DependentUpon>FormaUnosNovogVozila.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormaUvjetiKoristenja.xaml.cs">
       <DependentUpon>FormaUvjetiKoristenja.xaml</DependentUpon>
     </Compile>
@@ -141,9 +151,17 @@
     <None Include="ProjekatRentACar_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\02-dacia-sandero-mink.png" />
+    <Content Include="Assets\bmw-5-series.png" />
+    <Content Include="Assets\golf7.png" />
+    <Content Include="Assets\iris.png" />
+    <Content Include="Assets\kia_ceed_sportswagon.png" />
+    <Content Include="Assets\octavia.png" />
+    <Content Include="Assets\mercedes.png" />
     <Content Include="Assets\bronze-medal.png" />
     <Content Include="Assets\kartice.png" />
     <Content Include="Assets\polo.png" />
+    <Content Include="Assets\volvo_s60.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -158,7 +176,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\FormaInformacije.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\FormaKorisnickiRacun.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FormaListaVozila.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -197,6 +223,10 @@
     <Page Include="Views\FormaRegistracijaUposlenika.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FormaUnosNovogVozila.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\FormaUvjetiKoristenja.xaml">
       <SubType>Designer</SubType>

@@ -26,8 +26,8 @@
             </Grid.RowDefinitions>
             
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" MinWidth="220" MaxWidth="300"></ColumnDefinition>
-                <ColumnDefinition Width="Auto" MinWidth="220" MaxWidth="300"></ColumnDefinition>
+                <ColumnDefinition Width="Auto" MinWidth="230" MaxWidth="300"></ColumnDefinition>
+                <ColumnDefinition Width="Auto" MinWidth="230" MaxWidth="300"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
             <TextBlock Text="Informacije o vozilu" FontSize="20" Margin="10,20,10,5" Grid.ColumnSpan="2"></TextBlock>

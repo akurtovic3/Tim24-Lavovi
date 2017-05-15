@@ -97,6 +97,9 @@
     </Compile>
     <Compile Include="Models\ListaVozilaProba.cs" />
     <Compile Include="Models\Proba.cs" />
+    <Compile Include="Views\FormaDetaljiVozila.xaml.cs">
+      <DependentUpon>FormaDetaljiVozila.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormaInformacije.xaml.cs">
       <DependentUpon>FormaInformacije.xaml</DependentUpon>
     </Compile>
@@ -109,6 +112,9 @@
     <Compile Include="Views\FormaOdabirLokacijeIDatuma.xaml.cs">
       <DependentUpon>FormaOdabirLokacijeIDatuma.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\FormaOdabirOpreme.xaml.cs">
+      <DependentUpon>FormaOdabirOpreme.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormaONama.xaml.cs">
       <DependentUpon>FormaONama.xaml</DependentUpon>
     </Compile>
@@ -117,6 +123,9 @@
     </Compile>
     <Compile Include="Views\FormaPomocIKontakt.xaml.cs">
       <DependentUpon>FormaPomocIKontakt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormaPonudaPopust.xaml.cs">
+      <DependentUpon>FormaPonudaPopust.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\FormaPostavke.xaml.cs">
       <DependentUpon>FormaPostavke.xaml</DependentUpon>
@@ -154,6 +163,10 @@
     <Content Include="Assets\02-dacia-sandero-mink.png" />
     <Content Include="Assets\bmw-5-series.png" />
     <Content Include="Assets\golf7.png" />
+    <Content Include="Assets\Ikone\vrata.png" />
+    <Content Include="Assets\Ikone\mjenjac.png" />
+    <Content Include="Assets\Ikone\torba.png" />
+    <Content Include="Assets\Ikone\lik.png" />
     <Content Include="Assets\iris.png" />
     <Content Include="Assets\kia_ceed_sportswagon.png" />
     <Content Include="Assets\octavia.png" />
@@ -162,6 +175,7 @@
     <Content Include="Assets\kartice.png" />
     <Content Include="Assets\polo.png" />
     <Content Include="Assets\volvo_s60.png" />
+    <Content Include="Assets\Vozila\ml.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -176,6 +190,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\FormaDetaljiVozila.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\FormaInformacije.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -192,6 +210,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\FormaOdabirOpreme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\FormaONama.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -201,6 +223,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\FormaPomocIKontakt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FormaPonudaPopust.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="ProjekatRentACar.Views.FormaPonudaPopust"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjekatRentACar.Views"
+    xmlns:model="using:ProjekatRentACar.Models"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Key="VoziloDataTemplate" x:DataType="model:ListaVozilaProba">
+            <StackPanel Margin="5" Height="Auto" Width="Auto" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="20,20,20,20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Margin="45,0,45,0" Grid.Row="0" Height="200" Width="200" Source="{x:Bind SlikaPath}" ></Image>
+                    <TextBlock Grid.Row="1" Text="{x:Bind Marka}" FontSize="24"></TextBlock>
+                    <TextBlock Grid.Row="2" Text="{x:Bind Tip}"></TextBlock>
+                    <TextBlock Grid.Row="3"  HorizontalAlignment="Right" Foreground="DarkRed" Text="{x:Bind Cijena}"></TextBlock>
+                </Grid>
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+
+    <ScrollViewer>
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <GridView BorderBrush="DarkRed" BorderThickness="2" Grid.Column="3"
+                  ItemTemplate="{StaticResource VoziloDataTemplate}" 
+                  ItemsSource="{x:Bind vozila}">
+            </GridView>
+        </Grid>
+    </ScrollViewer>
+
+</Page>

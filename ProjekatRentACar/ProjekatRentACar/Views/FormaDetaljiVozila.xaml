@@ -1,0 +1,96 @@
+﻿<Page
+    x:Class="ProjekatRentACar.Views.FormaDetaljiVozila"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjekatRentACar.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ScrollViewer>
+            <RelativePanel Grid.Row="0" Height="Auto" HorizontalAlignment="Center">
+
+                <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Image Source="/Assets/Vozila/ml.png" HorizontalAlignment="Center" Grid.Row="0" Width="500" Height="500"></Image>
+
+                    <StackPanel Orientation="Vertical" Grid.Row="1">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Image Source="/Assets/Ikone/lik.png" Width="16" Height="16"></Image>
+                            <TextBlock Text="5"></TextBlock>
+                            <Image Source="/Assets/Ikone/torba.png" Width="16" Height="16"></Image>
+                            <TextBlock Text="3"></TextBlock>
+                            <Image Source="/Assets/Ikone/mjenjac.png" Width="16" Height="16"></Image>
+                            <TextBlock Text="A"></TextBlock>
+                            <Image Source="/Assets/Ikone/vrata.png" Width="16" Height="16"></Image>
+                            <TextBlock Text="4"></TextBlock>
+                        </StackPanel>
+                        <TextBlock Text="Mercedes-Benz ML 350 Bluetec" HorizontalAlignment="Center" FontSize="22" Margin="10"></TextBlock>
+                        <TextBlock Text="ili Hyundai Tucson ili slično vozilo" HorizontalAlignment="Center"></TextBlock>
+                        <TextBlock Text="Iz kategorije SUV" HorizontalAlignment="Center"></TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Left" Margin="0,25,0,0">
+                        <RadioButton Content="Plati odmah"></RadioButton>
+                        <RadioButton Content="Plati po dolasku"></RadioButton>
+                    </StackPanel>
+                </Grid>
+
+            </RelativePanel>
+        </ScrollViewer>
+        
+        <RelativePanel Grid.Row="1" VerticalAlignment="Bottom" BorderBrush="Gray" BorderThickness="1">
+
+            <Line Stroke="Gray" Fill="Gray" RelativePanel.AlignTopWithPanel="True" Width="500" Height="4"></Line>
+            
+            <Button 
+                Name="DugmeDalje" 
+                Content="Dalje"
+                Foreground="White"
+                Background="DarkRed"
+                Margin="10"
+                Width="100"
+                Height="45"
+                RelativePanel.AlignRightWithPanel="True">
+            </Button>
+
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <TextBlock
+                    Name="UkupnaCijena"
+                    Text="Ukupno 318.45 KM"
+                    Foreground="DarkRed"
+                    Grid.Row="0"
+                    FontSize="18">
+                </TextBlock>
+
+                <TextBlock
+                    Text="U cijenu je uključen PDV od 17.00%"
+                    FontSize="12"
+                    Grid.Row="1"
+                    VerticalAlignment="Bottom">
+                </TextBlock>
+
+            </Grid>
+
+        </RelativePanel>
+        
+    </Grid>
+
+</Page>

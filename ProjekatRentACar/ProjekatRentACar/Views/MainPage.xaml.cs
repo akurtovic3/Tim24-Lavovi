@@ -26,7 +26,7 @@ namespace ProjekatRentACar
         public MainPage()
         {
             this.InitializeComponent();
-            MainFrame.Navigate(typeof(FormaPonudaPopust));
+            MainFrame.Navigate(typeof(FormaOdabirOpreme));
         }
 
         private void NavigationButton_Click(object sender, RoutedEventArgs e)

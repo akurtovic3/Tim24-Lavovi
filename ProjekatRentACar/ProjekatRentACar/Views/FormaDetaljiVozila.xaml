@@ -50,11 +50,9 @@
 
             </RelativePanel>
         </ScrollViewer>
-        
+
         <RelativePanel Grid.Row="1" VerticalAlignment="Bottom" BorderBrush="Gray" BorderThickness="1">
 
-            <Line Stroke="Gray" Fill="Gray" RelativePanel.AlignTopWithPanel="True" Width="500" Height="4"></Line>
-            
             <Button 
                 Name="DugmeDalje" 
                 Content="Dalje"

@@ -15,16 +15,44 @@
         </Grid.RowDefinitions>
 
         <ScrollViewer>
-            <RelativePanel Grid.Row="0" Height="Auto" HorizontalAlignment="Center">
+            <RelativePanel Grid.Row="0" Height="Auto" HorizontalAlignment="Left">
 
-                <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Center">
+                <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Left">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
 
-                   <!-- ovdje ide oprema -->
+
+
+                    <GridView Header="Dodatna Oprema" Margin="5,20,5,5" HorizontalAlignment="Left">
+                        <GridViewItem>
+                            <RelativePanel  Width="200" Height="100" Background="LightGray">
+                                <TextBlock Text="Krovni nosači" Margin="10" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True"></TextBlock>
+                                <TextBlock Text="8 KM po danu" Margin="10" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True"></TextBlock>
+                            </RelativePanel>
+                        </GridViewItem>
+
+                        <GridViewItem>
+                            <RelativePanel Background="DarkRed" Width="200" Height="100" >
+                                <TextBlock Foreground="White" Text="Krovni sanduk" Margin="10" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True"></TextBlock>
+                                <TextBlock Foreground="White" Text="13 KM po danu" Margin="10" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True"></TextBlock>
+                            </RelativePanel>
+                        </GridViewItem>
+
+                        <GridViewItem>
+                            <RelativePanel Width="200" Height="100" Background="LightGray">
+                                <TextBlock Text="Držač za odjeću" Margin="10" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True"></TextBlock>
+                                <TextBlock Text="4 KM po danu" Margin="10" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True"></TextBlock>
+                            </RelativePanel>
+                        </GridViewItem>
+
+                    </GridView>
+
+
+
+                    <!-- ovdje ide oprema -->
                     
                 </Grid>
 

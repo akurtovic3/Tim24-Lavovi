@@ -36,22 +36,41 @@
 
             </Grid>
         </ScrollViewer>
-        <RelativePanel Grid.Row="1" Background="White" BorderThickness="2" Name="PrikazCijene" BorderBrush="Black" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignBottomWithPanel="True">
-            <StackPanel RelativePanel.AlignLeftWithPanel="True">
-                <TextBlock Margin="5" Foreground="DarkRed" Text="Ukupno: 2746 KM" FontSize="24"></TextBlock>
-                <TextBlock Margin="5" Text="U cijenu je uključen PDV" FontSize="16"></TextBlock>
-            </StackPanel>
+        <RelativePanel Grid.Row="1" VerticalAlignment="Bottom" BorderBrush="Gray" BorderThickness="1">
             <Button 
-                
-                Background="DarkRed"
-                VerticalAlignment="Stretch"
+                Name="DugmeDalje" 
+                Content="Plati"
                 Foreground="White"
-                RelativePanel.AlignBottomWithPanel="True"
-                RelativePanel.AlignTopWithPanel="True"
-                Margin="5"
+                Background="DarkRed"
+                Margin="10"
                 Width="100"
-                Content="Plati" 
-                RelativePanel.AlignRightWithPanel="True"></Button>
+                Height="45"
+                RelativePanel.AlignRightWithPanel="True">
+            </Button>
+
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <TextBlock
+                    Name="UkupnaCijena"
+                    Text="Ukupno 318.45 KM"
+                    Foreground="DarkRed"
+                    Grid.Row="0"
+                    FontSize="18">
+                </TextBlock>
+
+                <TextBlock
+                    Text="U cijenu je uključen PDV od 17.00%"
+                    FontSize="12"
+                    Grid.Row="1"
+                    VerticalAlignment="Bottom">
+                </TextBlock>
+
+            </Grid>
+
         </RelativePanel>
     </Grid>
         

@@ -53,10 +53,20 @@
         <StackPanel>
             <TextBox Margin="5" PlaceholderText="Search" ></TextBox>
             <TextBlock Margin="5" Text="Lokacije u blizini vas"></TextBlock>
-            <TextBlock Margin="5" Text="1 Sarajevo/Residence Inn" FontSize="28"></TextBlock>
-            <TextBlock Margin="5" Text="Skenderija 43"></TextBlock>
-            <TextBlock Margin="5" Text="2 Sarajevo Airport" FontSize="28"></TextBlock>
-            <TextBlock Margin="5" Text="Kurta Schorka 36"></TextBlock>
+                <Button HorizontalContentAlignment="Left" HorizontalAlignment="Stretch" Background="White">
+                    <StackPanel HorizontalAlignment="Left">
+                        <TextBlock Margin="5" Text="1 Sarajevo/Residence Inn" FontSize="28"></TextBlock>
+                        <TextBlock Margin="5" Text="Skenderija 43"></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button HorizontalContentAlignment="Left" HorizontalAlignment="Stretch" Background="White">
+                    <StackPanel >
+
+                        <TextBlock Margin="5" Text="2 Sarajevo Airport" FontSize="28"></TextBlock>
+                        <TextBlock Margin="5" Text="Kurta Schorka 36"></TextBlock>
+
+                    </StackPanel>
+                </Button>
 
         </StackPanel>
         <Maps:MapControl Name="Mapa" Grid.Column="1" Grid.RowSpan="2"></Maps:MapControl>

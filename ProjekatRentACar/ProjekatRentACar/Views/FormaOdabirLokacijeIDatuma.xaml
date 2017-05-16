@@ -7,6 +7,30 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <ScrollViewer>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Wide">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="DateStackPanel1.Orientation" Value="Horizontal" />
+                        <Setter Target="DateStackPanel2.Orientation" Value="Horizontal" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Narrow">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="DateStackPanel1.Orientation" Value="Vertical" />
+                        <Setter Target="DateStackPanel2.Orientation" Value="Vertical" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+
         <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Center">
            
             <Grid.RowDefinitions>
@@ -34,11 +58,13 @@
             Margin="5,10,5,10"
             Grid.ColumnSpan="2"
             PlaceholderText="Lokacija preuzimanja"></TextBox>
-            <StackPanel Name="DateStackPanel1" Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <StackPanel Name="DateStackPanel1" Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Stretch">
                 <DatePicker 
+                    HorizontalAlignment="Stretch"
                     Margin="5,10,5,10"
                     ></DatePicker>
                 <TimePicker 
+                    HorizontalAlignment="Stretch"
                     Margin="5,10,5,10"
                    ></TimePicker>
             </StackPanel>
@@ -55,12 +81,20 @@
             Margin="5,10,5,10"
             Grid.ColumnSpan="2"
             PlaceholderText="Lokacija vraćanja"></TextBox>
-            <DatePicker Grid.Row="5" 
+
+            <StackPanel Name="DateStackPanel2" Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Stretch">
+                <DatePicker 
+                    HorizontalAlignment="Stretch"
                     Margin="5,10,5,10"
-                    Grid.Column="0"></DatePicker>
-            <TimePicker Grid.Row="5"
-                   Margin="5,10,5,10"
-                    Grid.Column="1"></TimePicker>
+                    ></DatePicker>
+                <TimePicker 
+                    HorizontalAlignment="Stretch"
+                    Margin="5,10,5,10"
+                   ></TimePicker>
+            </StackPanel>
+
+
+            
             <Button Content="Prikaži ponude" 
                 VerticalAlignment="Stretch"
                 HorizontalAlignment="Stretch" 

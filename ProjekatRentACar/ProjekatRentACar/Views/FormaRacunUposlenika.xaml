@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="ProjekatRentACar.Views.FormaKorisnickiRacun"
+    x:Class="ProjekatRentACar.Views.FormaRacunUposlenika"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:ProjekatRentACar.Views"
@@ -18,6 +18,9 @@
                 <StackPanel>
                     <TextBlock Margin="5,5,5,15" Text="{x:Bind OdDatum}"></TextBlock>
                     <TextBlock Margin="5,5,5,5" Text="{x:Bind DoDatum}"></TextBlock>
+                    <TextBlock Margin="5,5,5,5" Text="{x:Bind ImeKorisnika}"></TextBlock>
+                    <TextBlock Margin="5,5,5,5" Text="{x:Bind LokacijaPreuzimanja}"></TextBlock>
+                    <TextBlock Margin="5,5,5,5" Text="{x:Bind LokacijaVracanja}"></TextBlock>
                 </StackPanel>
             </StackPanel>
         </DataTemplate>
@@ -39,11 +42,6 @@
 
                     <StackPanel>
                         <Image Height="150" Width="150" Source="/Assets/kartice.png"></Image>
-                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                            <Image Height="40" Width="40" Opacity="0.5"  Source="/Assets/bronze-medal.png"></Image>
-                            <Image Height="40" Width="40" Opacity="0.5"  Source="/Assets/bronze-medal.png"></Image>
-                            <Image Height="50" Width="50" Source="/Assets/bronze-medal.png"></Image>
-                        </StackPanel>
                     </StackPanel>
 
 
@@ -57,13 +55,15 @@
                         <TextBlock Text="Država: BiH" Margin="10"></TextBlock>
                         <TextBlock Text="Ulica: Safeta Zajke" Margin="10"></TextBlock>
                         <TextBlock Text="Poštanski broj: 71000" Margin="10"></TextBlock>
+                        <TextBlock Text="Uposlenik od: 02.05.1996." Margin="10"></TextBlock>
+
                     </StackPanel>
 
 
                 </Grid>
             </ScrollViewer>
         </PivotItem>
-        <PivotItem Header="Historija iznamljivanja">
+        <PivotItem Header="Lista iznajmljenih vozila">
             <!--Pivot content goes here-->
             <GridView  
                  ItemTemplate="{StaticResource VoziloDataTemplate}" 
@@ -73,5 +73,4 @@
     </Pivot>
 
 
-    
 </Page>

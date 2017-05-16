@@ -136,6 +136,12 @@
     <Compile Include="Views\FormaPrivatnost.xaml.cs">
       <DependentUpon>FormaPrivatnost.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\FormaRacunMenadzera.xaml.cs">
+      <DependentUpon>FormaRacunMenadzera.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormaRacunUposlenika.xaml.cs">
+      <DependentUpon>FormaRacunUposlenika.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormaRegistracijaKorisnika.xaml.cs">
       <DependentUpon>FormaRegistracijaKorisnika.xaml</DependentUpon>
     </Compile>
@@ -239,6 +245,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\FormaPrivatnost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FormaRacunMenadzera.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FormaRacunUposlenika.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

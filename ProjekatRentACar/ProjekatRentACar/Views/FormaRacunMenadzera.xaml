@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="ProjekatRentACar.Views.FormaKorisnickiRacun"
+    x:Class="ProjekatRentACar.Views.FormaRacunMenadzera"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:ProjekatRentACar.Views"
@@ -13,11 +13,16 @@
             <StackPanel Margin="5" Height="Auto" Width="Auto" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <StackPanel>
                     <Image Height="100" Width="100" Source="{x:Bind SlikaPath}" ></Image>
-                    <TextBlock Margin="5" Text="{x:Bind Naziv}"></TextBlock>
+                    <TextBlock Margin="5" Text="{x:Bind Ime}"></TextBlock>
                 </StackPanel>
                 <StackPanel>
-                    <TextBlock Margin="5,5,5,15" Text="{x:Bind OdDatum}"></TextBlock>
-                    <TextBlock Margin="5,5,5,5" Text="{x:Bind DoDatum}"></TextBlock>
+                    <TextBlock Margin="5,5,5,15" Text="{x:Bind DatumRodjenja}"></TextBlock>
+                    <TextBlock Margin="5,5,5,5" Text="{x:Bind Telefon}"></TextBlock>
+                    <TextBlock Margin="5,5,5,5" Text="{x:Bind Email}"></TextBlock>
+                    <TextBlock Margin="5,5,5,5" Text="{x:Bind Drzava}"></TextBlock>
+                    <TextBlock Margin="5,5,5,5" Text="{x:Bind Ulica}"></TextBlock>
+                    <TextBlock Margin="5,5,5,5" Text="{x:Bind PostanskiBroj}"></TextBlock>
+                    <TextBlock Margin="5,5,5,5" Text="{x:Bind Uposlenik}"></TextBlock>
                 </StackPanel>
             </StackPanel>
         </DataTemplate>
@@ -39,11 +44,6 @@
 
                     <StackPanel>
                         <Image Height="150" Width="150" Source="/Assets/kartice.png"></Image>
-                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                            <Image Height="40" Width="40" Opacity="0.5"  Source="/Assets/bronze-medal.png"></Image>
-                            <Image Height="40" Width="40" Opacity="0.5"  Source="/Assets/bronze-medal.png"></Image>
-                            <Image Height="50" Width="50" Source="/Assets/bronze-medal.png"></Image>
-                        </StackPanel>
                     </StackPanel>
 
 
@@ -63,8 +63,7 @@
                 </Grid>
             </ScrollViewer>
         </PivotItem>
-        <PivotItem Header="Historija iznamljivanja">
-            <!--Pivot content goes here-->
+        <PivotItem Header="Lista uposlenika">
             <GridView  
                  ItemTemplate="{StaticResource VoziloDataTemplate}" 
                   ItemsSource="{x:Bind probe}">
@@ -73,5 +72,4 @@
     </Pivot>
 
 
-    
 </Page>

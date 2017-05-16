@@ -1,0 +1,102 @@
+﻿<Page
+    x:Class="ProjekatRentACar.Views.FormaDetaljiOVozacu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjekatRentACar.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <ScrollViewer>
+            <Grid HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <TextBox Margin="5,30,5,10" Text="Senadin"></TextBox>
+                <TextBox Margin="5,5,5,10" Text="Terovic" Grid.Row="1" ></TextBox>
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+
+                    <ComboBox Margin="5,5,5,10" VerticalAlignment="Center">
+                        <ComboBoxItem Content="+387" IsSelected="True"></ComboBoxItem>
+                        <ComboBoxItem Content="+385"></ComboBoxItem>
+                        <ComboBoxItem Content="+382"></ComboBoxItem>
+                    </ComboBox>
+                    <TextBox VerticalAlignment="Center" Grid.Column="1"  Margin="5,5,5,10" Text="0613463860"></TextBox>
+                </Grid>
+                
+                
+
+                <TextBox Margin="5,5,5,10" Text="neko@gmail.com" Grid.Row="3"></TextBox>
+                <ScrollViewer  Margin="5,5,5,10" BorderBrush="DarkRed" BorderThickness="1" MaxWidth="400" MaxHeight="100"  Grid.Row="4" >
+                    <TextBlock   TextWrapping="Wrap" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae ante ut felis interdum bibendum nec eget ex. Donec dolor eros, fringilla ac cursus vestibulum, sagittis at libero. Morbi eget nulla sit amet justo posuere volutpat vitae et tortor. Ut scelerisque, neque nec fermentum consequat, elit ex posuere urna, eget aliquet urna diam sed nunc. Praesent iaculis lorem nisl, eget venenatis ipsum mattis et. Ut dignissim suscipit elit, in interdum est. Quisque arcu lacus, aliquet quis cursus quis, convallis ut dolor. Fusce id sapien lectus. Maecenas quis enim posuere, elementum mauris non, tempor magna. Donec lobortis posuere neque, sit amet finibus nisl fermentum a. Duis elementum nibh malesuada est condimentum, vitae tincidunt justo suscipit. Ut id sollicitudin leo. Maecenas feugiat dapibus enim non vulputate. Sed auctor imperdiet arcu, sit amet porta diam venenatis nec. Nullam enim neque, malesuada vitae scelerisque ac, sollicitudin vel ante. Maecenas porttitor nulla quis augue hendrerit, non ultrices mi convallis."></TextBlock>
+                </ScrollViewer>
+                <CheckBox  Margin="5,5,5,10" Grid.Row="5" IsChecked="False" Content="Prihvatam sve uslove navedene u ugovoru."></CheckBox>
+                
+            </Grid>
+        </ScrollViewer>
+
+
+        <RelativePanel Grid.Row="1" VerticalAlignment="Bottom" BorderBrush="Gray" BorderThickness="1">
+            <Button 
+                Name="DugmeDalje" 
+                Content="Dalje"
+                Foreground="White"
+                Background="DarkRed"
+                Margin="10"
+                Width="100"
+                Height="45"
+                RelativePanel.AlignRightWithPanel="True">
+            </Button>
+
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <TextBlock
+                    Name="UkupnaCijena"
+                    Text="Ukupno 318.45 KM"
+                    Foreground="DarkRed"
+                    Grid.Row="0"
+                    FontSize="18">
+                </TextBlock>
+
+                <TextBlock
+                    Text="U cijenu je uključen PDV od 17.00%"
+                    FontSize="12"
+                    Grid.Row="1"
+                    VerticalAlignment="Bottom">
+                </TextBlock>
+
+            </Grid>
+
+        </RelativePanel>
+    </Grid>
+</Page>

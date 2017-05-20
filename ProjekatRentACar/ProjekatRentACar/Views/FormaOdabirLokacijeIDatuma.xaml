@@ -102,6 +102,7 @@
                 Foreground="White" 
                 Margin="5,10,5,10"
                 Grid.Row="6" 
+                Command="{Binding Ponude}"
                 Grid.ColumnSpan="2"></Button>
         </Grid>
 

@@ -64,8 +64,8 @@
                    Name="MainSplitView"
                    >
             <SplitView.Pane>
-                <ListBox Name="MenuListBox" Background="#FF231C1C" Opacity="0.8">
-                    <ListBoxItem >
+                <ListBox  Name="MenuListBox" Background="#FF231C1C" Opacity="0.8" SelectionChanged="MenuListBox_SelectionChanged">
+                    <ListBoxItem Name="Rezervacija">
                         <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Margin="0">
                             <TextBlock Margin="5,0,0,0"
                                        FontSize="18"
@@ -81,7 +81,7 @@
                                        Margin="20,0,0,0"></TextBlock>
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem >
+                    <ListBoxItem Name="MojRacun">
                         <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Margin="0">
                             <TextBlock Margin="5,0,0,0"
                                        FontSize="18"
@@ -93,11 +93,11 @@
                                        HorizontalAlignment="Center"
                                        VerticalAlignment="Center"
                                        Foreground="White"
-                                       Text="Moj racun"
+                                       Text="Moj račun"
                                        Margin="20,0,0,0"></TextBlock>
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem  >
+                    <ListBoxItem  Name="NajboljePonude">
                         <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Margin="0">
                             <TextBlock Margin="5,0,0,0"
                                        VerticalAlignment="Center"
@@ -134,7 +134,7 @@
                     <ListBoxItem IsEnabled="False" Height="{x:Bind PronadjiStanice.Height, Mode=TwoWay}"></ListBoxItem>
                     <ListBoxItem IsEnabled="False" Height="{x:Bind PronadjiStanice.Height, Mode=TwoWay}"></ListBoxItem>
 
-                    <ListBoxItem >
+                    <ListBoxItem Name="Pomoc">
                         <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Margin="0">
                             <TextBlock Margin="5,0,0,0"
                                        VerticalAlignment="Center"
@@ -151,7 +151,7 @@
                         </StackPanel>
                     </ListBoxItem>
 
-                    <ListBoxItem >
+                    <ListBoxItem Name="Informacije">
                         <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Margin="0">
                             <TextBlock Margin="5,0,0,0"
                                        FontSize="18"
@@ -167,7 +167,7 @@
                         </StackPanel>
                     </ListBoxItem>
 
-                    <ListBoxItem >
+                    <ListBoxItem Name="Postavke">
                         <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Margin="0">
                             <TextBlock Margin="5,0,0,0"
                                        FontSize="18"

@@ -18,7 +18,6 @@ namespace ProjekatRentACar.ViewModels
         {
             Ponude = new RelayCommand<object>(prikaziPonude, moguLiSePrikazatiPonude);
             NavigationService = new NavigationService();
-
         }
 
         public bool moguLiSePrikazatiPonude(object parametar)

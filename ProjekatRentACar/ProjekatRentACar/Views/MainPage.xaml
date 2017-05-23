@@ -5,8 +5,71 @@
     xmlns:local="using:ProjekatRentACar"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:ProjekatRentACar.Models"
     mc:Ignorable="d">
 
+
+    <Page.Resources>
+        <DataTemplate x:Key="MenuDataTemplate" x:DataType="models:MenuItem">
+            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Margin="0">
+                <TextBlock Margin="5,0,0,0"
+                                       FontSize="18"
+                                       Foreground="White"
+                                       VerticalAlignment="Center"
+                                       FontFamily="Segoe MDL2 Assets" 
+                                       Text="{Binding Icon}"></TextBlock>
+                <TextBlock FontSize="18" 
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Foreground="White"
+                                       Text="{Binding Text}"
+                                       Margin="20,0,0,0"></TextBlock>
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+
+    <SplitView DisplayMode="CompactOverlay"
+               PaneBackground="Transparent"
+               CompactPaneLength="50"
+               OpenPaneLength="300"
+               Name="MainSplitView"
+               Background="Transparent">
+        <SplitView.Pane>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <Button Name="NavigationButton" 
+                    Click="NavigationButton_Click"
+                    FontFamily="Segoe MDL2 Assets" 
+                    RelativePanel.AlignLeftWithPanel="True"
+                    Content="&#xE700;" 
+                    Width="50"
+                    Height="50"
+                    FontSize="18"
+                    Background="DarkRed"
+                    Foreground="White"></Button>
+
+
+                <ListView Grid.Row="1" ItemsSource="{Binding OsnovniMenuItemi, Mode=TwoWay}"
+                      SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                      ItemTemplate="{StaticResource MenuDataTemplate}"
+                      Background="#FF535353"
+                          />
+               
+            </Grid>
+           
+        </SplitView.Pane>
+
+        <SplitView.Content>
+            <Frame Name="MainFrame"></Frame>
+        </SplitView.Content>
+    </SplitView>
+
+    <!--
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
@@ -57,6 +120,15 @@
             
         </RelativePanel>
 
+
+
+        
+        
+        
+
+
+
+        
         <SplitView Grid.Row="1" 
                    DisplayMode="CompactOverlay"
                    CompactPaneLength="50"
@@ -64,8 +136,8 @@
                    Name="MainSplitView"
                    >
             <SplitView.Pane>
-                <ListBox  Name="MenuListBox" Background="#FF231C1C" Opacity="0.8" SelectionChanged="MenuListBox_SelectionChanged">
-                    <ListBoxItem Name="Rezervacija">
+                <ListBox   Name="MenuListBox" Background="#FF231C1C" Opacity="0.8" SelectionChanged="MenuListBox_SelectionChanged">
+                    <ListBoxItem  Name="Rezervacija">
                         <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Margin="0">
                             <TextBlock Margin="5,0,0,0"
                                        FontSize="18"
@@ -193,4 +265,6 @@
         </SplitView>
 
     </Grid>
+    
+    -->
 </Page>

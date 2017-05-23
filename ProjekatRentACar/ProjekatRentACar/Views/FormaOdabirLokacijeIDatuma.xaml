@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    <ScrollViewer>
+    <Grid>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
                 <VisualState x:Name="Wide">
@@ -30,51 +30,71 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" ></RowDefinition>
+            <RowDefinition Height="*" ></RowDefinition>
+        </Grid.RowDefinitions>
 
-        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Center">
-           
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <TextBlock Name="asa"
+        <RelativePanel Background="DarkRed" Height="50">
+            <TextBlock Text="LAVOVI" 
+                       Foreground="White" 
+                       
+                       FontSize="18" 
+                       RelativePanel.AlignVerticalCenterWithPanel="True" 
+                       RelativePanel.AlignLeftWithPanel="True"
+                       Margin="0,0,0,0" 
+                       FontWeight="ExtraBold">
+            </TextBlock>
+        </RelativePanel>
+
+        <ScrollViewer Grid.Row="1">
+          
+
+
+            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Center">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Name="asa"
             Grid.Row="0"
             Grid.Column="0"
             Grid.ColumnSpan="2"
             Margin="5,40,5,10"
             Text="Lokacija preuzimanja"></TextBlock>
-            <TextBox
+                <TextBox
             Grid.Row="1"
             Grid.Column="0"
             Margin="5,10,5,10"
             Grid.ColumnSpan="2"
             PlaceholderText="Lokacija preuzimanja"></TextBox>
-            <StackPanel Name="DateStackPanel1" Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Stretch">
-                <DatePicker 
+                <StackPanel Name="DateStackPanel1" Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Stretch">
+                    <DatePicker 
                     HorizontalAlignment="Stretch"
                     Margin="5,10,5,10"
                     ></DatePicker>
-                <TimePicker 
+                    <TimePicker 
                     HorizontalAlignment="Stretch"
                     Margin="5,10,5,10"
                    ></TimePicker>
-            </StackPanel>
-            <TextBlock 
+                </StackPanel>
+                <TextBlock 
             Grid.Row="3"
             Grid.Column="0"
             Grid.ColumnSpan="2"
             Margin="5,10,5,10"
             Text="Lokacija vraćanja"></TextBlock>
-            <TextBox
+                <TextBox
             Grid.Row="4"
             SelectionHighlightColor="DarkRed"
             Grid.Column="0"
@@ -82,20 +102,20 @@
             Grid.ColumnSpan="2"
             PlaceholderText="Lokacija vraćanja"></TextBox>
 
-            <StackPanel Name="DateStackPanel2" Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Stretch">
-                <DatePicker 
+                <StackPanel Name="DateStackPanel2" Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Stretch">
+                    <DatePicker 
                     HorizontalAlignment="Stretch"
                     Margin="5,10,5,10"
                     ></DatePicker>
-                <TimePicker 
+                    <TimePicker 
                     HorizontalAlignment="Stretch"
                     Margin="5,10,5,10"
                    ></TimePicker>
-            </StackPanel>
+                </StackPanel>
 
 
-            
-            <Button Content="Prikaži ponude" 
+
+                <Button Content="Prikaži ponude" 
                 VerticalAlignment="Stretch"
                 HorizontalAlignment="Stretch" 
                 Background="DarkRed" 
@@ -104,8 +124,12 @@
                 Grid.Row="6" 
                 Command="{Binding Ponude}"
                 Grid.ColumnSpan="2"></Button>
-        </Grid>
+            </Grid>
 
-        
-    </ScrollViewer>
+
+        </ScrollViewer>
+    </Grid>
+    
+    
+    
 </Page>

@@ -98,7 +98,9 @@
     <Compile Include="Helper\NavigationService.cs" />
     <Compile Include="Helper\RelayCommand.cs" />
     <Compile Include="Models\ListaVozilaProba.cs" />
+    <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Models\Proba.cs" />
+    <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\OdabirLokacijeIDatumaViewModel.cs" />
     <Compile Include="Views\FormaDetaljiOVozacu.xaml.cs">
       <DependentUpon>FormaDetaljiOVozacu.xaml</DependentUpon>

@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using ProjekatRentACar.Views;
+using ProjekatRentACar.ViewModels;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -26,45 +27,57 @@ namespace ProjekatRentACar
         public MainPage()
         {
             this.InitializeComponent();
-            MainFrame.Navigate(typeof(FormaOdabirOpreme));
-            App.splitViewFrame = MainFrame;
+            // MainFrame.Navigate(typeof(FormaOdabirOpreme));
+             App.splitViewFrame = MainFrame;
+
+            DataContext = new MainPageViewModel();
         }
 
         private void NavigationButton_Click(object sender, RoutedEventArgs e)
         {
-            MainSplitView.IsPaneOpen = !MainSplitView.IsPaneOpen;
+            MainSplitView.IsPaneOpen = !MainSplitView.IsPaneOpen;            
         }
+        /*
 
-        private void MenuListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            switch (MenuListBox.SelectedIndex)
-            {
-                case 0:
-                    MainFrame.Navigate(typeof(FormaOdabirLokacijeIDatuma));
-                    break;
-                case 1:
-                    MainFrame.Navigate(typeof(FormaKorisnickiRacun));
-                    break;
-                case 2:
-                    MainFrame.Navigate(typeof(FormaPonudaPopust));
-                    break;
-                case 3:
-                    MainFrame.Navigate(typeof(FormaNadjiLokaciju));
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    break;
-                case 6:
-                    MainFrame.Navigate(typeof(FormaPomocIKontakt));
-                    break;
-                case 7:
-                    MainFrame.Navigate(typeof(FormaInformacije));
-                    break;
-                case 8:
-                    MainFrame.Navigate(typeof(FormaPostavke));
-                    break;
-            }
-        }
+
+
+
+private void NavigationButton_Click(object sender, RoutedEventArgs e)
+{
+   MainSplitView.IsPaneOpen = !MainSplitView.IsPaneOpen;
+}
+
+private void MenuListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+{
+   switch (MenuListBox.SelectedIndex)
+   {
+       case 0:
+           MainFrame.Navigate(typeof(FormaOdabirLokacijeIDatuma));
+           break;
+       case 1:
+           MainFrame.Navigate(typeof(FormaKorisnickiRacun));
+           break;
+       case 2:
+           MainFrame.Navigate(typeof(FormaPonudaPopust));
+           break;
+       case 3:
+           MainFrame.Navigate(typeof(FormaNadjiLokaciju));
+           break;
+       case 4:
+           break;
+       case 5:
+           break;
+       case 6:
+           MainFrame.Navigate(typeof(FormaPomocIKontakt));
+           break;
+       case 7:
+           MainFrame.Navigate(typeof(FormaInformacije));
+           break;
+       case 8:
+           MainFrame.Navigate(typeof(FormaPostavke));
+           break;
+   }
+}
+*/
     }
 }

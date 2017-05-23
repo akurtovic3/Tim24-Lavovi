@@ -7,13 +7,31 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock 
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" ></RowDefinition>
+            <RowDefinition Height="*" ></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <RelativePanel Grid.Row="0" Background="DarkRed" Height="50">
+            <TextBlock Text="POMOĆ" 
+                       Foreground="White" 
+                       
+                       FontSize="18" 
+                       RelativePanel.AlignVerticalCenterWithPanel="True" 
+                       RelativePanel.AlignLeftWithPanel="True"
+                       Margin="0,0,0,0" 
+                       FontWeight="Bold">
+            </TextBlock>
+        </RelativePanel>
+
+        <StackPanel Grid.Row="1" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <TextBlock 
             Text="E-mail podrška"
             FontSize="32"
             Margin="20,15,0,5"
         ></TextBlock>
-        <Button 
+            <Button 
             Content="Rezervacije"
             Margin="20,15,20,0"
             HorizontalAlignment="Stretch"
@@ -22,8 +40,9 @@
             Background="Transparent"
             BorderThickness="0"
             FontSize="24"
+            Command="{Binding Rezervacije}"
         ></Button>
-        <Button 
+            <Button 
             Content="Briga o korisnicima"
             Margin="20,0,20,0"
             HorizontalAlignment="Stretch"
@@ -32,8 +51,9 @@
             Background="Transparent"
             BorderThickness="0"
             FontSize="24"
+            Command="{Binding BrigaOKorisnicima}"
         ></Button>
-        <Button 
+            <Button 
             Content="Tehnička podrška"
             Margin="20,0,20,0"
             HorizontalAlignment="Stretch"
@@ -42,16 +62,31 @@
             Background="Transparent"
             BorderThickness="0"
             FontSize="24"
+            Command="{Binding TehnickaPodrska}"
         ></Button>
-        <TextBlock 
+            <TextBlock 
             Text="Telefonska podrška"
             FontSize="32"
             Margin="20,15,0,5"
         ></TextBlock>
-        <TextBlock 
+            <!--<TextBlock 
             Text="033123456"
             Margin="30,0,20,0"
             FontSize="24"
-        ></TextBlock>
-    </StackPanel>
+        ></TextBlock>-->
+            <Button
+            Name="TelefonskaPodrska"
+            Content="{Binding telbroj}"
+            Margin="20,0,20,0"
+            HorizontalAlignment="Stretch"
+            HorizontalContentAlignment="Left"
+            Height="Auto"
+            Background="Transparent"
+            BorderThickness="0"
+            FontSize="24"
+            Command="{Binding Broj}"
+        ></Button>
+        </StackPanel>
+
+    </Grid>
 </Page>

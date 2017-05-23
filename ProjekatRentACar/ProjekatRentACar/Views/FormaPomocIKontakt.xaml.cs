@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjekatRentACar.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,12 @@ namespace ProjekatRentACar.Views
         public FormaPomocIKontakt()
         {
             this.InitializeComponent();
+            DataContext = new PomocIKontaktViewModel();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
         }
     }
 }

@@ -14,6 +14,8 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using ProjekatRentACar.Views;
 using ProjekatRentACar.ViewModels;
+using ProjekatRentACar.Helper;
+using Windows.UI.Core;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -24,6 +26,8 @@ namespace ProjekatRentACar
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public INavigationService nav { get; set; }
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -31,11 +35,23 @@ namespace ProjekatRentACar
              App.splitViewFrame = MainFrame;
 
             DataContext = new MainPageViewModel();
+
+            //staviti da se vidi back
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
+
+            nav = new NavigationService();
         }
 
         private void NavigationButton_Click(object sender, RoutedEventArgs e)
         {
             MainSplitView.IsPaneOpen = !MainSplitView.IsPaneOpen;            
+        }
+
+        private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
+        {
+            nav.GoBack();  // treba dodati da se selektira ikona u meniju        
         }
         /*
 

@@ -7,30 +7,55 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button 
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" ></RowDefinition>
+            <RowDefinition Height="*" ></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <RelativePanel Grid.Row="0" Background="DarkRed" Height="50">
+            <TextBlock Text="INFORMACIJE" 
+                       Foreground="White" 
+                       
+                       FontSize="18" 
+                       RelativePanel.AlignVerticalCenterWithPanel="True" 
+                       RelativePanel.AlignLeftWithPanel="True"
+                       Margin="0,0,0,0" 
+                       FontWeight="Bold">
+            </TextBlock>
+        </RelativePanel>
+        
+        <StackPanel Grid.Row="1" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <Button 
             Content="O nama" 
             Margin="20,15,20,0" 
             HorizontalAlignment="Stretch"
             HorizontalContentAlignment="Left"
             BorderThickness="0"
+            Command="{Binding ONama}"
             Background="Transparent">
-        </Button>
-        <Button 
+            </Button>
+            <Button 
             Content="Privatnost" 
             Margin="20,0,20,0"
             HorizontalAlignment="Stretch" 
             HorizontalContentAlignment="Left"
             BorderThickness="0"
+            Command="{Binding Privatnost}"
             Background="Transparent">
-        </Button>
-        <Button 
+            </Button>
+            <Button 
             Content="Uslovi korištenja" 
             Margin="20,0,20,0"
             HorizontalAlignment="Stretch" 
             HorizontalContentAlignment="Left"
             BorderThickness="0"
+            Command="{Binding UsloviKoristenja}"
             Background="Transparent">
-        </Button>
-    </StackPanel>
+            </Button>
+        </StackPanel>
+
+    </Grid>
+
 </Page>

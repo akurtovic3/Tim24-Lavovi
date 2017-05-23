@@ -7,29 +7,50 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel Margin="10,5,5,5" Height="Auto" Width="Auto">
-            <TextBlock  Text="Ime i adresa" FontSize="24"></TextBlock>
-            <StackPanel Margin="70,5,5,5" Height="Auto" Width="Auto">
-                <TextBlock  Text="Rent a car" FontSize="16"></TextBlock>
-                <TextBlock   Text="Safeta 103" FontSize="16"></TextBlock>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" ></RowDefinition>
+            <RowDefinition Height="*" ></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <RelativePanel Grid.Row="0" Background="DarkRed" Height="50">
+            <TextBlock Text="O NAMA" 
+                       Foreground="White" 
+                       
+                       FontSize="18" 
+                       RelativePanel.AlignVerticalCenterWithPanel="True" 
+                       RelativePanel.AlignLeftWithPanel="True"
+                       Margin="0,0,0,0" 
+                       FontWeight="Bold">
+            </TextBlock>
+        </RelativePanel>
+        
+        <StackPanel Grid.Row="1" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <StackPanel Margin="10,5,5,5" Height="Auto" Width="Auto">
+                <TextBlock  Text="Ime i adresa" FontSize="24"></TextBlock>
+                <StackPanel Margin="70,5,5,5" Height="Auto" Width="Auto">
+                    <TextBlock  Text="Rent a car" FontSize="16"></TextBlock>
+                    <TextBlock   Text="Safeta 103" FontSize="16"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel  Margin="10,5,5,5" Height="Auto" Width="Auto">
+                <TextBlock Text="Sjediste kompanije" FontSize="24"></TextBlock>
+                <TextBlock Margin="70,5,5,5" Text="Sarajevo, Humska" FontSize="16"></TextBlock>
+            </StackPanel>
+            <StackPanel  Margin="10,5,5,5" Height="Auto" Width="Auto">
+                <TextBlock Text="Registracijski broj" FontSize="24"></TextBlock>
+                <TextBlock Margin="70,5,5,5" Text="4124125115151365" FontSize="16"></TextBlock>
+            </StackPanel>
+            <StackPanel  Margin="10,5,5,5" Height="Auto" Width="Auto">
+                <TextBlock Text="Vlasnik aplikacije" FontSize="24"></TextBlock>
+                <TextBlock Margin="70,5,5,5" Text="Tim Lavovi" FontSize="16"></TextBlock>
+            </StackPanel>
+            <StackPanel Margin="10,5,5,5" Height="Auto" Width="Auto">
+                <TextBlock Text="Verzija Aplikacije" FontSize="24"></TextBlock>
+                <TextBlock Margin="70,5,5,5" Text="1.0.0" FontSize="16"></TextBlock>
             </StackPanel>
         </StackPanel>
-        <StackPanel  Margin="10,5,5,5" Height="Auto" Width="Auto">
-            <TextBlock Text="Sjediste kompanije" FontSize="24"></TextBlock>
-            <TextBlock Margin="70,5,5,5" Text="Sarajevo, Humska" FontSize="16"></TextBlock>
-        </StackPanel>
-        <StackPanel  Margin="10,5,5,5" Height="Auto" Width="Auto">
-            <TextBlock Text="Registracijski broj" FontSize="24"></TextBlock>
-            <TextBlock Margin="70,5,5,5" Text="4124125115151365" FontSize="16"></TextBlock>
-        </StackPanel>
-        <StackPanel  Margin="10,5,5,5" Height="Auto" Width="Auto">
-            <TextBlock Text="Vlasnik aplikacije" FontSize="24"></TextBlock>
-            <TextBlock Margin="70,5,5,5" Text="Tim Lavovi" FontSize="16"></TextBlock>
-        </StackPanel>
-        <StackPanel Margin="10,5,5,5" Height="Auto" Width="Auto">
-            <TextBlock Text="Verzija Aplikacije" FontSize="24"></TextBlock>
-            <TextBlock Margin="70,5,5,5" Text="1.0.0" FontSize="16"></TextBlock>
-        </StackPanel>
-    </StackPanel>
+
+    </Grid>
 </Page>

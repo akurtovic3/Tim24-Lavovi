@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjekatRentACar.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace ProjekatRentACar.Views
         public FormaInformacije()
         {
             this.InitializeComponent();
+            DataContext = new InformacijeViewModel();
         }
     }
 }

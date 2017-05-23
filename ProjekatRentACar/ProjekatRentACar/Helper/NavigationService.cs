@@ -29,7 +29,9 @@ namespace ProjekatRentACar.Helper
         //poziv da se vrati na predhodnu stranicu
         public void GoBack()
         {
-            App.splitViewFrame.GoBack();
+            if (App.splitViewFrame.CanGoBack)
+                App.splitViewFrame.GoBack();
+
         }
     }
 

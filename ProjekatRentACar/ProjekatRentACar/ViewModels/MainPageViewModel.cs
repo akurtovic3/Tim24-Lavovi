@@ -3,14 +3,16 @@ using ProjekatRentACar.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ProjekatRentACar.ViewModels
 {
-    public class MainPageViewModel
+    public class MainPageViewModel : INotifyPropertyChanged
     {
         private Helper.INavigationService NavigationService { get; set; }
         private MenuItem selectedItem { get; set; }
@@ -24,6 +26,7 @@ namespace ProjekatRentACar.ViewModels
             {
                 selectedItem = value;
                 promjeniFrame(selectedItem.Tag);
+                OnNotifyPropertyChanged("SelectedItem");
             }
         }
 
@@ -55,10 +58,14 @@ namespace ProjekatRentACar.ViewModels
         }
 
         public ObservableCollection<MenuItem> OsnovniMenuItemi { get; set; }
-        
 
-        public MainPageViewModel()
-        {
+
+
+        private static MainPageViewModel instance;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private MainPageViewModel() {
             OsnovniMenuItemi = new ObservableCollection<MenuItem>();
             OsnovniMenuItemi.Add(new MenuItem { Icon = "\uE804", Text = "Rezervacije", Tag = 0 });
             OsnovniMenuItemi.Add(new MenuItem { Icon = "\uE77B", Text = "Moj račun", Tag = 1 });
@@ -73,5 +80,28 @@ namespace ProjekatRentACar.ViewModels
             NavigationService = new Helper.NavigationService();
             NavigationService.Navigate(typeof(FormaOdabirLokacijeIDatuma));
         }
+
+        public static MainPageViewModel Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new MainPageViewModel();
+                }
+                return instance;
+            }
+        }
+
+        protected void OnNotifyPropertyChanged([CallerMemberName] string memberName = "")
+        { 
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(memberName));
+        }
+
+        public void changeSelectedItemTo(int tag)
+        {
+            SelectedItem = OsnovniMenuItemi.ElementAt(tag);
+        }
     }
 }
+

@@ -95,9 +95,15 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helper\DateTimeConverter.cs" />
+    <Compile Include="Helper\DateTimeToDateTimeOffsetConverter.cs" />
+    <Compile Include="Helper\ErrorToColorConverter.cs" />
+    <Compile Include="Helper\IsNullValidation.cs" />
+    <Compile Include="Helper\LaterThanValidation.cs" />
     <Compile Include="Helper\NavigationService.cs" />
     <Compile Include="Helper\RelayCommand.cs" />
     <Compile Include="Models\ListaVozilaProba.cs" />
+    <Compile Include="Models\Lokacija.cs" />
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Models\Proba.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />

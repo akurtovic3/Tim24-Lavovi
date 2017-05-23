@@ -18,7 +18,7 @@ namespace ProjekatRentACar.Helper
         //obicna navigacija bez parametra
         public void Navigate(Type sourcePage)
         {
-            App.splitViewFrame.Navigate(sourcePage, new PopOutThemeAnimation());
+            App.splitViewFrame.Navigate(sourcePage, new PaneThemeTransition());
         }
         //navigiranje na page ali da se proslijedi parametar stranici
         public void Navigate(Type sourcePage, object parameter)

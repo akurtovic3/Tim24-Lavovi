@@ -5,7 +5,14 @@
     xmlns:local="using:ProjekatRentACar.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:helper="using:ProjekatRentACar.Helper"
     mc:Ignorable="d">
+
+    <Page.Resources>
+        <helper:ErrorToColorConverter x:Key="ErrorToColorConverter"></helper:ErrorToColorConverter>
+        <helper:DateTimeToDateTimeOffsetConverter x:Key="DateTimeToDateTimeOffsetConverter"></helper:DateTimeToDateTimeOffsetConverter>
+
+    </Page.Resources>
     <Grid>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
@@ -48,7 +55,7 @@
         </RelativePanel>
 
         <ScrollViewer Grid.Row="1">
-          
+
 
 
             <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Center">
@@ -66,22 +73,34 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <TextBlock Name="asa"
-            Grid.Row="0"
-            Grid.Column="0"
-            Grid.ColumnSpan="2"
+
+                    <TextBlock Name="asa"                
+          Grid.ColumnSpan="2"
             Margin="5,40,5,10"
             Text="Lokacija preuzimanja"></TextBlock>
-                <TextBox
-            Grid.Row="1"
-            Grid.Column="0"
-            Margin="5,10,5,10"
-            Grid.ColumnSpan="2"
-            PlaceholderText="Lokacija preuzimanja"></TextBox>
+
+                <Button Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                        HorizontalContentAlignment="Left"
+                        Background="White"
+                    Margin="5,10,5,10"
+                        BorderThickness="2"
+                        BorderBrush="{Binding Errors[PocetnaLokacija], Converter={StaticResource ErrorToColorConverter}}"
+                        
+                        HorizontalAlignment="Stretch"
+                    Content="Lokacija preuzimanja"
+                        Command="{Binding LokacijaPreuzimanja}">
+                </Button>
+                
+                
                 <StackPanel Name="DateStackPanel1" Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Stretch">
                     <DatePicker 
                     HorizontalAlignment="Stretch"
                     Margin="5,10,5,10"
+                        Date="{Binding DatumRezervacije,
+                        Mode=TwoWay, 
+                        Converter={StaticResource DateTimeToDateTimeOffsetConverter}}"
                     ></DatePicker>
                     <TimePicker 
                     HorizontalAlignment="Stretch"
@@ -94,18 +113,26 @@
             Grid.ColumnSpan="2"
             Margin="5,10,5,10"
             Text="Lokacija vraćanja"></TextBlock>
-                <TextBox
-            Grid.Row="4"
-            SelectionHighlightColor="DarkRed"
-            Grid.Column="0"
-            Margin="5,10,5,10"
-            Grid.ColumnSpan="2"
-            PlaceholderText="Lokacija vraćanja"></TextBox>
+                <Button Grid.Row="4"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                        HorizontalContentAlignment="Left"
+                        Background="White"
+                    Margin="5,10,5,10"
+                        BorderThickness="2"
+                        BorderBrush="{Binding Errors[KrajnjaLokacija], Converter={StaticResource ErrorToColorConverter}}"
+                        HorizontalAlignment="Stretch"
+                        Command="{Binding LokacijaVracanja}"
+                    Content="Lokacija vraćanja">
+                </Button>
 
                 <StackPanel Name="DateStackPanel2" Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Stretch">
                     <DatePicker 
                     HorizontalAlignment="Stretch"
                     Margin="5,10,5,10"
+                    Date="{Binding DatumVracanja,
+                        Mode=TwoWay, 
+                        Converter={StaticResource DateTimeToDateTimeOffsetConverter}}"
                     ></DatePicker>
                     <TimePicker 
                     HorizontalAlignment="Stretch"
@@ -123,13 +150,14 @@
                 Margin="5,10,5,10"
                 Grid.Row="6" 
                 Command="{Binding Ponude}"
-                Grid.ColumnSpan="2"></Button>
+                Grid.ColumnSpan="2"
+                ></Button>
             </Grid>
 
 
         </ScrollViewer>
     </Grid>
-    
-    
-    
+
+
+
 </Page>

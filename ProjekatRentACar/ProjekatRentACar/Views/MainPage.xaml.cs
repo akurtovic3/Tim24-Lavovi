@@ -31,9 +31,9 @@ namespace ProjekatRentACar
         public MainPage()
         {
             this.InitializeComponent();
-            // MainFrame.Navigate(typeof(FormaOdabirOpreme));
              App.splitViewFrame = MainFrame;
 
+ 
             DataContext = new MainPageViewModel();
 
             //staviti da se vidi back
@@ -42,58 +42,21 @@ namespace ProjekatRentACar
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
 
             nav = new NavigationService();
+
+            DataContext = MainPageViewModel.Instance;
+
         }
 
         private void NavigationButton_Click(object sender, RoutedEventArgs e)
         {
-            MainSplitView.IsPaneOpen = !MainSplitView.IsPaneOpen;            
+            MainSplitView.IsPaneOpen = !MainSplitView.IsPaneOpen;
+            MainListView.Visibility = Visibility.Visible;         
         }
+
 
         private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
         {
             nav.GoBack();  // treba dodati da se selektira ikona u meniju        
         }
-        /*
-
-
-
-
-private void NavigationButton_Click(object sender, RoutedEventArgs e)
-{
-   MainSplitView.IsPaneOpen = !MainSplitView.IsPaneOpen;
-}
-
-private void MenuListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-{
-   switch (MenuListBox.SelectedIndex)
-   {
-       case 0:
-           MainFrame.Navigate(typeof(FormaOdabirLokacijeIDatuma));
-           break;
-       case 1:
-           MainFrame.Navigate(typeof(FormaKorisnickiRacun));
-           break;
-       case 2:
-           MainFrame.Navigate(typeof(FormaPonudaPopust));
-           break;
-       case 3:
-           MainFrame.Navigate(typeof(FormaNadjiLokaciju));
-           break;
-       case 4:
-           break;
-       case 5:
-           break;
-       case 6:
-           MainFrame.Navigate(typeof(FormaPomocIKontakt));
-           break;
-       case 7:
-           MainFrame.Navigate(typeof(FormaInformacije));
-           break;
-       case 8:
-           MainFrame.Navigate(typeof(FormaPostavke));
-           break;
-   }
-}
-*/
     }
 }

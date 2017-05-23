@@ -1,23 +1,111 @@
-﻿using ProjekatRentACar.Helper;
+﻿using Prism.Windows.Validation;
+using ProjekatRentACar.Helper;
+using ProjekatRentACar.Models;
 using ProjekatRentACar.Views;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI.Popups;
 
 namespace ProjekatRentACar.ViewModels
 {
-    public class OdabirLokacijeIDatumaViewModel
+    public class OdabirLokacijeIDatumaViewModel : ValidatableBindableBase, INotifyPropertyChanged
     {
         public ICommand Ponude { get; set; }
+        public ICommand LokacijaPreuzimanja { get; set; }
+        public ICommand LokacijaVracanja { get; set; }
         public Helper.INavigationService NavigationService { get; set; }
+
+        private Lokacija pocetnaLokacija;
+        [IsNullValidation(ErrorMessage ="Morate postaviti pocetnu lokaciju")]
+        public Lokacija PocetnaLokacija
+        {
+            get { return pocetnaLokacija; }
+            set { SetProperty(ref pocetnaLokacija, value); }
+        }
+
+
+        private Lokacija krajnjaLokacija;
+        [IsNullValidation(ErrorMessage = "Morate postaviti krajnju lokaciju")]
+        public Lokacija KrajnjaLokacija
+        {
+            get { return krajnjaLokacija; }
+            set { SetProperty(ref krajnjaLokacija, value); }
+        }
+
+        private DateTime datumRezervacije { get; set; }
+        public DateTime DatumRezervacije
+        {
+            get
+            {
+                return datumRezervacije;
+            }
+            set
+            {
+                datumRezervacije = value;
+                DatumVracanja = datumRezervacije.AddDays(1);
+            }
+        }
+
+        private DateTime datumVracanja;
+        [LaterThenValidation("DatumRezervacije", ErrorMessage = "Datum vracanja mora biti iza datuma rezervacije")]
+        public DateTime DatumVracanja
+        {
+            get
+            {
+                return datumVracanja;
+            }
+            set
+            {
+                SetProperty(ref datumVracanja, value);
+                OnNotifyPropertyChanged("DatumVracanja");
+            }
+        }
+
+
 
         public OdabirLokacijeIDatumaViewModel()
         {
             Ponude = new RelayCommand<object>(prikaziPonude, moguLiSePrikazatiPonude);
+            LokacijaPreuzimanja = new RelayCommand<object>(otvoriLokaciju, moguLiSePrikazatiPonude);
+            LokacijaVracanja = new RelayCommand<object>(otvoriLokaciju, moguLiSePrikazatiPonude);
             NavigationService = new NavigationService();
+            this.IsValidationEnabled = false;
+            PocetnaLokacija = new Lokacija();
+            KrajnjaLokacija = new Lokacija();
+            this.ErrorsChanged += Vm_ErrorsChanged;
+            datumRezervacije = DateTime.Today;
+            DatumVracanja = datumRezervacije.AddDays(1);
+
+        }
+
+        private void Vm_ErrorsChanged(object sender, System.ComponentModel.DataErrorsChangedEventArgs e)
+        {
+            //Erori = new ObservableCollection<string>(this.Errors.Errors.Values.SelectMany(x => x).ToList());
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private ObservableCollection<string> erori;
+        public ObservableCollection<string> Erori
+        {
+            get
+            {
+                return erori;
+            }
+            set
+            {
+                erori = value;
+                //OnNotifyPropertyChanged("Erori");
+            }
         }
 
         public bool moguLiSePrikazatiPonude(object parametar)
@@ -25,10 +113,38 @@ namespace ProjekatRentACar.ViewModels
             return true;
         }
 
-        public void prikaziPonude(object parametar)
+        public async void prikaziPonude(object parametar)
         {
-            NavigationService.Navigate(typeof(FormaListaVozila));
-            
+            this.IsValidationEnabled = true;
+            this.ValidateProperties();
+            Erori = new ObservableCollection<string>(this.Errors.Errors.Values.SelectMany(x => x).ToList());
+
+            if (DatumRezervacije.AddDays(1) > DatumVracanja)
+            {
+                var dialog = new MessageDialog("Datum vracanja mora biti iza datuma rezervacije");
+                await dialog.ShowAsync();
+            }
+
+            if ((erori == null || erori.Count == 0) && DatumRezervacije.AddDays(1) < DatumVracanja)
+            {
+                NavigationService.Navigate(typeof(FormaListaVozila));
+            }
+
+
         }
+
+        public void otvoriLokaciju(object parametar)
+        {
+            var mainPage = MainPageViewModel.Instance;
+            mainPage.changeSelectedItemTo(3);
+            NavigationService.Navigate(typeof(FormaNadjiLokaciju));
+        }
+
+        protected void OnNotifyPropertyChanged([CallerMemberName] string memberName = "")
+        {
+            
+           PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(memberName));
+        }
+
     }
 }

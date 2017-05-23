@@ -95,11 +95,20 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Helper\ICommunicateBehaviour.cs" />
+=======
+    <Compile Include="Helper\DateTimeConverter.cs" />
+    <Compile Include="Helper\DateTimeToDateTimeOffsetConverter.cs" />
+    <Compile Include="Helper\ErrorToColorConverter.cs" />
+    <Compile Include="Helper\IsNullValidation.cs" />
+    <Compile Include="Helper\LaterThanValidation.cs" />
+>>>>>>> ea1d66df12f064c440a59bc1989b7a6953d88785
     <Compile Include="Helper\NavigationService.cs" />
     <Compile Include="Helper\CallCommunicateBehaviour.cs" />
     <Compile Include="Helper\RelayCommand.cs" />
     <Compile Include="Models\ListaVozilaProba.cs" />
+    <Compile Include="Models\Lokacija.cs" />
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Models\Proba.cs" />
     <Compile Include="ViewModels\InformacijeViewModel.cs" />

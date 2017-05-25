@@ -107,6 +107,7 @@
     <Compile Include="Models\ListaVozilaProba.cs" />
     <Compile Include="Models\Lokacija.cs" />
     <Compile Include="Models\MenuItem.cs" />
+    <Compile Include="Models\Osoba.cs" />
     <Compile Include="Models\Proba.cs" />
     <Compile Include="ViewModels\DetaljiLokacijeViewModel.cs" />
     <Compile Include="ViewModels\InformacijeViewModel.cs" />
@@ -115,9 +116,14 @@
     <Compile Include="ViewModels\OdabirLokacijeIDatumaViewModel.cs" />
     <Compile Include="ViewModels\PomocIKontaktViewModel.cs" />
     <Compile Include="ViewModels\PostavkeViewModel.cs" />
+
     <Compile Include="Views\FormaDetaljiLokacije.xaml.cs">
       <DependentUpon>FormaDetaljiLokacije.xaml</DependentUpon>
     </Compile>
+
+    <Compile Include="ViewModels\PrijavaViewModel.cs" />
+    <Compile Include="ViewModels\RegistracijaKorisnikaViewModel.cs" />
+
     <Compile Include="Views\FormaDetaljiOVozacu.xaml.cs">
       <DependentUpon>FormaDetaljiOVozacu.xaml</DependentUpon>
     </Compile>

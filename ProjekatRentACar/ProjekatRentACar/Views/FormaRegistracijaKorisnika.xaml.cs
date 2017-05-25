@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjekatRentACar.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,13 @@ namespace ProjekatRentACar.Views
         public FormaRegistracijaKorisnika()
         {
             this.InitializeComponent();
+            DataContext = new RegistracijaKorisnikaViewModel();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            MainPageViewModel.Instance.changeSelectedItemTo(0);
         }
     }
 }

@@ -37,7 +37,7 @@ namespace ProjekatRentACar.ViewModels
                     NavigationService.Navigate(typeof(FormaOdabirLokacijeIDatuma));
                     break;
                 case 1:
-                    NavigationService.Navigate(typeof(FormaKorisnickiRacun));
+                    NavigationService.Navigate(typeof(FormaPrijava));
                     break;
                 case 2:
                     NavigationService.Navigate(typeof(FormaPonudaPopust));
@@ -61,7 +61,6 @@ namespace ProjekatRentACar.ViewModels
 
 
 
-        private static MainPageViewModel instance;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -81,6 +80,7 @@ namespace ProjekatRentACar.ViewModels
             NavigationService.Navigate(typeof(FormaOdabirLokacijeIDatuma));
         }
 
+        private static MainPageViewModel instance;
         public static MainPageViewModel Instance
         {
             get

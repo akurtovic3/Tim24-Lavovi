@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using ProjekatRentACar.Models;
 using System.Collections.ObjectModel;
+using ProjekatRentACar.ViewModels;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -39,5 +40,7 @@ namespace ProjekatRentACar.Views
             vozila.Add(new ListaVozilaProba("Kia", "Ceed", "Kompakt", "Po danu 49 KM", "/Assets/kia_ceed_sportswagon.png"));
             vozila.Add(new ListaVozilaProba("Volkswagen", "Passat Variant", "Karavan", "Po danu 78 KM", "/Assets/iris.png"));
         }
+
+       
     }
 }

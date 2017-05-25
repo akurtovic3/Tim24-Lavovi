@@ -95,15 +95,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="Helper\ICommunicateBehaviour.cs" />
-
     <Compile Include="Helper\DateTimeConverter.cs" />
     <Compile Include="Helper\DateTimeToDateTimeOffsetConverter.cs" />
     <Compile Include="Helper\ErrorToColorConverter.cs" />
     <Compile Include="Helper\IsNullValidation.cs" />
     <Compile Include="Helper\LaterThanValidation.cs" />
-
     <Compile Include="Helper\NavigationService.cs" />
     <Compile Include="Helper\CallCommunicateBehaviour.cs" />
     <Compile Include="Helper\RelayCommand.cs" />
@@ -113,6 +110,7 @@
     <Compile Include="Models\Proba.cs" />
     <Compile Include="ViewModels\InformacijeViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
+    <Compile Include="ViewModels\NadjiLokacijuViewModel.cs" />
     <Compile Include="ViewModels\OdabirLokacijeIDatumaViewModel.cs" />
     <Compile Include="ViewModels\PomocIKontaktViewModel.cs" />
     <Compile Include="ViewModels\PostavkeViewModel.cs" />

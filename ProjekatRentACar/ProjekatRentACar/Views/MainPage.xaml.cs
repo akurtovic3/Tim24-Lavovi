@@ -34,7 +34,7 @@ namespace ProjekatRentACar
              App.splitViewFrame = MainFrame;
 
  
-            DataContext = new MainPageViewModel();
+            DataContext =  MainPageViewModel.Instance;
 
             //staviti da se vidi back
             var currentView = SystemNavigationManager.GetForCurrentView();

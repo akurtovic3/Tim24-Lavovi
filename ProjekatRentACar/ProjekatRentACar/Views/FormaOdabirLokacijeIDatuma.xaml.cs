@@ -28,5 +28,11 @@ namespace ProjekatRentACar.Views
             this.InitializeComponent();
             DataContext = new OdabirLokacijeIDatumaViewModel();
         }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            MainPageViewModel.Instance.changeSelectedItemTo(0);
+        }
     }
 }

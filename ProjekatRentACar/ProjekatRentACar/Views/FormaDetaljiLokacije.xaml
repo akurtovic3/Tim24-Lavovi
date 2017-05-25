@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="ProjekatRentACar.Views.FormaNadjiLokaciju"
+    x:Class="ProjekatRentACar.Views.FormaDetaljiLokacije"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:ProjekatRentACar.Views"
@@ -10,8 +10,8 @@
     xmlns:models="using:ProjekatRentACar.Models"
     mc:Ignorable="d">
 
-
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
                 <VisualState x:Name="Wide">
@@ -47,7 +47,7 @@
         </Grid.RowDefinitions>
 
         <RelativePanel Grid.Row="0" Background="DarkRed" Height="50">
-            <TextBlock Text="PRONAĐI STANICE" 
+            <TextBlock Text="DETALJI LOKACIJE" 
                        Foreground="White" 
                        
                        FontSize="18" 
@@ -58,8 +58,9 @@
             </TextBlock>
         </RelativePanel>
 
+
         <Grid Grid.Row="1">
-           
+            
             <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
@@ -72,46 +73,27 @@
 
                 <ScrollViewer HorizontalAlignment="Stretch"  Name="ScrollViewer">
                     <StackPanel>
-                        <AutoSuggestBox Margin="5"
-                                    ItemsSource="{Binding FilteredItems}"
-                                    PlaceholderText="Traži"
-                                    QueryIcon="Find"
-                                    TextChanged="SearchBox_TextChanged"
-                                    SuggestionChosen="SearchBox_SuggestionChosen"
-                                    Name="SearchBox">
-                            <AutoSuggestBox.ItemTemplate>
-                                <DataTemplate x:DataType="models:Lokacija">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                                        <TextBlock Text="{Binding Naziv}"></TextBlock>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </AutoSuggestBox.ItemTemplate>
-                        </AutoSuggestBox>
-                        <TextBlock Margin="5" Text="Lokacije u blizini vas"></TextBlock>
-                        <ListView>
-                            <ListViewItem>
-                                <StackPanel HorizontalAlignment="Left">
-                                    <TextBlock Margin="5" Text="1 Sarajevo/Residence Inn" FontSize="28"></TextBlock>
-                                    <TextBlock Margin="5" Text="Skenderija 43"></TextBlock>
-                                </StackPanel>
-                            </ListViewItem>
-                            <ListViewItem>
-                                <StackPanel >
-                                    <TextBlock Margin="5" Text="2 Sarajevo Airport" FontSize="28"></TextBlock>
-                                    <TextBlock Margin="5" Text="Kurta Schorka 36"></TextBlock>
-                                </StackPanel>
-                            </ListViewItem>
-                            <ListViewItem>
-                                <StackPanel >
-                                    <TextBlock Margin="5" Text="3 Sarajevo Airport" FontSize="28"></TextBlock>
-                                    <TextBlock Margin="5" Text="Kurta Schorka 36"></TextBlock>
-                                </StackPanel>
-                            </ListViewItem>
-                        </ListView>
+                        <TextBlock Margin="10" Text="{Binding OdabranaLokacija.Naziv}" FontSize="24"></TextBlock>
+                        <TextBlock Margin="10" Text="{Binding OdabranaLokacija.Adresa}" FontSize="16"></TextBlock>
+                        <Button HorizontalAlignment="Stretch" Background="DarkRed" Foreground="White" Content="Rezervisi ovdje" Margin="10"></Button>
+                        <TextBlock Margin="10" Text="{Binding OdabranaLokacija.Opis}"></TextBlock>
                     </StackPanel>
                 </ScrollViewer>
 
-                <Maps:MapControl Name="Mapa" Grid.Column="1" Grid.RowSpan="2"></Maps:MapControl>
+                <Maps:MapControl Name="Mapa"
+                             Grid.Column="1" 
+                             Grid.RowSpan="2"
+                             ZoomLevel="14"
+                             LandmarksVisible="True"
+                             TransitFeaturesVisible="True">
+
+                    <Maps:MapItemsControl>
+                        <StackPanel Maps:MapControl.Location="{Binding OdabranaLokacija.LokacijaMjesta}" Maps:MapControl.NormalizedAnchorPoint="0.5,1">
+                            <TextBlock FontWeight="Bold" HorizontalAlignment="Center" Foreground="DarkRed" Text="{Binding OdabranaLokacija.Naziv}"></TextBlock>
+                            <Image Height="50" Width="50"  Source="/Assets/car-pin.png"></Image>
+                        </StackPanel>
+                    </Maps:MapItemsControl>
+                </Maps:MapControl>
             </Grid>
         </Grid>
     </Grid>

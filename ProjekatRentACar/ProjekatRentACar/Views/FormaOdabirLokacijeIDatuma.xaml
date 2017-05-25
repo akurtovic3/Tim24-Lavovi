@@ -6,13 +6,15 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:helper="using:ProjekatRentACar.Helper"
+    xmlns:model="using:ProjekatRentACar.Models"
     mc:Ignorable="d">
 
     <Page.Resources>
         <helper:ErrorToColorConverter x:Key="ErrorToColorConverter"></helper:ErrorToColorConverter>
         <helper:DateTimeToDateTimeOffsetConverter x:Key="DateTimeToDateTimeOffsetConverter"></helper:DateTimeToDateTimeOffsetConverter>
-
     </Page.Resources>
+    
+    
     <Grid>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">

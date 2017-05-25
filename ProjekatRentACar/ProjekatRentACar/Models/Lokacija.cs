@@ -5,33 +5,24 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Devices.Geolocation;
 
 namespace ProjekatRentACar.Models
 {
-    public class Lokacija : ValidatableBindableBase
+    public class Lokacija 
     {
         private string naziv;
-        [Required(ErrorMessage = "Morate unijeti lokaciju")]
         public string Naziv
         {
             get { return naziv; }
             set { naziv = value; }
         }
 
-        private float sirina;
-
-        public float Sirina
+        private Geopoint lokacija;
+        public Geopoint LokacijaMjesta
         {
-            get { return sirina; }
-            set { sirina = value; }
-        }
-
-        private float duzina;
-
-        public float Duzina
-        {
-            get { return duzina; }
-            set { duzina = value; }
+            get { return lokacija; }
+            set { lokacija = value; }
         }
 
         private string adresa;
@@ -50,6 +41,17 @@ namespace ProjekatRentACar.Models
             set { opis = value; }
         }
 
+        public Lokacija(string naziv, Geopoint lokacija, string adresa, string opis)
+        {
+            this.Naziv = naziv;
+            this.LokacijaMjesta = lokacija;
+            this.Adresa = adresa;
+            this.Opis = opis;
+        }
 
+        public Lokacija()
+        {
+            
+        }
     }
 }

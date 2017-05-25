@@ -108,12 +108,16 @@
     <Compile Include="Models\Lokacija.cs" />
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Models\Proba.cs" />
+    <Compile Include="ViewModels\DetaljiLokacijeViewModel.cs" />
     <Compile Include="ViewModels\InformacijeViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\NadjiLokacijuViewModel.cs" />
     <Compile Include="ViewModels\OdabirLokacijeIDatumaViewModel.cs" />
     <Compile Include="ViewModels\PomocIKontaktViewModel.cs" />
     <Compile Include="ViewModels\PostavkeViewModel.cs" />
+    <Compile Include="Views\FormaDetaljiLokacije.xaml.cs">
+      <DependentUpon>FormaDetaljiLokacije.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormaDetaljiOVozacu.xaml.cs">
       <DependentUpon>FormaDetaljiOVozacu.xaml</DependentUpon>
     </Compile>
@@ -191,6 +195,7 @@
   <ItemGroup>
     <Content Include="Assets\02-dacia-sandero-mink.png" />
     <Content Include="Assets\bmw-5-series.png" />
+    <Content Include="Assets\car-pin.png" />
     <Content Include="Assets\golf7.png" />
     <Content Include="Assets\Ikone\vrata.png" />
     <Content Include="Assets\Ikone\mjenjac.png" />
@@ -219,6 +224,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\FormaDetaljiLokacije.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\FormaDetaljiOVozacu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

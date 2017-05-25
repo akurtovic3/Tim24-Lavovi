@@ -2,14 +2,15 @@
 using ProjekatRentACar.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Devices.Geolocation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Maps;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
@@ -23,33 +24,20 @@ namespace ProjekatRentACar.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class FormaNadjiLokaciju : Page
+    public sealed partial class FormaDetaljiLokacije : Page
     {
-        public FormaNadjiLokaciju()
+        public FormaDetaljiLokacije()
         {
             this.InitializeComponent();
-            DataContext = new NadjiLokacijuViewModel();     
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            MainPageViewModel.Instance.changeSelectedItemTo(3);
-
-        }
-
-        private void SearchBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
-        {
-            //Narušava se malo MVVM, ali ovo je najlakši način, jer nemaju Commande za TextChanged
-            (DataContext as NadjiLokacijuViewModel).filterSuggestedItems(((AutoSuggestBox)sender).Text);
-        }
-
-
-        private void SearchBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
-        {
-            (sender as AutoSuggestBox).Text = (args.SelectedItem as Lokacija).Naziv;
-            (DataContext as NadjiLokacijuViewModel).performSelectedLocation(args.SelectedItem as Lokacija);
-            
+            DataContext = new DetaljiLokacijeViewModel(e.Parameter as Lokacija);
+            // Pitanje: Zašto nema Center atribut u XAML (ne mogu bindati na njega??)
+            Mapa.Center = (DataContext as DetaljiLokacijeViewModel).OdabranaLokacija.LokacijaMjesta;
+           
         }
     }
 }

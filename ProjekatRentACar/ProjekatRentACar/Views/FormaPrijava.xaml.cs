@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using ProjekatRentACar.ViewModels;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -25,6 +26,18 @@ namespace ProjekatRentACar.Views
         public FormaPrijava()
         {
             this.InitializeComponent();
+            DataContext = new PrijavaViewModel();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            MainPageViewModel.Instance.changeSelectedItemTo(0);
+        }
+
+        private void PBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            (DataContext as PrijavaViewModel).Sifra = (sender as PasswordBox).Password;
         }
     }
 }

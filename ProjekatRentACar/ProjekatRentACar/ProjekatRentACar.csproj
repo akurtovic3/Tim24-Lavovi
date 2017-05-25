@@ -111,9 +111,12 @@
     <Compile Include="Models\Proba.cs" />
     <Compile Include="ViewModels\InformacijeViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
+    <Compile Include="ViewModels\NadjiLokacijuViewModel.cs" />
     <Compile Include="ViewModels\OdabirLokacijeIDatumaViewModel.cs" />
     <Compile Include="ViewModels\PomocIKontaktViewModel.cs" />
     <Compile Include="ViewModels\PostavkeViewModel.cs" />
+    <Compile Include="ViewModels\PrijavaViewModel.cs" />
+    <Compile Include="ViewModels\RegistracijaKorisnikaViewModel.cs" />
     <Compile Include="Views\FormaDetaljiOVozacu.xaml.cs">
       <DependentUpon>FormaDetaljiOVozacu.xaml</DependentUpon>
     </Compile>

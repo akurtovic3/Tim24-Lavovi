@@ -5,7 +5,13 @@
     xmlns:local="using:ProjekatRentACar.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:helper="using:ProjekatRentACar.Helper"
     mc:Ignorable="d">
+    
+    <Page.Resources>
+        <helper:ErrorToColorConverter x:Key="ErrorToColorConverter"></helper:ErrorToColorConverter>
+    </Page.Resources>
+
 
     <Grid Name="MainGrid"  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Center">
         <Grid.RowDefinitions>
@@ -20,9 +26,9 @@
             <ColumnDefinition Width="Auto"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <TextBox MaxWidth="500" Margin="5,40,5,10" Grid.Row="0" Grid.ColumnSpan="2" PlaceholderText="Korisničko ime"></TextBox>
-        <TextBox MaxWidth="500" Margin="5,10,5,10" Grid.Row="1" Grid.ColumnSpan="2" PlaceholderText="Šifra"></TextBox>
-        <Button Background="DarkRed" Foreground="White" HorizontalAlignment="Stretch" Margin="5,10,5,10" Grid.Row="2" Grid.ColumnSpan="2" Content="Login"></Button>
+        <TextBox MaxWidth="500" Margin="5,40,5,10" Grid.Row="0" Grid.ColumnSpan="2" PlaceholderText="Korisničko ime" Text="{Binding KorisnickoIme}" BorderThickness="2" BorderBrush="{Binding Errors[KorisnickoIme], Converter={StaticResource ErrorToColorConverter}}"></TextBox>
+        <PasswordBox Name="PBox" MaxWidth="500" Margin="5,10,5,10" Grid.Row="1" Grid.ColumnSpan="2"  PlaceholderText="Šifra" PasswordChanged="PBox_PasswordChanged" ></PasswordBox>
+        <Button Background="DarkRed" Foreground="White" HorizontalAlignment="Stretch" Margin="5,10,5,10" Grid.Row="2" Grid.ColumnSpan="2" Content="Prijavi se" Command="{Binding Login}"></Button>
         <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal">
             <Button Margin="5,10,5,10" Content="Zaboravljeno korisničko ime?"></Button>
             <Button Margin="5,10,5,10" Content="Zaboravljena šifra?"></Button>

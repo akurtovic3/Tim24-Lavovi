@@ -8,7 +8,7 @@
     xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
     mc:Ignorable="d">
 
-    <ScrollViewer>
+    <Grid>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
                 <VisualState x:Name="Wide">
@@ -19,8 +19,8 @@
                         <Setter Target="Mapa.(Grid.Column)" Value="1" />
                         <Setter Target="Mapa.(Grid.Row)" Value="0" />
                         <Setter Target="Mapa.(Grid.ColumnSpan)" Value="1" />
-
-
+                        <Setter Target="ScrollViewer.(Grid.ColumnSpan)" Value="1"></Setter>
+                        <Setter Target="ScrollViewer.(Grid.RowSpan)" Value="2"></Setter>
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Narrow">
@@ -31,45 +31,57 @@
                         <Setter Target="Mapa.(Grid.Column)" Value="0" />
                         <Setter Target="Mapa.(Grid.Row)" Value="1" />
                         <Setter Target="Mapa.(Grid.ColumnSpan)" Value="2" />
+                        <Setter Target="ScrollViewer.(Grid.ColumnSpan)" Value="2"></Setter>
+                        <Setter Target="ScrollViewer.(Grid.RowSpan)" Value="1"></Setter>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-
-
         <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        
-
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
+            <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
-
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <StackPanel>
-            <TextBox Margin="5" PlaceholderText="Search" ></TextBox>
-            <TextBlock Margin="5" Text="Lokacije u blizini vas"></TextBlock>
-                <Button HorizontalContentAlignment="Left" HorizontalAlignment="Stretch" Background="White">
-                    <StackPanel HorizontalAlignment="Left">
-                        <TextBlock Margin="5" Text="1 Sarajevo/Residence Inn" FontSize="28"></TextBlock>
-                        <TextBlock Margin="5" Text="Skenderija 43"></TextBlock>
-                    </StackPanel>
-                </Button>
-                <Button HorizontalContentAlignment="Left" HorizontalAlignment="Stretch" Background="White">
-                    <StackPanel >
 
-                        <TextBlock Margin="5" Text="2 Sarajevo Airport" FontSize="28"></TextBlock>
-                        <TextBlock Margin="5" Text="Kurta Schorka 36"></TextBlock>
-
-                    </StackPanel>
-                </Button>
-
-        </StackPanel>
-        <Maps:MapControl Name="Mapa" Grid.Column="1" Grid.RowSpan="2"></Maps:MapControl>
+            <ScrollViewer HorizontalAlignment="Stretch"  Name="ScrollViewer">
+                <StackPanel>
+                    <AutoSuggestBox Margin="5"
+                                    PlaceholderText="Traži"
+                                    QueryIcon="Find"
+                                    TextChanged="SearchBox_TextChanged"
+                                    SuggestionChosen="SearchBox_SuggestionChosen"
+                                    Name="SearchBox">
+                      
+                    </AutoSuggestBox>
+                    <TextBlock Margin="5" Text="Lokacije u blizini vas"></TextBlock>
+                    <ListView>
+                        <ListViewItem>
+                            <StackPanel HorizontalAlignment="Left">
+                                <TextBlock Margin="5" Text="1 Sarajevo/Residence Inn" FontSize="28"></TextBlock>
+                                <TextBlock Margin="5" Text="Skenderija 43"></TextBlock>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem>
+                            <StackPanel >
+                                <TextBlock Margin="5" Text="2 Sarajevo Airport" FontSize="28"></TextBlock>
+                                <TextBlock Margin="5" Text="Kurta Schorka 36"></TextBlock>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem>
+                            <StackPanel >
+                                <TextBlock Margin="5" Text="3 Sarajevo Airport" FontSize="28"></TextBlock>
+                                <TextBlock Margin="5" Text="Kurta Schorka 36"></TextBlock>
+                            </StackPanel>
+                        </ListViewItem>
+                    </ListView>
+                </StackPanel>
+            </ScrollViewer>
+            
+            <Maps:MapControl Name="Mapa" Grid.Column="1" Grid.RowSpan="2"></Maps:MapControl>
     </Grid>
-    </ScrollViewer>
+    </Grid>
 </Page>

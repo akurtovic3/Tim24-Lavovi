@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ProjekatRentACar.ViewModels;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -24,7 +26,27 @@ namespace ProjekatRentACar.Views
     {
         public FormaNadjiLokaciju()
         {
-            this.InitializeComponent();
+            this.InitializeComponent();            
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            MainPageViewModel.Instance.changeSelectedItemTo(3);
+        }
+
+        private string[] selectionItems = new string[] { "Sarajevo", "Mostar", "Konjic", "Bihać", "Tuzla", "Zenica" };
+        private void SearchBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            var autoSuggestBox = (AutoSuggestBox)sender;
+            var filtered = selectionItems.Where(p => p.StartsWith(autoSuggestBox.Text)).ToArray();
+            autoSuggestBox.ItemsSource = filtered;
+        }
+
+
+        private void SearchBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
+        {
+            Debug.WriteLine("RADI");
         }
     }
 }

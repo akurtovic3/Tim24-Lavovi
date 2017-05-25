@@ -25,7 +25,7 @@ namespace ProjekatRentACar.ViewModels
         public Helper.INavigationService NavigationService { get; set; }
 
         private Lokacija pocetnaLokacija;
-        [IsNullValidation(ErrorMessage ="Morate postaviti pocetnu lokaciju")]
+        [IsNullValidation]
         public Lokacija PocetnaLokacija
         {
             get { return pocetnaLokacija; }
@@ -34,7 +34,7 @@ namespace ProjekatRentACar.ViewModels
 
 
         private Lokacija krajnjaLokacija;
-        [IsNullValidation(ErrorMessage = "Morate postaviti krajnju lokaciju")]
+        [IsNullValidation]
         public Lokacija KrajnjaLokacija
         {
             get { return krajnjaLokacija; }
@@ -56,7 +56,6 @@ namespace ProjekatRentACar.ViewModels
         }
 
         private DateTime datumVracanja;
-        [LaterThenValidation("DatumRezervacije", ErrorMessage = "Datum vracanja mora biti iza datuma rezervacije")]
         public DateTime DatumVracanja
         {
             get
@@ -65,7 +64,7 @@ namespace ProjekatRentACar.ViewModels
             }
             set
             {
-                SetProperty(ref datumVracanja, value);
+                datumVracanja = value;
                 OnNotifyPropertyChanged("DatumVracanja");
             }
         }
@@ -81,16 +80,12 @@ namespace ProjekatRentACar.ViewModels
             this.IsValidationEnabled = false;
             PocetnaLokacija = new Lokacija();
             KrajnjaLokacija = new Lokacija();
-            this.ErrorsChanged += Vm_ErrorsChanged;
             datumRezervacije = DateTime.Today;
             DatumVracanja = datumRezervacije.AddDays(1);
 
         }
 
-        private void Vm_ErrorsChanged(object sender, System.ComponentModel.DataErrorsChangedEventArgs e)
-        {
-            //Erori = new ObservableCollection<string>(this.Errors.Errors.Values.SelectMany(x => x).ToList());
-        }
+       
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -104,7 +99,6 @@ namespace ProjekatRentACar.ViewModels
             set
             {
                 erori = value;
-                //OnNotifyPropertyChanged("Erori");
             }
         }
 
@@ -121,7 +115,7 @@ namespace ProjekatRentACar.ViewModels
 
             if (DatumRezervacije.AddDays(1) > DatumVracanja)
             {
-                var dialog = new MessageDialog("Datum vracanja mora biti iza datuma rezervacije");
+                var dialog = new MessageDialog("Datum vraćanja mora biti iza datuma rezervacije!");
                 await dialog.ShowAsync();
             }
 

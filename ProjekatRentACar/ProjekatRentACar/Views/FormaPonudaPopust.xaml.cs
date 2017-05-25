@@ -1,4 +1,5 @@
 ﻿using ProjekatRentACar.Models;
+using ProjekatRentACar.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -38,6 +39,12 @@ namespace ProjekatRentACar.Views
             vozila.Add(new ListaVozilaProba("BMW", "5 series", "Limuzina", "Po danu 63 KM", "/Assets/bmw-5-series.png"));
             vozila.Add(new ListaVozilaProba("Kia", "Ceed", "Kompakt", "Po danu 49 KM", "/Assets/kia_ceed_sportswagon.png"));
             vozila.Add(new ListaVozilaProba("Volkswagen", "Passat Variant", "Karavan", "Po danu 78 KM", "/Assets/iris.png"));
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            MainPageViewModel.Instance.changeSelectedItemTo(2);
         }
     }
 }

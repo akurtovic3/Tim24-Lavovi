@@ -11,47 +11,63 @@ namespace ProjekatRentACar.Models
 {
     public class Lokacija 
     {
-        private string naziv;
-        public string Naziv
-        {
-            get { return naziv; }
-            set { naziv = value; }
-        }
 
-        private Geopoint lokacija;
-        public Geopoint LokacijaMjesta
-        {
-            get { return lokacija; }
-            set { lokacija = value; }
-        }
+        public string id { get; set; }
+        public double Sirina { get; set; }
+        public double Duzina { get; set; }
 
-        private string adresa;
 
-        public string Adresa
-        {
-            get { return adresa; }
-            set { adresa = value; }
-        }
 
-        private string opis;
 
-        public string Opis
-        {
-            get { return opis; }
-            set { opis = value; }
-        }
+    
+         private string naziv;
+         public string Naziv
+         {
+             get { return naziv; }
+             set { naziv = value; }
+         }
 
-        public Lokacija(string naziv, Geopoint lokacija, string adresa, string opis)
-        {
-            this.Naziv = naziv;
-            this.LokacijaMjesta = lokacija;
-            this.Adresa = adresa;
-            this.Opis = opis;
-        }
+         private Geopoint lokacija;
+         public Geopoint LokacijaMjesta
+         {
+             get { return lokacija; }
+             set { lokacija = value; }
+         }
+
+
+
+         private string adresa;
+
+         public string Adresa
+         {
+             get { return adresa; }
+             set { adresa = value; }
+         }
+
+         private string opis;
+
+         public string Opis
+         {
+             get { return opis; }
+             set { opis = value; }
+         }
+
+         public Lokacija(string naziv, double duzina, double sirina, string adresa, string opis)
+         {
+             this.Naziv = naziv;
+             this.LokacijaMjesta = lokacija;
+             this.Adresa = adresa;
+             this.Opis = opis;
+            this.Duzina = duzina;
+            this.Sirina = sirina;
+            this.LokacijaMjesta = new Geopoint(new BasicGeoposition() { Longitude = duzina, Latitude=sirina});
+         }
+         
 
         public Lokacija()
         {
-            
+            this.LokacijaMjesta = new Geopoint(new BasicGeoposition() { Longitude = Duzina, Latitude = Sirina });
+
         }
     }
 }

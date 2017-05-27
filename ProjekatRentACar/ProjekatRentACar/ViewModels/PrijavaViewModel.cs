@@ -16,9 +16,8 @@ namespace ProjekatRentACar.ViewModels
 {
     public class PrijavaViewModel : ValidatableBindableBase, INotifyPropertyChanged
     {
-        [Required]
         private string korisnickoIme;
-
+        [Required]
         public string KorisnickoIme
         {
             get { return korisnickoIme; }

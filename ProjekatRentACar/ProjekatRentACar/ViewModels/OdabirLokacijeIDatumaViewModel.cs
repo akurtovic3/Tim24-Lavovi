@@ -129,8 +129,7 @@ namespace ProjekatRentACar.ViewModels
 
         public void otvoriLokaciju(object parametar)
         {
-            var mainPage = MainPageViewModel.Instance;
-            mainPage.changeSelectedItemTo(3);
+           
             NavigationService.Navigate(typeof(FormaNadjiLokaciju));
         }
 

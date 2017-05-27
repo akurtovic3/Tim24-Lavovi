@@ -12,31 +12,51 @@
         <helper:ErrorToColorConverter x:Key="ErrorToColorConverter"></helper:ErrorToColorConverter>
     </Page.Resources>
 
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Name="MainGrid"  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Center">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto" ></RowDefinition>
+            <RowDefinition Height="*" ></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"></ColumnDefinition>
-            <ColumnDefinition Width="Auto"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
 
-        <TextBox MaxWidth="500" Margin="5,40,5,10" Grid.Row="0" Grid.ColumnSpan="2" PlaceholderText="Korisničko ime" Text="{Binding KorisnickoIme, Mode=TwoWay}" BorderThickness="2" BorderBrush="{Binding Errors[KorisnickoIme], Converter={StaticResource ErrorToColorConverter}}"></TextBox>
-        <PasswordBox Name="PBox"  MaxWidth="500" Margin="5,10,5,10" Grid.Row="1" Grid.ColumnSpan="2"  PlaceholderText="Šifra" PasswordChanged="PBox_PasswordChanged" BorderThickness="2" BorderBrush="{Binding Errors[Sifra], Converter={StaticResource ErrorToColorConverter}}" ></PasswordBox>
-        <Button Background="DarkRed" Foreground="White" HorizontalAlignment="Stretch" Margin="5,10,5,10" Grid.Row="2" Grid.ColumnSpan="2" Content="Prijavi se" Command="{Binding Login}"></Button>
-        <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal">
-            <Button Margin="5,10,5,10" Content="Zaboravljeno korisničko ime?"></Button>
-            <Button Margin="5,10,5,10" Content="Zaboravljena šifra?"></Button>
-        </StackPanel>
-        <StackPanel HorizontalAlignment="Center" Grid.Row="4" Grid.ColumnSpan="2" Orientation="Horizontal">
-            <TextBlock  VerticalAlignment="Center" Margin="5,10,5,10" Text="Nemate korisnički račun?"></TextBlock>
-            <HyperlinkButton  VerticalAlignment="Center" Margin="5,10,5,10"  Content="Registrirajte se sada"></HyperlinkButton>
-        </StackPanel>
-            
+        <RelativePanel Grid.Row="0" Background="DarkRed" Height="50">
+            <TextBlock Text="MOJ RAČUN" 
+                       Foreground="White" 
+                       
+                       FontSize="18" 
+                       RelativePanel.AlignVerticalCenterWithPanel="True" 
+                       RelativePanel.AlignLeftWithPanel="True"
+                       Margin="0,0,0,0" 
+                       FontWeight="Bold">
+            </TextBlock>
+        </RelativePanel>
+
+        <Grid Grid.Row="1" Name="MainGrid"  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBox MaxWidth="500" Margin="5,40,5,10" Grid.Row="0" Grid.ColumnSpan="2" PlaceholderText="Korisničko ime" Text="{Binding KorisnickoIme, Mode=TwoWay}" BorderThickness="2" BorderBrush="{Binding Errors[KorisnickoIme], Converter={StaticResource ErrorToColorConverter}}"></TextBox>
+            <PasswordBox Name="PBox"  MaxWidth="500" Margin="5,10,5,10" Grid.Row="1" Grid.ColumnSpan="2"  PlaceholderText="Šifra" PasswordChanged="PBox_PasswordChanged" BorderThickness="2" BorderBrush="{Binding Errors[Sifra], Converter={StaticResource ErrorToColorConverter}}" ></PasswordBox>
+            <Button Background="DarkRed" Foreground="White" HorizontalAlignment="Stretch" Margin="5,10,5,10" Grid.Row="2" Grid.ColumnSpan="2" Content="Prijavi se" Command="{Binding Login}"></Button>
+            <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal">
+                <Button Margin="5,10,5,10" Content="Zaboravljeno korisničko ime?" Background="White" Foreground="DarkRed"></Button>
+                <Button Margin="5,10,5,10" Content="Zaboravljena šifra?" Background="White" Foreground="DarkRed"></Button>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Grid.Row="4" Grid.ColumnSpan="2" Orientation="Horizontal">
+                <TextBlock  VerticalAlignment="Center" Margin="5,10,5,10" Text="Nemate korisnički račun?"></TextBlock>
+                <HyperlinkButton  VerticalAlignment="Center" Margin="5,10,5,10"  Content="Registrirajte se sada" Command="{Binding Registracija}"></HyperlinkButton>
+            </StackPanel>
+
+        </Grid>
+
     </Grid>
 </Page>

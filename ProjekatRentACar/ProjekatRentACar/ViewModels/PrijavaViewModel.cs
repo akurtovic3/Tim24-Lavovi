@@ -34,12 +34,14 @@ namespace ProjekatRentACar.ViewModels
         }
 
         public ICommand Login { get; set; }
+        public ICommand Registracija { get; set; }
         NavigationService navigacija;
         public ObservableCollection<string> erori { get; set; }
 
         public PrijavaViewModel()
         {
             Login = new RelayCommand<object>(prikaziFormuOsobe);
+            Registracija = new RelayCommand<object>(prikaziFormuZaRegistraciju);
             navigacija = new NavigationService();
         }
 
@@ -48,12 +50,17 @@ namespace ProjekatRentACar.ViewModels
             this.ValidateProperties();
             erori = new ObservableCollection<string>(this.Errors.Errors.Values.SelectMany(x => x).ToList());
 
-            if ((erori == null || erori.Count == 0) )
+            if ((erori == null || erori.Count == 0))
             {
                 navigacija.Navigate(typeof(FormaKorisnickiRacun));
             }
         }
 
-        
+        public void prikaziFormuZaRegistraciju(object parametar)
+        {
+            navigacija.Navigate(typeof(FormaRegistracijaKorisnika));
+        }
+
+
     }
 }

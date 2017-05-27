@@ -28,12 +28,35 @@
     </Page.Resources>
 
     <ScrollViewer>
+
         <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <GridView BorderBrush="DarkRed" BorderThickness="2" Grid.Column="3"
-                  ItemTemplate="{StaticResource VoziloDataTemplate}" 
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" ></RowDefinition>
+                <RowDefinition Height="*" ></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <RelativePanel Grid.Row="0" Background="DarkRed" Height="50">
+                <TextBlock Text="SPECIJALNA PONUDA" 
+                       Foreground="White" 
+                       
+                       FontSize="18" 
+                       RelativePanel.AlignVerticalCenterWithPanel="True" 
+                       RelativePanel.AlignLeftWithPanel="True"
+                       Margin="0,0,0,0" 
+                       FontWeight="Bold">
+                </TextBlock>
+            </RelativePanel>
+
+            <Grid Grid.Row="1" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                <GridView  Grid.Column="3"
+                 ItemTemplate="{StaticResource VoziloDataTemplate}" 
                   ItemsSource="{x:Bind vozila}">
-            </GridView>
+                </GridView>
+            </Grid>
+
         </Grid>
+
     </ScrollViewer>
 
 </Page>

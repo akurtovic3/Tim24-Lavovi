@@ -35,7 +35,7 @@ namespace ProjekatRentACar.ViewModels
             navigacija = new NavigationService();
             try
             {
-                uradiTask();
+                uradiTask().GetAwaiter();
             }
             catch(Exception ex)
             {
@@ -55,13 +55,11 @@ namespace ProjekatRentACar.ViewModels
             Debug.WriteLine((x.ElementAt(0) as Lokacija).Naziv);
         }
 
-
-
         public void filterSuggestedItems(string autoSuggestBoxText)
         {
             //Pitanje za cogu: Drugaciji nacin kako da ovo dolje radi???
             FilteredItems.Clear();
-            var filtered = selectionItems.Where(p => (p as Lokacija).Naziv.StartsWith(autoSuggestBoxText)).ToArray();
+            var filtered = selectionItems.Where(l => (l.Naziv.Contains(autoSuggestBoxText) || l.Naziv.ToLower().Contains(autoSuggestBoxText)));
             foreach (Lokacija s in filtered)
             {
                 s.LokacijaMjesta = new Geopoint(new BasicGeoposition() { Longitude = s.Duzina, Latitude = s.Sirina });

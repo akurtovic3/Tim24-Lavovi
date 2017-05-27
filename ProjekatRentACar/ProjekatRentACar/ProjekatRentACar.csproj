@@ -104,11 +104,18 @@
     <Compile Include="Helper\NavigationService.cs" />
     <Compile Include="Helper\CallCommunicateBehaviour.cs" />
     <Compile Include="Helper\RelayCommand.cs" />
+    <Compile Include="Models\Korisnik.cs" />
     <Compile Include="Models\ListaVozilaProba.cs" />
     <Compile Include="Models\Lokacija.cs" />
+    <Compile Include="Models\Menadzer.cs" />
     <Compile Include="Models\MenuItem.cs" />
+    <Compile Include="Models\Najam.cs" />
+    <Compile Include="Models\Oprema.cs" />
     <Compile Include="Models\Osoba.cs" />
+    <Compile Include="Models\PDFGenerator.cs" />
     <Compile Include="Models\Proba.cs" />
+    <Compile Include="Models\Uposlenik.cs" />
+    <Compile Include="Models\Vozilo.cs" />
     <Compile Include="ViewModels\DetaljiLokacijeViewModel.cs" />
     <Compile Include="ViewModels\InformacijeViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
@@ -116,14 +123,11 @@
     <Compile Include="ViewModels\OdabirLokacijeIDatumaViewModel.cs" />
     <Compile Include="ViewModels\PomocIKontaktViewModel.cs" />
     <Compile Include="ViewModels\PostavkeViewModel.cs" />
-
     <Compile Include="Views\FormaDetaljiLokacije.xaml.cs">
       <DependentUpon>FormaDetaljiLokacije.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="ViewModels\PrijavaViewModel.cs" />
     <Compile Include="ViewModels\RegistracijaKorisnikaViewModel.cs" />
-
     <Compile Include="Views\FormaDetaljiOVozacu.xaml.cs">
       <DependentUpon>FormaDetaljiOVozacu.xaml</DependentUpon>
     </Compile>
@@ -196,7 +200,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="ProjekatRentACar_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\02-dacia-sandero-mink.png" />

@@ -28,7 +28,8 @@ namespace ProjekatRentACar.Views
         public FormaNadjiLokaciju()
         {
             this.InitializeComponent();
-            DataContext = new NadjiLokacijuViewModel();     
+            DataContext = new NadjiLokacijuViewModel();
+
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -54,5 +55,7 @@ namespace ProjekatRentACar.Views
             (DataContext as NadjiLokacijuViewModel).performSelectedLocation(args.SelectedItem as Lokacija);
             
         }
+
+        
     }
 }

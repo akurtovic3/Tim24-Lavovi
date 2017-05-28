@@ -10,14 +10,36 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Devices.Geolocation;
 using Windows.UI.Popups;
+using Windows.UI.Core;
+using System.Threading.Tasks;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace ProjekatRentACar.ViewModels
 {
-    public class NadjiLokacijuViewModel
+    public class NadjiLokacijuViewModel: INotifyPropertyChanged
     {
+        Geolocator geolocator;
         public ObservableCollection<Lokacija> FiltiraneLokacije { get; set; }
+        public ObservableCollection<Lokacija> LokacijeUBlizini { get; set; }
         private LokacijaDataSource lokacijaDS;
         public Boolean isUp;
+
+        private Lokacija selectedItem { get; set; }
+        public Lokacija SelectedItem
+        {
+            get
+            {
+                return selectedItem;
+            }
+            set
+            {
+                selectedItem = value;
+                performSelectedLocation(selectedItem);
+            }
+        }
+
+
         public LokacijaDataSource LokacijaDS
         {
             get
@@ -48,23 +70,84 @@ namespace ProjekatRentACar.ViewModels
             }
         }
 
+        
+        private void lokacijeUBliziniLoaded()
+        {
+            LokacijeUBlizini.Clear();
+            Debug.WriteLine(lokacijaDS.LokacijeUBlizini.Count);
+            foreach (Lokacija l in LokacijaDS.LokacijeUBlizini)
+            {
+                LokacijeUBlizini.Add(l);
+            }
+        }
+        private Geopoint trenutnaLokacija;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public Geopoint TrenutnaLokacija
+        {
+            get { return trenutnaLokacija; }
+            set
+            {
+                trenutnaLokacija = value;
+                OnNotifyPropertyChanged("TrenutnaLokacija");
+            }
+        }
+
+       
+        private void CommandInvokedHandler(IUICommand command)
+        {
+            // Display message showing the label of the command that was invoked
+            Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-location"));
+        }
+
+        private async void ucitajLokacije()
+        {
+            geolocator = new Geolocator { DesiredAccuracyInMeters = 10 };
+            var accessStatus = await Geolocator.RequestAccessAsync();
+            Geoposition pos = null;
+            if (accessStatus == GeolocationAccessStatus.Allowed)
+            {
+                //uzimanje pozicije ako smije
+
+                pos = await geolocator.GetGeopositionAsync();
+                TrenutnaLokacija = pos.Coordinate.Point;
+                LokacijaDS.preuzmiLokacijeUBlizini(TrenutnaLokacija.Position.Latitude, TrenutnaLokacija.Position.Longitude, lokacijeUBliziniLoaded).GetAwaiter();
+            }
+            else { 
+
+                MessageDialog ms = new MessageDialog("Lokacija nije ukljucena");
+                await ms.ShowAsync();
+            }   
+        }
+
+       
+
+
         public NadjiLokacijuViewModel(bool returnLocation = false) 
         {
             FiltiraneLokacije = new ObservableCollection<Lokacija>();
             sveLokacije = new ObservableCollection<Lokacija>();
+            LokacijeUBlizini = new ObservableCollection<Models.Lokacija>();
             navigacija = new NavigationService();
             LokacijaDS = new LokacijaDataSource();
             LokacijaDS.preuzmiLokacije(lokacijeLoaded).GetAwaiter();
-           /* try
-            {
-                uradiTask().GetAwaiter();
-            }
-            catch(Exception ex)
-            {
-                MessageDialog msgDialogEror = new MessageDialog("Error: " + ex.ToString());
-                msgDialogEror.ShowAsync();
-            }*/
+            ucitajLokacije();
+
+
+
+
+            /* try
+             {
+                 uradiTask().GetAwaiter();
+             }
+             catch(Exception ex)
+             {
+                 MessageDialog msgDialogEror = new MessageDialog("Error: " + ex.ToString());
+                 msgDialogEror.ShowAsync();
+             }*/
         }
+
 
         /*
         private async Task  uradiTask()
@@ -89,6 +172,7 @@ namespace ProjekatRentACar.ViewModels
             }
 
         }
+        
 
         public void performSelectedLocation(Lokacija selectedItem)
         {
@@ -96,6 +180,12 @@ namespace ProjekatRentACar.ViewModels
             navigacija.Navigate(typeof(FormaDetaljiLokacije), new List<object>() { selectedItem, isUp});
         }
 
-        
+
+        protected void OnNotifyPropertyChanged([CallerMemberName] string memberName = "")
+        {
+
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(memberName));
+        }
+
     }
 }

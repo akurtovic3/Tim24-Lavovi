@@ -29,7 +29,6 @@ namespace ProjekatRentACar.Views
             this.InitializeComponent();
             DataContext = new OdabirLokacijeIDatumaViewModel();
             NavigationCacheMode = NavigationCacheMode.Required;
-
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

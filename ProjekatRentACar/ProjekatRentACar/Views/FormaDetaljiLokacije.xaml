@@ -80,13 +80,17 @@
                     </StackPanel>
                 </ScrollViewer>
 
+              
+                
                 <Maps:MapControl Name="Mapa"
+                                 MapServiceToken="F9u7a5IM3q0reFEYocwP~xd4aIuwYinaWatKst7Umow~ArQ9vr4K3TtXHIVtpz-he20SxJFPvgPwcHTukAWx7apGoNzlmFC6WwxjJcZj2n2M"
                              Grid.Column="1" 
+                                ZoomLevel="15"
                              Grid.RowSpan="2"
-                             ZoomLevel="14"
                              LandmarksVisible="True"
                              TransitFeaturesVisible="True">
 
+                    
                     <Maps:MapItemsControl>
                         <StackPanel Maps:MapControl.Location="{Binding OdabranaLokacija.LokacijaMjesta}" Maps:MapControl.NormalizedAnchorPoint="0.5,1">
                             <TextBlock FontWeight="Bold" HorizontalAlignment="Center" Foreground="DarkRed" Text="{Binding OdabranaLokacija.Naziv}"></TextBlock>

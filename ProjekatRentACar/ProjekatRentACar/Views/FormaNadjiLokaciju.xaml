@@ -6,10 +6,19 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
+
     xmlns:helper="using:ProjekatRentACar.Helper"
     xmlns:models="using:ProjekatRentACar.Models"
     mc:Ignorable="d">
 
+    <Page.Resources>
+        <DataTemplate x:Key="LokacijaDataTemplate" x:DataType="models:Lokacija">
+            <StackPanel  HorizontalAlignment="Left">
+                <TextBlock Margin="5" Text="{Binding Naziv}" FontSize="28" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Margin="5" Text="{Binding Adresa}" TextWrapping="Wrap"></TextBlock>
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <VisualStateManager.VisualStateGroups>
@@ -73,6 +82,7 @@
                 <ScrollViewer HorizontalAlignment="Stretch"  Name="ScrollViewer">
                     <StackPanel>
                         <AutoSuggestBox Margin="5"
+                                        MinWidth="200" MaxWidth="400"
                                     ItemsSource="{Binding FiltiraneLokacije}"
                                     PlaceholderText="Traži"
                                     QueryIcon="Find"
@@ -88,30 +98,27 @@
                             </AutoSuggestBox.ItemTemplate>
                         </AutoSuggestBox>
                         <TextBlock Margin="5" Text="Lokacije u blizini vas"></TextBlock>
-                        <ListView>
-                            <ListViewItem>
-                                <StackPanel HorizontalAlignment="Left">
-                                    <TextBlock Margin="5" Text="1 Sarajevo/Residence Inn" FontSize="28"></TextBlock>
-                                    <TextBlock Margin="5" Text="Skenderija 43"></TextBlock>
-                                </StackPanel>
-                            </ListViewItem>
-                            <ListViewItem>
-                                <StackPanel >
-                                    <TextBlock Margin="5" Text="2 Sarajevo Airport" FontSize="28"></TextBlock>
-                                    <TextBlock Margin="5" Text="Kurta Schorka 36"></TextBlock>
-                                </StackPanel>
-                            </ListViewItem>
-                            <ListViewItem>
-                                <StackPanel >
-                                    <TextBlock Margin="5" Text="3 Sarajevo Airport" FontSize="28"></TextBlock>
-                                    <TextBlock Margin="5" Text="Kurta Schorka 36"></TextBlock>
-                                </StackPanel>
-                            </ListViewItem>
+                        <ListView SelectedItem="{Binding SelectedItem, Mode=TwoWay}" ItemTemplate="{StaticResource LokacijaDataTemplate}" 
+                            ItemsSource="{Binding LokacijeUBlizini}">
                         </ListView>
                     </StackPanel>
                 </ScrollViewer>
 
-                <Maps:MapControl Name="Mapa" Grid.Column="1" Grid.RowSpan="2"></Maps:MapControl>
+                <Maps:MapControl Center="{Binding TrenutnaLokacija}"
+ZoomLevel="12" MapServiceToken="F9u7a5IM3q0reFEYocwP~xd4aIuwYinaWatKst7Umow~ArQ9vr4K3TtXHIVtpz-he20SxJFPvgPwcHTukAWx7apGoNzlmFC6WwxjJcZj2n2M" Name="Mapa"  Grid.Column="1" Grid.RowSpan="2">
+                   
+                    <Maps:MapItemsControl ItemsSource="{Binding LokacijeUBlizini}">
+                        
+                        <Maps:MapItemsControl.ItemTemplate>
+                            <DataTemplate >
+                                <StackPanel Maps:MapControl.Location="{Binding LokacijaMjesta}" >
+                                    <!--<TextBlock  Margin="-25,-50,0,0" FontWeight="Bold" HorizontalAlignment="Center" Foreground="DarkRed" Text="{Binding Naziv}"></TextBlock>-->
+                                    <Image  Margin="-25,-50,0,0"  Height="50" Width="50"  Source="/Assets/car-pin.png"></Image>
+                                </StackPanel>
+                            </DataTemplate>
+                        </Maps:MapItemsControl.ItemTemplate>
+                    </Maps:MapItemsControl>
+                </Maps:MapControl>
             </Grid>
         </Grid>
     </Grid>

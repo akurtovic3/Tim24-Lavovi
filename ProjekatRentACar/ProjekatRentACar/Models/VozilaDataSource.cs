@@ -102,7 +102,7 @@ namespace ProjekatRentACar.Models
                 }
                 if (value.GetObjectAt(i).TryGetValue("cijena_po_danu", out jsonValue))
                 {
-                    novoVozilo.CijenaPoDanu = Convert.ToDouble(jsonValue.GetString());
+                    novoVozilo.CijenaPoDanu = Math.Round(Convert.ToDouble(jsonValue.GetString()),2);
                 }
                 if (value.GetObjectAt(i).TryGetValue("popust", out jsonValue))
                 {
@@ -112,6 +112,7 @@ namespace ProjekatRentACar.Models
                 {
                     novoVozilo.Slika = jsonValue.GetString();
                 }
+                novoVozilo.CijenaSaPopustom = Math.Round(novoVozilo.CijenaPoDanu - (novoVozilo.CijenaPoDanu * novoVozilo.Popust / 100), 2);
                 vozila.Add(novoVozilo);
             }
             callback();

@@ -12,7 +12,7 @@ namespace ProjekatRentACar.Models
     public class Lokacija 
     {
 
-        public string id { get; set; }
+        private int id;
         public double Sirina { get; set; }
         public double Duzina { get; set; }
 
@@ -52,8 +52,22 @@ namespace ProjekatRentACar.Models
              set { opis = value; }
          }
 
-         public Lokacija(string naziv, double duzina, double sirina, string adresa, string opis)
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+            }
+        }
+
+        public Lokacija(int id,string naziv, double duzina, double sirina, string adresa, string opis)
          {
+            Id = id;
              this.Naziv = naziv;
              this.LokacijaMjesta = lokacija;
              this.Adresa = adresa;

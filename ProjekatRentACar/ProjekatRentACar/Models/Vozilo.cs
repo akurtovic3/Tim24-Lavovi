@@ -29,6 +29,7 @@ namespace ProjekatRentACar.Models
         private double cijenaPoDanu;
         private int popust;
         private string slika;
+        private double cijenaSaPopustom; 
 
         public Vozilo(int id, TipVozila tip, string proizvodjac, string model, int snaga, VrstaGoriva vrstaGoriva, int kilometraza, int brojSjedista, int brojVrata, Mjenjac vrstaMjenjaca, double kubikaza, int godiste, bool klima, int zapreminaPrtljaznika, bool navigacija, double cijenaPoDanu, int popust)
         {
@@ -289,6 +290,19 @@ namespace ProjekatRentACar.Models
             set
             {
                 slika = value;
+            }
+        }
+
+        public double CijenaSaPopustom
+        {
+            get
+            {
+                return cijenaSaPopustom;
+            }
+
+            set
+            {
+                cijenaSaPopustom = value;
             }
         }
     }

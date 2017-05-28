@@ -43,7 +43,7 @@ namespace ProjekatRentACar.ViewModels
                     NavigationService.Navigate(typeof(FormaPonudaPopust));
                     break;
                 case 3:
-                    NavigationService.Navigate(typeof(FormaNadjiLokaciju));
+                    NavigationService.Navigate(typeof(FormaNadjiLokaciju),true);
                     break;
                 case 4:
                     NavigationService.Navigate(typeof(FormaPomocIKontakt));

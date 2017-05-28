@@ -18,12 +18,12 @@ namespace ProjekatRentACar.Helper
         //obicna navigacija bez parametra
         public void Navigate(Type sourcePage)
         {
-            App.splitViewFrame.Navigate(sourcePage, new PaneThemeTransition());
+            App.splitViewFrame.Navigate(sourcePage);
         }
         //navigiranje na page ali da se proslijedi parametar stranici
         public void Navigate(Type sourcePage, object parameter)
         {
-            App.splitViewFrame.Navigate(sourcePage, parameter, new DrillInNavigationTransitionInfo());
+            App.splitViewFrame.Navigate(sourcePage, parameter);
         }
               
         //poziv da se vrati na predhodnu stranicu

@@ -34,7 +34,7 @@ namespace ProjekatRentACar.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            DataContext = new DetaljiLokacijeViewModel(e.Parameter as Lokacija);
+            DataContext = new DetaljiLokacijeViewModel((e.Parameter as List<object>));
             // Pitanje: Zašto nema Center atribut u XAML (ne mogu bindati na njega??)
             Mapa.Center = (DataContext as DetaljiLokacijeViewModel).OdabranaLokacija.LokacijaMjesta;
            

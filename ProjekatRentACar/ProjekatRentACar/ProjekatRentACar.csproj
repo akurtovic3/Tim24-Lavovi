@@ -95,18 +95,24 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helper\CijenaConverter.cs" />
+    <Compile Include="Helper\EnumToStringConverter.cs" />
     <Compile Include="Helper\ICommunicateBehaviour.cs" />
     <Compile Include="Helper\DateTimeConverter.cs" />
     <Compile Include="Helper\DateTimeToDateTimeOffsetConverter.cs" />
     <Compile Include="Helper\ErrorToColorConverter.cs" />
     <Compile Include="Helper\IsNullValidation.cs" />
     <Compile Include="Helper\LaterThanValidation.cs" />
+    <Compile Include="Helper\LokacijaPreuzimanjaKonverter.cs" />
+    <Compile Include="Helper\LokacijaVracanjaKonverter.cs" />
     <Compile Include="Helper\NavigationService.cs" />
     <Compile Include="Helper\CallCommunicateBehaviour.cs" />
+    <Compile Include="Helper\PopustConverter.cs" />
     <Compile Include="Helper\RelayCommand.cs" />
     <Compile Include="Models\Korisnik.cs" />
     <Compile Include="Models\ListaVozilaProba.cs" />
     <Compile Include="Models\Lokacija.cs" />
+    <Compile Include="Models\LokacijaDataSource.cs" />
     <Compile Include="Models\Menadzer.cs" />
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Models\Najam.cs" />

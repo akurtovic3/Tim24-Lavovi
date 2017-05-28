@@ -25,14 +25,15 @@ namespace ProjekatRentACar.ViewModels
         public ICommand LokacijaPreuzimanja { get; set; }
         public ICommand LokacijaVracanja { get; set; }
         public Helper.INavigationService NavigationService { get; set; }
-        ObservableCollection<Vozilo> vozila;
 
         private Lokacija pocetnaLokacija;
         [IsNullValidation]
         public Lokacija PocetnaLokacija
         {
             get { return pocetnaLokacija; }
-            set { SetProperty(ref pocetnaLokacija, value); }
+            set { SetProperty(ref pocetnaLokacija, value);
+                OnNotifyPropertyChanged("PocetnaLokacija");
+            }
         }
 
 
@@ -41,7 +42,9 @@ namespace ProjekatRentACar.ViewModels
         public Lokacija KrajnjaLokacija
         {
             get { return krajnjaLokacija; }
-            set { SetProperty(ref krajnjaLokacija, value); }
+            set { SetProperty(ref krajnjaLokacija, value);
+                OnNotifyPropertyChanged("KrajnjaLokacija");
+            }
         }
 
         private DateTime datumRezervacije { get; set; }
@@ -77,8 +80,8 @@ namespace ProjekatRentACar.ViewModels
         public OdabirLokacijeIDatumaViewModel()
         {
             Ponude = new RelayCommand<object>(prikaziPonude, moguLiSePrikazatiPonude);
-            LokacijaPreuzimanja = new RelayCommand<object>(otvoriLokaciju, moguLiSePrikazatiPonude);
-            LokacijaVracanja = new RelayCommand<object>(otvoriLokaciju, moguLiSePrikazatiPonude);
+            LokacijaPreuzimanja = new RelayCommand<object>(otvoriLokaciju1, moguLiSePrikazatiPonude);
+            LokacijaVracanja = new RelayCommand<object>(otvoriLokaciju2, moguLiSePrikazatiPonude);
             NavigationService = new NavigationService();
             this.IsValidationEnabled = false;
             PocetnaLokacija = new Lokacija();
@@ -119,18 +122,30 @@ namespace ProjekatRentACar.ViewModels
                 await dialog.ShowAsync();
             }
 
-            if ((erori == null || erori.Count == 0) && DatumRezervacije.AddDays(1) < DatumVracanja)
+            if ((erori == null || erori.Count == 0) && DatumRezervacije.AddDays(1) <= datumVracanja)
             {
-                NavigationService.Navigate(typeof(FormaListaVozila));
+                Najam noviNajam = new Najam();
+                noviNajam.MjestoPreuzimanja = PocetnaLokacija;
+                noviNajam.MjestoVracanja = KrajnjaLokacija;
+                noviNajam.PocetniDatum = DatumRezervacije;
+                noviNajam.KrajniDatum = DatumVracanja;
+
+                NavigationService.Navigate(typeof(FormaListaVozila), noviNajam);
             }
 
 
         }
 
-        public void otvoriLokaciju(object parametar)
+        public void otvoriLokaciju1(object parametar)
         {
-           
-            NavigationService.Navigate(typeof(FormaNadjiLokaciju));
+
+            NavigationService.Navigate(typeof(FormaNadjiLokaciju), true);
+        }
+
+        public void otvoriLokaciju2(object parametar)
+        {
+
+            NavigationService.Navigate(typeof(FormaNadjiLokaciju), false);
         }
 
         protected void OnNotifyPropertyChanged([CallerMemberName] string memberName = "")

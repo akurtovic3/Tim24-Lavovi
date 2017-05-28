@@ -11,6 +11,9 @@
 
     <Page.Resources>
         <helper:ErrorToColorConverter x:Key="ErrorToColorConverter"></helper:ErrorToColorConverter>
+        <helper:LokacijaPreuzimanjaKonverter x:Key="LokacijaPreuzimanjaKonverter"></helper:LokacijaPreuzimanjaKonverter>
+        <helper:LokacijaVracanjaKonverter x:Key="LokacijaVracanjaKonverter"></helper:LokacijaVracanjaKonverter>
+
         <helper:DateTimeToDateTimeOffsetConverter x:Key="DateTimeToDateTimeOffsetConverter"></helper:DateTimeToDateTimeOffsetConverter>
     </Page.Resources>
     
@@ -91,7 +94,7 @@
                         BorderBrush="{Binding Errors[PocetnaLokacija], Converter={StaticResource ErrorToColorConverter}}"
                         
                         HorizontalAlignment="Stretch"
-                    Content="Lokacija preuzimanja"
+                    Content="{Binding PocetnaLokacija, Converter={StaticResource LokacijaPreuzimanjaKonverter}}"
                         Command="{Binding LokacijaPreuzimanja}">
                 </Button>
                 
@@ -125,7 +128,7 @@
                         BorderBrush="{Binding Errors[KrajnjaLokacija], Converter={StaticResource ErrorToColorConverter}}"
                         HorizontalAlignment="Stretch"
                         Command="{Binding LokacijaVracanja}"
-                    Content="Lokacija vraćanja">
+                    Content="{Binding KrajnjaLokacija, Converter={StaticResource LokacijaVracanjaKonverter}}">
                 </Button>
 
                 <StackPanel Name="DateStackPanel2" Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Stretch">

@@ -48,19 +48,18 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <TextBox MaxWidth="500" Margin="5,40,5,10" Grid.Row="0"  Grid.ColumnSpan="2" PlaceholderText="Ime" Text="{Binding Ime}"></TextBox>
-            <TextBox MaxWidth="500" Margin="5,10,5,10" Grid.Row="1"   Grid.ColumnSpan="2" PlaceholderText="Prezime" Text="{Binding Prezime}"></TextBox>
+            <TextBox BorderThickness="2" BorderBrush="{Binding Errors[Ime], Converter={StaticResource ErrorToColorConverter}}" MaxWidth="500" Margin="5,40,5,10" Grid.Row="0"  Grid.ColumnSpan="2" PlaceholderText="Ime" Text="{Binding Ime}"></TextBox>
+            <TextBox BorderThickness="2" BorderBrush="{Binding Errors[Prezime], Converter={StaticResource ErrorToColorConverter}}" MaxWidth="500" Margin="5,10,5,10" Grid.Row="1"   Grid.ColumnSpan="2" PlaceholderText="Prezime" Text="{Binding Prezime}"></TextBox>
             <DatePicker Grid.Row="2" Grid.Column="1"
                     Header="Datum Rođenja:"
                     Margin="5,10,5,10"
                     HorizontalAlignment="Stretch"></DatePicker>
-            <TextBox MaxWidth="500" Margin="5,10,5,10" Grid.Row="3" Grid.ColumnSpan="2" PlaceholderText="Kontakt Broj" Text="{Binding Telefon}"></TextBox>
-            <TextBox MaxWidth="500" Margin="5,10,5,10" Grid.Row="4" Grid.ColumnSpan="2" PlaceholderText="Email" Text="{Binding Email}"></TextBox>
+            <TextBox BorderThickness="2" BorderBrush="{Binding Errors[Telefon], Converter={StaticResource ErrorToColorConverter}}" MaxWidth="500" Margin="5,10,5,10" Grid.Row="3" Grid.ColumnSpan="2" PlaceholderText="Kontakt Broj" Text="{Binding Telefon}"></TextBox>
+            <TextBox BorderThickness="2" BorderBrush="{Binding Errors[Email], Converter={StaticResource ErrorToColorConverter}}" MaxWidth="500" Margin="5,10,5,10" Grid.Row="4" Grid.ColumnSpan="2" PlaceholderText="Email" Text="{Binding Email}"></TextBox>
             <ComboBox HorizontalAlignment="Stretch" MaxWidth="500" Grid.ColumnSpan="2" Margin="5,10,5,10" Grid.Row="5" PlaceholderText="Država" SelectedItem="{Binding Drzava}">
-                <ComboBoxItem Name="cbx1" >Bosna i Hercegovina</ComboBoxItem>
+                <ComboBoxItem IsSelected="True" Name="cbx1" >Bosna i Hercegovina</ComboBoxItem>
             </ComboBox>
-            <TextBox MaxWidth="500" Margin="5,10,5,10" Grid.Row="6" Grid.ColumnSpan="2" PlaceholderText="Adresa" Text="{Binding Adresa}"></TextBox>
-            <TextBox MaxWidth="500" Margin="5,10,5,10" Grid.Row="7" Grid.ColumnSpan="2" PlaceholderText="Poštanski broj" Text="{Binding PostanskiBroj}"></TextBox>
+            <TextBox BorderThickness="2" BorderBrush="{Binding Errors[Adresa], Converter={StaticResource ErrorToColorConverter}}" MaxWidth="500" Margin="5,10,5,10" Grid.Row="6" Grid.ColumnSpan="2" PlaceholderText="Adresa" Text="{Binding Adresa}"></TextBox>
             <Button Background="DarkRed" Foreground="White" HorizontalAlignment="Stretch" Margin="5,10,5,10" Grid.Row="8" Grid.ColumnSpan="2" Content="Registriraj me" Command="{Binding Registriraj}"></Button>
 
         </Grid>

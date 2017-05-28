@@ -72,16 +72,9 @@ namespace ProjekatRentACar.ViewModels
             set { SetProperty(ref adresa, value); }
         }
 
-        private int postanskiBroj;
-        [Required]
-        public int PostanskiBroj
-        {
-            get { return postanskiBroj; }
-            set { SetProperty(ref postanskiBroj, value); }
-        }
+       
 
         public ICommand Registriraj { get; set; }
-        public object Errors { get; private set; }
         public ObservableCollection<string> erori { get; set; }
         NavigationService navigacija { get; set; }
 
@@ -94,7 +87,7 @@ namespace ProjekatRentACar.ViewModels
         public async void obavijestiORegistraciji(object parametar)
         {
             this.ValidateProperties();
-            //erori = new ObservableCollection<string>(this.Errors.Errors.Values.SelectMany(x => x).ToList());
+            erori = new ObservableCollection<string>(Errors.Errors.Values.SelectMany(x => x).ToList());
 
             if ((erori == null || erori.Count == 0))
             {

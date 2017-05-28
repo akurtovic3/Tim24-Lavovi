@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using ProjekatRentACar.ViewModels;
+using ProjekatRentACar.Models;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -27,12 +28,23 @@ namespace ProjekatRentACar.Views
         {
             this.InitializeComponent();
             DataContext = new OdabirLokacijeIDatumaViewModel();
+            NavigationCacheMode = NavigationCacheMode.Required;
+
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
             MainPageViewModel.Instance.changeSelectedItemTo(0);
+            if (!(e.Parameter == null || string.IsNullOrWhiteSpace(e.Parameter.ToString())))
+            {
+                var lista = (List<object>)e.Parameter;
+                (DataContext as OdabirLokacijeIDatumaViewModel).KrajnjaLokacija = (Lokacija)(lista.ElementAt(0));
+                if ((Boolean)(lista.ElementAt(1)) == true)
+                {
+                    (DataContext as OdabirLokacijeIDatumaViewModel).PocetnaLokacija = (Lokacija)(lista.ElementAt(0));
+                }
+            }
         }
     }
 }

@@ -73,7 +73,7 @@
                 <ScrollViewer HorizontalAlignment="Stretch"  Name="ScrollViewer">
                     <StackPanel>
                         <AutoSuggestBox Margin="5"
-                                    ItemsSource="{Binding FilteredItems}"
+                                    ItemsSource="{Binding FiltiraneLokacije}"
                                     PlaceholderText="Traži"
                                     QueryIcon="Find"
                                     TextChanged="SearchBox_TextChanged"

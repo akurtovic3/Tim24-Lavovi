@@ -27,6 +27,11 @@ namespace ProjekatRentACar.Models
             Oprema = new List<Oprema>();
         }
 
+        public Najam()
+        {
+
+        }
+
         public int Id
         {
             get

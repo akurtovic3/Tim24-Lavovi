@@ -35,6 +35,9 @@ namespace ProjekatRentACar.Views
         {
             base.OnNavigatedTo(e);
             MainPageViewModel.Instance.changeSelectedItemTo(3);
+     
+           (DataContext as NadjiLokacijuViewModel).isUp = (Boolean)e.Parameter;
+            
 
         }
 

@@ -75,7 +75,7 @@
                     <StackPanel>
                         <TextBlock Margin="10" Text="{Binding OdabranaLokacija.Naziv}" FontSize="24"></TextBlock>
                         <TextBlock Margin="10" Text="{Binding OdabranaLokacija.Adresa}" FontSize="16"></TextBlock>
-                        <Button HorizontalAlignment="Stretch" Background="DarkRed" Foreground="White" Content="Rezervisi ovdje" Margin="10"></Button>
+                        <Button Command="{Binding RezervisiOvdjeCommand}" HorizontalAlignment="Stretch" Background="DarkRed" Foreground="White" Content="Rezervisi ovdje" Margin="10"></Button>
                         <TextBlock Margin="10" Text="{Binding OdabranaLokacija.Opis}"></TextBlock>
                     </StackPanel>
                 </ScrollViewer>

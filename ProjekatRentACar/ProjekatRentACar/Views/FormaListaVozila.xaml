@@ -6,11 +6,16 @@
     xmlns:model="using:ProjekatRentACar.Models"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:helper="using:ProjekatRentACar.Helper"
     mc:Ignorable="d">
 
     <Page.Resources>
-        <DataTemplate x:Key="VoziloDataTemplate" x:DataType="model:ListaVozilaProba">
-            <StackPanel Margin="5" Height="Auto" Width="Auto" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <helper:EnumToStringConverter x:Key="EnumToStringConverter"></helper:EnumToStringConverter>
+        <helper:CijenaConverter x:Key="CijenaConverter"></helper:CijenaConverter>
+        <helper:PopustConverter x:Key="PopustConverter"></helper:PopustConverter>
+
+        <DataTemplate  x:Key="VoziloDataTemplate" x:DataType="model:Vozilo">
+            <StackPanel  Margin="5" Height="Auto" Width="Auto" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="20,20,20,20">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>
@@ -18,13 +23,35 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Image Margin="45,0,45,0" Grid.Row="0" Height="200" Width="200" Source="{x:Bind SlikaPath}" ></Image>
-                    <TextBlock Grid.Row="1" Text="{x:Bind Marka}" FontSize="24"></TextBlock>
-                    <TextBlock Grid.Row="2" Text="{x:Bind Tip}"></TextBlock>
-                    <TextBlock Grid.Row="3"  HorizontalAlignment="Right" Foreground="DarkRed" Text="{x:Bind Cijena}"></TextBlock>
+                    <Image Margin="45,0,45,0" Grid.Row="0" Height="200" Width="200" >
+                        <Image.Source>
+                            <BitmapImage UriSource="{Binding Slika}"></BitmapImage>
+                        </Image.Source>
+                    </Image>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <TextBlock  Text="{Binding Proizvodjac}" FontSize="24"></TextBlock>
+                        <TextBlock Margin="5,0,0,0" Text="{Binding Model}" FontSize="24"></TextBlock>
+                    </StackPanel>
+                    <TextBlock Grid.Row="2"  Text="{Binding Tip, Converter={StaticResource  EnumToStringConverter}}"></TextBlock>
+                    
+                    <Grid Grid.Row="3" Height="40" HorizontalAlignment="Right">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+
+                        </Grid.RowDefinitions>
+                        <TextBlock Visibility="{x:Bind Popust, Converter={StaticResource PopustConverter}}" FontWeight="Bold" Grid.Row="0" FontSize="16" HorizontalAlignment="Right" Foreground="DarkRed" Text="{Binding CijenaSaPopustom, Converter={StaticResource CijenaConverter}}"></TextBlock>
+
+                        <TextBlock Name="cijena" Grid.Row="1" HorizontalAlignment="Right" Foreground="DarkRed" Text="{Binding CijenaPoDanu, Converter={StaticResource CijenaConverter}}"></TextBlock>
+                        <Rectangle Visibility="{x:Bind Popust, Converter={StaticResource PopustConverter}}" Grid.Row="1" Height="1" Fill="DarkRed" HorizontalAlignment="Stretch" VerticalAlignment="Center"></Rectangle>
+
+                    </Grid>
                 </Grid>
             </StackPanel>
         </DataTemplate>
+
+          
+
     </Page.Resources>
 
     <ScrollViewer>
@@ -51,7 +78,7 @@
             <Grid Grid.Row="1" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
                 <GridView  Grid.Column="3"
                  ItemTemplate="{StaticResource VoziloDataTemplate}" 
-                  ItemsSource="{x:Bind vozila}">
+                  ItemsSource="{Binding vozila}">
                 </GridView>
             </Grid>
 

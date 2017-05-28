@@ -11,25 +11,28 @@ namespace ProjekatRentACar.Models
     public enum Mjenjac { Automatski, Manuelni };
     public class Vozilo
     {
+        private int id;
         private TipVozila tip;
         private string proizvodjac;
         private string model;
         private int snaga;
         private VrstaGoriva vrstaGoriva;
-        private float kilometraza;
+        private int kilometraza;
         private int brojSjedista;
         private int brojVrata;
         private Mjenjac vrstaMjenjaca;
-        private float kubikaza;
+        private double kubikaza;
         private int godiste;
         private Boolean klima;
         private int zapreminaPrtljaznika;
         private Boolean navigacija;
-        private float cijenaPoDanu;
+        private double cijenaPoDanu;
         private int popust;
+        private string slika;
 
-        public Vozilo(TipVozila tip, string proizvodjac, string model, int snaga, VrstaGoriva vrstaGoriva, float kilometraza, int brojSjedista, int brojVrata, Mjenjac vrstaMjenjaca, float kubikaza, int godiste, bool klima, int zapreminaPrtljaznika, bool navigacija, float cijenaPoDanu, int popust)
+        public Vozilo(int id, TipVozila tip, string proizvodjac, string model, int snaga, VrstaGoriva vrstaGoriva, int kilometraza, int brojSjedista, int brojVrata, Mjenjac vrstaMjenjaca, double kubikaza, int godiste, bool klima, int zapreminaPrtljaznika, bool navigacija, double cijenaPoDanu, int popust)
         {
+            this.Id = id;
             this.tip = tip;
             this.proizvodjac = proizvodjac;
             Model = model;
@@ -47,6 +50,13 @@ namespace ProjekatRentACar.Models
             this.cijenaPoDanu = cijenaPoDanu;
             this.popust = popust;
         }
+
+        public Vozilo()
+        {
+
+        }
+
+        
 
         public TipVozila Tip
         {
@@ -78,12 +88,12 @@ namespace ProjekatRentACar.Models
         {
             get
             {
-                return Model;
+                return model;
             }
 
             set
             {
-                Model = value;
+                model = value;
             }
         }
 
@@ -113,7 +123,7 @@ namespace ProjekatRentACar.Models
             }
         }
 
-        public float Kilometraza
+        public int Kilometraza
         {
             get
             {
@@ -165,7 +175,7 @@ namespace ProjekatRentACar.Models
             }
         }
 
-        public float Kubikaza
+        public double Kubikaza
         {
             get
             {
@@ -230,7 +240,7 @@ namespace ProjekatRentACar.Models
             }
         }
 
-        public float CijenaPoDanu
+        public double CijenaPoDanu
         {
             get
             {
@@ -253,6 +263,32 @@ namespace ProjekatRentACar.Models
             set
             {
                 popust = value;
+            }
+        }
+
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+            }
+        }
+
+        public string Slika
+        {
+            get
+            {
+                return slika;
+            }
+
+            set
+            {
+                slika = value;
             }
         }
     }

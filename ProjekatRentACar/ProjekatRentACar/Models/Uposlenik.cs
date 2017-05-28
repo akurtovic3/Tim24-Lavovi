@@ -84,9 +84,9 @@ namespace ProjekatRentACar.Models
                 return;
             Vozila.RemoveAt(i);
         }
-        public void azurirajVozilo(int i, TipVozila tip, string proizvodjac, string model, int snaga, VrstaGoriva vrstaGoriva, float kilometraza, int brojSjedista, int brojVrata, Mjenjac vrstaMjenjaca, float kubikaza, int godiste, bool klima, int zapreminaPrtljaznika, bool navigacija, float cijenaPoDanu, int popust)
+        public void azurirajVozilo(int i, TipVozila tip, string proizvodjac, string model, int snaga, VrstaGoriva vrstaGoriva, int kilometraza, int brojSjedista, int brojVrata, Mjenjac vrstaMjenjaca, double kubikaza, int godiste, bool klima, int zapreminaPrtljaznika, bool navigacija, double cijenaPoDanu, int popust)
         {
-            Vozila[i] = new Vozilo(tip, proizvodjac, model, snaga, vrstaGoriva, kilometraza, brojSjedista, brojVrata, vrstaMjenjaca, kubikaza, godiste, klima, zapreminaPrtljaznika, navigacija, cijenaPoDanu, popust);
+            Vozila[i] = new Vozilo(1,tip, proizvodjac, model, snaga, vrstaGoriva, kilometraza, brojSjedista, brojVrata, vrstaMjenjaca, kubikaza, godiste, klima, zapreminaPrtljaznika, navigacija, cijenaPoDanu, popust);
         }
         public void dodajOpremu(Oprema o)
         {

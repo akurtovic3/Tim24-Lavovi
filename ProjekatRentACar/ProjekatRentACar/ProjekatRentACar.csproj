@@ -115,6 +115,7 @@
     <Compile Include="Models\PDFGenerator.cs" />
     <Compile Include="Models\Proba.cs" />
     <Compile Include="Models\Uposlenik.cs" />
+    <Compile Include="Models\VozilaDataSource.cs" />
     <Compile Include="Models\Vozilo.cs" />
     <Compile Include="ViewModels\DetaljiLokacijeViewModel.cs" />
     <Compile Include="ViewModels\InformacijeViewModel.cs" />
@@ -123,6 +124,7 @@
     <Compile Include="ViewModels\OdabirLokacijeIDatumaViewModel.cs" />
     <Compile Include="ViewModels\PomocIKontaktViewModel.cs" />
     <Compile Include="ViewModels\PostavkeViewModel.cs" />
+    <Compile Include="ViewModels\VozilaViewModel.cs" />
     <Compile Include="Views\FormaDetaljiLokacije.xaml.cs">
       <DependentUpon>FormaDetaljiLokacije.xaml</DependentUpon>
     </Compile>
@@ -330,6 +332,9 @@
     <SDKReference Include="WindowsMobile, Version=10.0.14393.0">
       <Name>Windows Mobile Extensions for the UWP</Name>
     </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

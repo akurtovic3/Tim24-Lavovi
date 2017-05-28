@@ -9,10 +9,12 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.Data.Json;
 using Windows.UI.Popups;
 
 namespace ProjekatRentACar.ViewModels
@@ -23,6 +25,7 @@ namespace ProjekatRentACar.ViewModels
         public ICommand LokacijaPreuzimanja { get; set; }
         public ICommand LokacijaVracanja { get; set; }
         public Helper.INavigationService NavigationService { get; set; }
+        ObservableCollection<Vozilo> vozila;
 
         private Lokacija pocetnaLokacija;
         [IsNullValidation]
@@ -82,10 +85,7 @@ namespace ProjekatRentACar.ViewModels
             KrajnjaLokacija = new Lokacija();
             datumRezervacije = DateTime.Today;
             DatumVracanja = datumRezervacije.AddDays(1);
-
         }
-
-       
 
         public event PropertyChangedEventHandler PropertyChanged;
 

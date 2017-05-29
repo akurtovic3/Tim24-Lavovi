@@ -33,7 +33,7 @@
                         <TextBlock Margin="5,0,0,0" Text="{Binding Model}" FontSize="24"></TextBlock>
                     </StackPanel>
                     <TextBlock Grid.Row="2"  Text="{Binding Tip, Converter={StaticResource  EnumToStringConverter}}"></TextBlock>
-                    
+
                     <Grid Grid.Row="3" Height="40" HorizontalAlignment="Right">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
@@ -49,22 +49,17 @@
                 </Grid>
             </StackPanel>
         </DataTemplate>
-
-          
-
     </Page.Resources>
 
-    <ScrollViewer>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" ></RowDefinition>
+            <RowDefinition Height="*" ></RowDefinition>
+        </Grid.RowDefinitions>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" ></RowDefinition>
-                <RowDefinition Height="*" ></RowDefinition>
-            </Grid.RowDefinitions>
-
-            <RelativePanel Grid.Row="0" Background="DarkRed" Height="50">
-                <TextBlock Text="PONUDA" 
+        <RelativePanel Grid.Row="0" Background="DarkRed" Height="50">
+            <TextBlock Text="PONUDA" 
                        Foreground="White" 
                        
                        FontSize="18" 
@@ -72,18 +67,19 @@
                        RelativePanel.AlignLeftWithPanel="True"
                        Margin="0,0,0,0" 
                        FontWeight="Bold">
-                </TextBlock>
-            </RelativePanel>
+            </TextBlock>
+        </RelativePanel>
 
-            <Grid Grid.Row="1" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-                <GridView  Grid.Column="3"
-                 ItemTemplate="{StaticResource VoziloDataTemplate}" 
-                  ItemsSource="{Binding vozila}">
+        <ScrollViewer Grid.Row="1">
+            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                <GridView Name="vozilaGrid"  IsItemClickEnabled="True" ItemClick="GridView_ItemClick" Margin="0,20,0,0" Grid.Column="3"
+                    SelectedItem="{Binding OdabranoVozilo, Mode=TwoWay}"
+                    ItemTemplate="{StaticResource VoziloDataTemplate}" 
+                    ItemsSource="{Binding vozila}">
                 </GridView>
             </Grid>
+        </ScrollViewer>
 
-        </Grid>
-
-    </ScrollViewer>
+    </Grid>
 
 </Page>

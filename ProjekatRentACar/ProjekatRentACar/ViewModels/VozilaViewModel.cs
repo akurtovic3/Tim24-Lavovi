@@ -1,4 +1,6 @@
-﻿using ProjekatRentACar.Models;
+﻿using ProjekatRentACar.Helper;
+using ProjekatRentACar.Models;
+using ProjekatRentACar.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,6 +16,22 @@ namespace ProjekatRentACar.ViewModels
     {
         public ObservableCollection<Vozilo> vozila { get; set; }
         private VozilaDataSource vozilaDS;
+        NavigationService navigacija;
+
+        private Vozilo odabranoVozilo { get; set; }
+        public Vozilo OdabranoVozilo
+        {
+            get
+            {
+                return odabranoVozilo;
+            }
+            set
+            {
+                odabranoVozilo = value;
+                navigacija.Navigate(typeof(FormaDetaljiVozila), odabranoVozilo);
+            }
+        }
+
         public VozilaDataSource VozilaDS
         {
             get
@@ -31,6 +49,7 @@ namespace ProjekatRentACar.ViewModels
         {
             vozila = new ObservableCollection<Vozilo>();
             VozilaDS = new VozilaDataSource();
+            navigacija = new NavigationService();
             vozilaDS.preuzmiVozila(najam.PocetniDatum, najam.KrajniDatum, vozilaLoaded).GetAwaiter();
         }
 

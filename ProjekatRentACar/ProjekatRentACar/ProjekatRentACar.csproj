@@ -110,6 +110,13 @@
     <Compile Include="Helper\CallCommunicateBehaviour.cs" />
     <Compile Include="Helper\PopustConverter.cs" />
     <Compile Include="Helper\RelayCommand.cs" />
+    <Compile Include="Migrations\20170529180428_InitialMigration.cs" />
+    <Compile Include="Migrations\20170529180428_InitialMigration.designer.cs">
+      <DependentUpon>20170529180428_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\InformacijeDBContextModelSnapshot.cs" />
+    <Compile Include="Models\Informacije.cs" />
+    <Compile Include="Models\InformacijeDBContext.cs" />
     <Compile Include="Models\Korisnik.cs" />
     <Compile Include="Models\ListaVozilaProba.cs" />
     <Compile Include="Models\LoginDataSource.cs" />

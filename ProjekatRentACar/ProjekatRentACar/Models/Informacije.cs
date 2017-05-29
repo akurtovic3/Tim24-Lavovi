@@ -9,7 +9,8 @@ namespace ProjekatRentACar.Models
 {
     public class Informacije
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]        public int informacijeID { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int informacijeID { get; set; }
         public string ONama { get; set; }
         public string Privatnost { get; set; }
         public string UsloviKoristenja { get; set; }

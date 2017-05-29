@@ -13,13 +13,16 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
+using Microsoft.WindowsAzure.MobileServices;
+using ProjekatRentACar.Azure;
+using System.Diagnostics;
 
 namespace ProjekatRentACar.ViewModels
 {
     public class PrijavaViewModel : ValidatableBindableBase, INotifyPropertyChanged
     {
         private LoginDataSource loginDS;
-
+        IMobileServiceTable<UserAnalytics> userTableObj = App.MobileService.GetTable<UserAnalytics>();
 
 
         private string korisnickoIme;
@@ -69,6 +72,18 @@ namespace ProjekatRentACar.ViewModels
         {
             if(loginDS.isError == false)
             {
+                //Pošalji u azure
+                try
+                {
+                    UserAnalytics user = new UserAnalytics();
+                    //Treba pokupiti pravi email kada se user loguje u aplikaciju
+                    user.email = "mrndjo@gmail.com";
+                    userTableObj.InsertAsync(user);  
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
                 navigacija.Navigate(typeof(FormaKorisnickiRacun));
             }else
             {

@@ -88,7 +88,11 @@ namespace ProjekatRentACar.ViewModels
             KrajnjaLokacija = new Lokacija();
             datumRezervacije = DateTime.Today;
             DatumVracanja = datumRezervacije.AddDays(1);
+
+            
         }
+
+        
 
         public event PropertyChangedEventHandler PropertyChanged;
 

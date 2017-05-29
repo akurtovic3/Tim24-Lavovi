@@ -1,5 +1,6 @@
 ﻿using Prism.Windows.Validation;
 using ProjekatRentACar.Helper;
+using ProjekatRentACar.Models;
 using ProjekatRentACar.Views;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,8 @@ namespace ProjekatRentACar.ViewModels
 {
     class RegistracijaKorisnikaViewModel : ValidatableBindableBase, INotifyPropertyChanged
     {
+        RegistracijaDataSource registracijaDS;
+
         private string ime;
         [Required]
         public string Ime
@@ -78,11 +81,43 @@ namespace ProjekatRentACar.ViewModels
         public ObservableCollection<string> erori { get; set; }
         NavigationService navigacija { get; set; }
 
+        public RegistracijaDataSource RegistracijaDS
+        {
+            get
+            {
+                return registracijaDS;
+            }
+
+            set
+            {
+                registracijaDS = value;
+            }
+        }
+
         public RegistracijaKorisnikaViewModel()
         {
             Registriraj = new RelayCommand<object>(obavijestiORegistraciji);
             navigacija = new NavigationService();
+            registracijaDS = new RegistracijaDataSource();
         }
+
+        private void registracijaLoaded()
+        {
+            showMessageBox();
+
+            if (registracijaDS.isError == false)
+            {
+               // navigacija.Navigate(typeof(FormaPrijava));
+            }
+           
+        }
+
+        private async void showMessageBox()
+        {
+            MessageDialog ms = new MessageDialog(registracijaDS.ErrorText);
+            await ms.ShowAsync();
+        }
+
 
         public async void obavijestiORegistraciji(object parametar)
         {

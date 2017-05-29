@@ -10,7 +10,10 @@ namespace ProjekatRentACar.Models
    public  enum Medalje { Zlato, Srebro, Bronza };
     public class Korisnik:Osoba
     {
-        
+        public Korisnik()
+        {
+
+        }
         private Medalje rejting { get; set; }
         private List<Najam> najmovi;
 

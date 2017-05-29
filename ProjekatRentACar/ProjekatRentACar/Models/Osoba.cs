@@ -9,6 +9,11 @@ namespace ProjekatRentACar.Models
 {
     abstract public class Osoba
     {
+        public Osoba()
+        {
+
+        }
+
         private string ime { get; set; }
         private string prezime { get; set; }
         private DateTime datumRodjenja { get; set; }

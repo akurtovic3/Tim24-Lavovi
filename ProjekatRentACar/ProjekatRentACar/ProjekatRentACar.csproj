@@ -96,6 +96,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helper\CijenaConverter.cs" />
+    <Compile Include="Helper\ComboBoxConverter.cs" />
     <Compile Include="Helper\EnumToStringConverter.cs" />
     <Compile Include="Helper\ICommunicateBehaviour.cs" />
     <Compile Include="Helper\DateTimeConverter.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="Helper\RelayCommand.cs" />
     <Compile Include="Models\Korisnik.cs" />
     <Compile Include="Models\ListaVozilaProba.cs" />
+    <Compile Include="Models\LoginDataSource.cs" />
     <Compile Include="Models\Lokacija.cs" />
     <Compile Include="Models\LokacijaDataSource.cs" />
     <Compile Include="Models\Menadzer.cs" />
@@ -120,6 +122,7 @@
     <Compile Include="Models\Osoba.cs" />
     <Compile Include="Models\PDFGenerator.cs" />
     <Compile Include="Models\Proba.cs" />
+    <Compile Include="Models\RegistracijaDataSource.cs" />
     <Compile Include="Models\Uposlenik.cs" />
     <Compile Include="Models\VozilaDataSource.cs" />
     <Compile Include="Models\Vozilo.cs" />

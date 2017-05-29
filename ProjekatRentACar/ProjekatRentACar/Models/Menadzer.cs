@@ -10,6 +10,11 @@ namespace ProjekatRentACar.Models
 {
     public class Menadzer:Osoba
     {
+
+        public Menadzer()
+        {
+
+        }
         private DateTime datumZaposlenja { get; set; }
         private List<Korisnik> korisnici;
         private List<Uposlenik> uposlenici;

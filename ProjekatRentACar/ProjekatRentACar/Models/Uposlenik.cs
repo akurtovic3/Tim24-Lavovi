@@ -9,6 +9,12 @@ namespace ProjekatRentACar.Models
 {
     public class Uposlenik : Osoba
     {
+
+        public Uposlenik()
+        {
+
+        }
+
         private DateTime datumZaposlenja { get; set; }
         private float plata { get; set; }
         private List<Oprema> oprema;

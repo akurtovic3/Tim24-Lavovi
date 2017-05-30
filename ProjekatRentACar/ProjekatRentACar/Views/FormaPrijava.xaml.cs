@@ -32,7 +32,7 @@ namespace ProjekatRentACar.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            MainPageViewModel.Instance.changeSelectedItemTo(0);
+            MainPageViewModel.Instance.changeSelectedItemTo(1);
         }
 
         private void PBox_PasswordChanged(object sender, RoutedEventArgs e)

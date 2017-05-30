@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -36,7 +37,6 @@ namespace ProjekatRentACar.ViewModels
         }
 
         private DateTime datumRodjenja;
-        [Required]
         public DateTime DatumRodjenja
         {
             get { return datumRodjenja; }
@@ -44,7 +44,7 @@ namespace ProjekatRentACar.ViewModels
         }
 
         private string telefon;
-        [Required]
+        [Required, Phone]
         public string Telefon
         {
             get { return telefon; }
@@ -52,7 +52,7 @@ namespace ProjekatRentACar.ViewModels
         }
 
         private string email;
-        [Required]
+        [Required, EmailAddress]
         public string Email
         {
             get { return email; }
@@ -60,11 +60,12 @@ namespace ProjekatRentACar.ViewModels
         }
 
         private string drzava;
-        [Required]
         public string Drzava
         {
             get { return drzava; }
-            set { SetProperty(ref drzava, value); }
+            set {
+                drzava = value;
+            }
         }
 
         private string adresa;
@@ -75,7 +76,14 @@ namespace ProjekatRentACar.ViewModels
             set { SetProperty(ref adresa, value); }
         }
 
-       
+        private string sifra;
+        [Required]
+        public string Sifra
+        {
+            get { return sifra; }
+            set { SetProperty(ref sifra, value); }
+        }
+
 
         public ICommand Registriraj { get; set; }
         public ObservableCollection<string> erori { get; set; }
@@ -99,37 +107,55 @@ namespace ProjekatRentACar.ViewModels
             Registriraj = new RelayCommand<object>(obavijestiORegistraciji);
             navigacija = new NavigationService();
             registracijaDS = new RegistracijaDataSource();
+            Drzava = "Bosna i Hercegovina";
+            
         }
 
         private void registracijaLoaded()
         {
-            showMessageBox();
-
-            if (registracijaDS.isError == false)
-            {
-               // navigacija.Navigate(typeof(FormaPrijava));
-            }
-           
+            showMessageBox();   
         }
 
+
+        
         private async void showMessageBox()
         {
             MessageDialog ms = new MessageDialog(registracijaDS.ErrorText);
+            if(RegistracijaDS.isError == false)
+            {
+                ms.Commands.Add(new UICommand(
+        "Prijavi se", new UICommandInvokedHandler(this.CommandInvokedHandler)));
+                ms.Commands.Add(new UICommand("Cancel"));
+                ms.DefaultCommandIndex = 0;
+                ms.CancelCommandIndex = 1;
+            }  
             await ms.ShowAsync();
         }
 
+        private void CommandInvokedHandler(IUICommand command)
+        {
+            navigacija.GoBack();
+        }
 
-        public async void obavijestiORegistraciji(object parametar)
+        public  void obavijestiORegistraciji(object parametar)
         {
             this.ValidateProperties();
             erori = new ObservableCollection<string>(Errors.Errors.Values.SelectMany(x => x).ToList());
 
             if ((erori == null || erori.Count == 0))
             {
-                MessageDialog msgDialog = new MessageDialog("Registracija uspješna!", "Obavijest");
-                await msgDialog.ShowAsync();
-                navigacija.Navigate(typeof(FormaKorisnickiRacun));
+                RegistracijaDS.registrujKorisnika(Ime, Prezime,
+            DatumRodjenja, Telefon.ToString(), Email, Drzava,
+            Adresa, Sifra, registracijaLoaded).GetAwaiter();
+                
             }
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnNotifyPropertyChanged([CallerMemberName] string memberName = "")
+        {
+
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(memberName));
         }
     }
 }

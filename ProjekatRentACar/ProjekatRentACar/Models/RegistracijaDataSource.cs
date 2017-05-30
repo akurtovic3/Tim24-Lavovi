@@ -16,7 +16,7 @@ namespace ProjekatRentACar.Models
         public string ErrorText = "";
 
         public async Task registrujKorisnika(string ime, string prezime,
-            string datum_rodjenja, string kontakt_broj,string email,string drzava,
+            DateTime datum_rodjenja, string kontakt_broj,string email,string drzava,
             string adresa,string sifra, Action callback)
         {
             HttpClient httpClient = new HttpClient();
@@ -25,7 +25,7 @@ namespace ProjekatRentACar.Models
             {
                 new KeyValuePair<string, string>("ime", ime),
                 new KeyValuePair<string, string>("prezime", prezime),
-                new KeyValuePair<string, string>("datum_rodjenja", datum_rodjenja),
+                new KeyValuePair<string, string>("datum_rodjenja", datum_rodjenja.ToString("yyyy-MM-dd")),
                 new KeyValuePair<string, string>("kontakt_broj", kontakt_broj),
                 new KeyValuePair<string, string>("email", email),
                 new KeyValuePair<string, string>("drzava", drzava),
@@ -44,20 +44,11 @@ namespace ProjekatRentACar.Models
             {
                 isError = jsonValue.GetBoolean();
             }
-            if (isError == true)
+            if (value.TryGetValue("error_msg", out jsonValue))
             {
-                if (value.TryGetValue("error_msg", out jsonValue))
-                {
-                    ErrorText = jsonValue.GetString();
-                }
-                callback();
+                ErrorText = jsonValue.GetString();
             }
-            else
-            {
-                //---------------------
-                callback();
-
-            }
+            callback();
         }
     }
 }

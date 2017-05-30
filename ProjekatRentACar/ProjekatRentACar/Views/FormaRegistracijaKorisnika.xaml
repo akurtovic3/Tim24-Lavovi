@@ -10,6 +10,7 @@
 
     <Page.Resources>
         <helper:ErrorToColorConverter x:Key="ErrorToColorConverter"></helper:ErrorToColorConverter>
+        <helper:DateTimeToDateTimeOffsetConverter x:Key="DateTimeToDateTimeOffsetConverter"></helper:DateTimeToDateTimeOffsetConverter>
 
     </Page.Resources>
     
@@ -52,15 +53,20 @@
             <TextBox BorderThickness="2" BorderBrush="{Binding Errors[Ime], Converter={StaticResource ErrorToColorConverter}}" MaxWidth="500" Margin="5,40,5,10" Grid.Row="0"  Grid.ColumnSpan="2" PlaceholderText="Ime" Text="{Binding Ime, Mode=TwoWay}"></TextBox>
             <TextBox BorderThickness="2" BorderBrush="{Binding Errors[Prezime], Converter={StaticResource ErrorToColorConverter}}" MaxWidth="500" Margin="5,10,5,10" Grid.Row="1"   Grid.ColumnSpan="2" PlaceholderText="Prezime" Text="{Binding Prezime, Mode=TwoWay}"></TextBox>
             <DatePicker Grid.Row="2" Grid.Column="1"
+                        Date="{Binding DatumRodjenja,
+                        Mode=TwoWay, 
+                        Converter={StaticResource DateTimeToDateTimeOffsetConverter}}"
                     Header="Datum Rođenja:"
                     Margin="5,10,5,10"
                     HorizontalAlignment="Stretch"></DatePicker>
             <TextBox BorderThickness="2" BorderBrush="{Binding Errors[Telefon], Converter={StaticResource ErrorToColorConverter}}" MaxWidth="500" Margin="5,10,5,10" Grid.Row="3" Grid.ColumnSpan="2" PlaceholderText="Kontakt Broj" Text="{Binding Telefon, Mode=TwoWay}"></TextBox>
             <TextBox BorderThickness="2" BorderBrush="{Binding Errors[Email], Converter={StaticResource ErrorToColorConverter}}" MaxWidth="500" Margin="5,10,5,10" Grid.Row="4" Grid.ColumnSpan="2" PlaceholderText="Email" Text="{Binding Email, Mode=TwoWay}"></TextBox>
-            <ComboBox HorizontalAlignment="Stretch" BorderThickness="2" BorderBrush="{Binding Errors[Drzava], Converter={StaticResource ErrorToColorConverter}}" MaxWidth="500" Grid.ColumnSpan="2" Margin="5,10,5,10" Grid.Row="5" PlaceholderText="Država" >
-                <ComboBoxItem IsSelected="True" Name="cbx1" >Bosna i Hercegovina</ComboBoxItem>
+            <PasswordBox BorderThickness="2" BorderBrush="{Binding Errors[Sifra], Converter={StaticResource ErrorToColorConverter}}" MaxWidth="500" Margin="5,10,5,10" Grid.Row="5" Grid.ColumnSpan="2" PlaceholderText="Šifra" Password="{Binding Sifra, Mode=TwoWay}"></PasswordBox>
+
+            <ComboBox HorizontalAlignment="Stretch"  MaxWidth="500" Grid.ColumnSpan="2" Margin="5,10,5,10" Grid.Row="6" PlaceholderText="Država" >
+                <ComboBoxItem  Name="cbx1" Content="Bosna i Hercegovina" IsSelected="True"></ComboBoxItem>
             </ComboBox>
-            <TextBox BorderThickness="2" BorderBrush="{Binding Errors[Adresa], Converter={StaticResource ErrorToColorConverter}}" MaxWidth="500" Margin="5,10,5,10" Grid.Row="6" Grid.ColumnSpan="2" PlaceholderText="Adresa" Text="{Binding Adresa, Mode=TwoWay}"></TextBox>
+            <TextBox BorderThickness="2" BorderBrush="{Binding Errors[Adresa], Converter={StaticResource ErrorToColorConverter}}" MaxWidth="500" Margin="5,10,5,10" Grid.Row="7" Grid.ColumnSpan="2" PlaceholderText="Adresa" Text="{Binding Adresa, Mode=TwoWay}"></TextBox>
             <Button Background="DarkRed" Foreground="White" HorizontalAlignment="Stretch" Margin="5,10,5,10" Grid.Row="8" Grid.ColumnSpan="2" Content="Registriraj me" Command="{Binding Registriraj}"></Button>
 
         </Grid>

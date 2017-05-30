@@ -14,6 +14,7 @@ namespace ProjekatRentACar.ViewModels
 {
     public class VozilaViewModel
     {
+        private Najam najam;
         public ObservableCollection<Vozilo> vozila { get; set; }
         private VozilaDataSource vozilaDS;
         NavigationService navigacija;
@@ -28,7 +29,8 @@ namespace ProjekatRentACar.ViewModels
             set
             {
                 odabranoVozilo = value;
-                navigacija.Navigate(typeof(FormaDetaljiVozila), odabranoVozilo);
+                najam.Vozilo = odabranoVozilo;
+                navigacija.Navigate(typeof(FormaDetaljiVozila), najam);
             }
         }
 
@@ -47,6 +49,7 @@ namespace ProjekatRentACar.ViewModels
 
         public VozilaViewModel(Najam najam)
         {
+            this.najam = najam;
             vozila = new ObservableCollection<Vozilo>();
             VozilaDS = new VozilaDataSource();
             navigacija = new NavigationService();

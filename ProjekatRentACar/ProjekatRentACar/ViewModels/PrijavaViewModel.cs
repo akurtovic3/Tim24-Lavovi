@@ -22,7 +22,8 @@ namespace ProjekatRentACar.ViewModels
     public class PrijavaViewModel : ValidatableBindableBase, INotifyPropertyChanged
     {
         private LoginDataSource loginDS;
-        IMobileServiceTable<UserAnalytics> userTableObj = App.MobileService.GetTable<UserAnalytics>();
+        IMobileServiceTable<UserAnalytics> userTableObj = App.MobileService.GetTable<UserAnalytics>();
+
 
 
         private string korisnickoIme;

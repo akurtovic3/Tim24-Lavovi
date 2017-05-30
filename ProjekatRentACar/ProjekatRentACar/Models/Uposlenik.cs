@@ -71,6 +71,7 @@ namespace ProjekatRentACar.Models
             }
         }
 
+        /*
         public Uposlenik(string ime, string prezime, DateTime datum_rodjenja, string telefon, string email, string adresa,
            int postanski_broj, string korisnicko_ime, string sifra, Image slika,DateTime datum_zaposlenja,float plata) : base(ime, prezime, datum_rodjenja, telefon, email, adresa, postanski_broj, korisnicko_ime, sifra, slika)
         {
@@ -79,6 +80,8 @@ namespace ProjekatRentACar.Models
             Oprema = new List<Oprema>();
             Vozila = new List<Vozilo>();
         }
+
+    */
         public void dodajVozilo(Vozilo v)
         {
             Vozila.Add(v);

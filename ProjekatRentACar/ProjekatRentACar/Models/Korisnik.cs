@@ -51,7 +51,7 @@ namespace ProjekatRentACar.Models
         }
 
         public Korisnik(string ime, string prezime, DateTime datum_rodjenja, string telefon, string email, string adresa,
-           int postanski_broj, string korisnicko_ime, string sifra, Image slika, Medalje r,int i) : base(ime, prezime, datum_rodjenja, telefon, email, adresa, postanski_broj, korisnicko_ime, sifra, slika)
+             Medalje r,int i) : base(ime, prezime, datum_rodjenja, telefon, email, adresa)
         {
             Rejting = r;
             Id=i;

@@ -63,7 +63,7 @@ namespace ProjekatRentACar.Models
                 generator = value;
             }
         }
-
+        /*
         public Menadzer(string ime, string prezime, DateTime datum_rodjenja, string telefon, string email, string adresa,
            int postanski_broj, string korisnicko_ime, string sifra, Image slika, DateTime datum_zaposlenja) : base(ime, prezime, datum_rodjenja, telefon, email, adresa, postanski_broj, korisnicko_ime, sifra, slika)
         {
@@ -87,5 +87,6 @@ namespace ProjekatRentACar.Models
         {
             Uposlenici[i] = new Uposlenik(ime, prezime, datum_rodjenja, telefon, email, adresa, postanski_broj, korisnicko_ime, sifra, slika, datum_zaposlenja, plata);
         }
+        */
     }
 }

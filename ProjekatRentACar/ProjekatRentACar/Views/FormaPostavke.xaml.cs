@@ -2,6 +2,7 @@
 using ProjekatRentACar.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -40,7 +41,8 @@ namespace ProjekatRentACar.Views
         {
             using (var db = new PostavkeDbContext())
             {
-                ValuteCombo.SelectedItem = db.postavke.Select(x => x.Valuta).ToList<string>().ElementAt(0);
+                Debug.WriteLine(db.postavke.Select(x => x.Valuta).ToList<string>().Count);
+                ValuteCombo.SelectedItem = db.postavke.Select(x => x.Valuta).ToList<string>().ElementAt(3);
                 LokacijaToggle.IsOn = db.postavke.Select(x => x.Lokacija).ToList<bool>().ElementAt(0);
                 NotifikacijeToggle.IsOn = db.postavke.Select(x => x.Notifikacije).ToList<bool>().ElementAt(0);
             }

@@ -43,6 +43,7 @@ namespace ProjekatRentACar
             using (var db2 = new ONamaDbContext())
             using (var db3 = new PostavkeDbContext())
             {
+
                 db.Database.ApplyMigrations();
                 db2.Database.ApplyMigrations();
                 db3.Database.ApplyMigrations();

@@ -74,18 +74,23 @@ namespace ProjekatRentACar.ViewModels
             if(loginDS.isError == false)
             {
                 //Pošalji u azure
-                try
+                if (loginDS.role == "1")
                 {
-                    UserAnalytics user = new UserAnalytics();
-                    //Treba pokupiti pravi email kada se user loguje u aplikaciju
-                    user.email = "mrndjo@gmail.com";
-                    userTableObj.InsertAsync(user);  
+                    Korisnik noviKorisnik = LoginDS.noviKorisnik;
+                    try
+                    {
+                        UserAnalytics user = new UserAnalytics();
+                        //Treba pokupiti pravi email kada se user loguje u aplikaciju
+                        user.email = noviKorisnik.Email;
+                        userTableObj.InsertAsync(user);
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine(ex.Message);
+                    }
+                    navigacija.Navigate(typeof(FormaKorisnickiRacun), noviKorisnik);
                 }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine(ex.Message);
-                }
-                navigacija.Navigate(typeof(FormaKorisnickiRacun));
+                
             }else
             {
                 showMessageBox();

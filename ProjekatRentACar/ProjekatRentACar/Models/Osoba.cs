@@ -20,7 +20,6 @@ namespace ProjekatRentACar.Models
         private string telefon { get; set; }
         private string email { get; set; }
         private string adresa { get; set; }
-        private int postanskiBroj { get; set; }
         private string korisnickoIme { get; set; } 
         private string sifra { get; set; }
         private Image slika { get; set; }
@@ -61,11 +60,7 @@ namespace ProjekatRentACar.Models
             set { adresa = value; }
         }
 
-        public int PostanskiBroj
-        {
-            get { return postanskiBroj; }
-            set { postanskiBroj = value; }
-        }
+       
 
         public string KorisnickoIme
         {
@@ -85,8 +80,8 @@ namespace ProjekatRentACar.Models
             set { slika = value; }
         }
 
-        public Osoba(string ime, string prezime, DateTime datum_rodjenja, string telefon, string email, string adresa,
-            int postanski_broj, string korisnicko_ime, string sifra, Image slika)
+        public Osoba(string ime, string prezime, DateTime datum_rodjenja, string telefon, string email, string adresa
+            )
         {
             Ime = ime;
             Prezime = prezime;
@@ -94,10 +89,7 @@ namespace ProjekatRentACar.Models
             Telefon = telefon;
             Email = email;
             Adresa = adresa;
-            PostanskiBroj = postanski_broj;
-            KorisnickoIme = korisnicko_ime;
-            Sifra = sifra;
-            Slika = slika;
+            
         }
     }
 }

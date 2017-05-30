@@ -14,18 +14,19 @@ namespace ProjekatRentACar.ViewModels
     {
         public ICommand Dalje { get; set; }
         NavigationService navigacija;
-        public Vozilo odabranoVozilo { get; set; }
 
-        public DetaljiVozilaViewModel(Vozilo vozilo)
+        public Najam najam { get; set; }
+        public DetaljiVozilaViewModel(Najam najam)
         {
             Dalje = new RelayCommand<object>(prikaziOpremu);
             navigacija = new NavigationService();
-            odabranoVozilo = vozilo;
+            this.najam = najam;
+            this.najam.Cijena = (najam.KrajniDatum - najam.PocetniDatum).TotalDays * najam.Vozilo.CijenaPoDanu;
         }
 
         void prikaziOpremu(object parameter)
         {
-            navigacija.Navigate(typeof(FormaOdabirOpreme));
+            navigacija.Navigate(typeof(FormaDetaljiOVozacu));
         }
     }
 }

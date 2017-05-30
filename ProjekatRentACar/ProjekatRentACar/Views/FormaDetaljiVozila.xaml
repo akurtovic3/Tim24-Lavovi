@@ -45,7 +45,7 @@
                             <RowDefinition Height="Auto"></RowDefinition>
                         </Grid.RowDefinitions>
 
-                        <Image Source="{Binding odabranoVozilo.Slika}" HorizontalAlignment="Center" Grid.Row="0" MaxWidth="500" MaxHeight="500"></Image>
+                        <Image Source="{Binding najam.Vozilo.Slika}" HorizontalAlignment="Center" Grid.Row="0" MaxWidth="500" MaxHeight="500"></Image>
 
                         <StackPanel Orientation="Vertical" Grid.Row="1">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -64,8 +64,8 @@
                                 <TextBlock Text="4"></TextBlock>
                             </StackPanel>
                             <StackPanel Margin="10" HorizontalAlignment="Center" Grid.Row="1" Orientation="Horizontal">
-                                <TextBlock Text="{Binding odabranoVozilo.Proizvodjac}" FontSize="24"></TextBlock>
-                                <TextBlock Margin="5,0,0,0" Text="{Binding odabranoVozilo.Model}" FontSize="24"></TextBlock>
+                                <TextBlock Text="{Binding najam.Vozilo.Proizvodjac}" FontSize="24"></TextBlock>
+                                <TextBlock Margin="5,0,0,0" Text="{Binding najam.Vozilo.Model}" FontSize="24"></TextBlock>
                             </StackPanel>
                             <TextBlock Text="ili Hyundai Tucson ili slično vozilo" HorizontalAlignment="Center"></TextBlock>
                             <TextBlock Text="Iz kategorije SUV" HorizontalAlignment="Center"></TextBlock>
@@ -100,7 +100,7 @@
 
                     <StackPanel Grid.Row="0" Orientation="Horizontal">
                         <TextBlock Text="Ukupno" FontSize="18" Foreground="DarkRed"></TextBlock>
-                        <TextBlock Text="{Binding odabranoVozilo.CijenaPoDanu}" FontSize="18" Margin="5,0,0,0" Foreground="DarkRed"></TextBlock>
+                        <TextBlock Text="{Binding najam.Cijena}" FontSize="18" Margin="5,0,0,0" Foreground="DarkRed"></TextBlock>
                         <TextBlock Text="KM" FontSize="18" Margin="5,0,0,0" Foreground="DarkRed"></TextBlock>
                     </StackPanel>
 

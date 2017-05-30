@@ -44,6 +44,12 @@ namespace ProjekatRentACar.Models
                     callback();
             }else
             {
+                
+                if (value.TryGetValue("role", out jsonValue))
+                {
+                    ErrorText = jsonValue.GetString();
+                }
+               
                 //---------------------
                 callback();
 

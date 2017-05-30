@@ -32,6 +32,8 @@ namespace ProjekatRentACar.Helper
             }
             catch { return false; }
         }
+        
+
         void ICommand.Execute(object parameter)
         {
             Execute((T)parameter);

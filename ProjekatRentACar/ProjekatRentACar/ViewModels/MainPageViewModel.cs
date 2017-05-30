@@ -37,23 +37,28 @@ namespace ProjekatRentACar.ViewModels
                     NavigationService.Navigate(typeof(FormaOdabirLokacijeIDatuma));
                     break;
                 case 1:
-                    NavigationService.Navigate(typeof(FormaPrijava));
+                    if (App.daLiJeKorisnikPrijavljen)
+                    {
+                        NavigationService.Navigate(typeof(FormaKorisnickiRacun));
+                    }
+                    else
+                    {
+                        NavigationService.Navigate(typeof(FormaPrijava));
+                    }  
                     break;
                 case 2:
-                    NavigationService.Navigate(typeof(FormaPonudaPopust));
+                    NavigationService.Navigate(typeof(FormaNadjiLokaciju), true);
                     break;
                 case 3:
-                    NavigationService.Navigate(typeof(FormaNadjiLokaciju),true);
-                    break;
-                case 4:
                     NavigationService.Navigate(typeof(FormaPomocIKontakt));
                     break;
-                case 5:
+                case 4:
                     NavigationService.Navigate(typeof(FormaInformacije));
                     break;
-                case 6:
+                case 5:
                     NavigationService.Navigate(typeof(FormaPostavke));
-                    break;                
+                    break;
+                         
             }
         }
 
@@ -68,11 +73,10 @@ namespace ProjekatRentACar.ViewModels
             OsnovniMenuItemi = new ObservableCollection<MenuItem>();
             OsnovniMenuItemi.Add(new MenuItem { Icon = "\uE804", Text = "Rezervacije", Tag = 0 });
             OsnovniMenuItemi.Add(new MenuItem { Icon = "\uE77B", Text = "Moj račun", Tag = 1 });
-            OsnovniMenuItemi.Add(new MenuItem { Icon = "\uE94C", Text = "Najbolje ponude", Tag = 2 });
-            OsnovniMenuItemi.Add(new MenuItem { Icon = "\uE1C4", Text = "Pronađi stanice", Tag = 3 });
-            OsnovniMenuItemi.Add(new MenuItem { Icon = "\uE11B", Text = "Pomoć", Tag = 4 });
-            OsnovniMenuItemi.Add(new MenuItem { Icon = "\uE946", Text = "Informacije", Tag = 5 });
-            OsnovniMenuItemi.Add(new MenuItem { Icon = "\uE115", Text = "Postavke", Tag = 6 });
+            OsnovniMenuItemi.Add(new MenuItem { Icon = "\uE1C4", Text = "Pronađi stanice", Tag = 2 });
+            OsnovniMenuItemi.Add(new MenuItem { Icon = "\uE11B", Text = "Pomoć", Tag = 3 });
+            OsnovniMenuItemi.Add(new MenuItem { Icon = "\uE946", Text = "Informacije", Tag = 4 });
+            OsnovniMenuItemi.Add(new MenuItem { Icon = "\uE115", Text = "Postavke", Tag = 5 });
 
 
             selectedItem = OsnovniMenuItemi.ElementAt(0);

@@ -11,12 +11,12 @@ namespace ProjekatRentACar.Models
         private int id;
         private DateTime pocetniDatum;
         private DateTime krajniDatum;
-        private float cijena;
+        private double cijena;
         private Lokacija mjestoPreuzimanja;
         private Lokacija mjestoVracanja;
         private List<Oprema> oprema;
         private Vozilo vozilo;
-        public Najam(int id, DateTime pocetniDatum, DateTime krajniDatum, float cijena, Lokacija mjestoPreuzimanja, Lokacija mjestoVracanja)
+        public Najam(int id, DateTime pocetniDatum, DateTime krajniDatum, double cijena, Lokacija mjestoPreuzimanja, Lokacija mjestoVracanja)
         {
             this.id = id;
             this.pocetniDatum = pocetniDatum;
@@ -71,7 +71,7 @@ namespace ProjekatRentACar.Models
             }
         }
 
-        public float Cijena
+        public double Cijena
         {
             get
             {

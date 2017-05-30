@@ -33,7 +33,7 @@ namespace ProjekatRentACar.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            MainPageViewModel.Instance.changeSelectedItemTo(6);
+            MainPageViewModel.Instance.changeSelectedItemTo(5);
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)

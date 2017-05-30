@@ -13,8 +13,8 @@ namespace ProjekatRentACarMigrations
                 name: "Informacije",
                 columns: table => new
                 {
-                    informacijeID = table.Column(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true.ToString()),
+                    informacijeID = table.Column(type: "INTEGER", nullable: false),
+                        //.Annotation("Sqlite:Autoincrement", true.ToString()),
                     ONama = table.Column(type: "TEXT", nullable: true),
                     Privatnost = table.Column(type: "TEXT", nullable: true),
                     UsloviKoristenja = table.Column(type: "TEXT", nullable: true)

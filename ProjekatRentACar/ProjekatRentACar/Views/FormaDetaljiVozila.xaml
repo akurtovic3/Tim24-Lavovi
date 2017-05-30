@@ -5,7 +5,9 @@
     xmlns:local="using:ProjekatRentACar.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:helper="using:ProjekatRentACar.Helper"
     mc:Ignorable="d">
+
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -101,7 +103,7 @@
                         <TextBlock Text="{Binding odabranoVozilo.CijenaPoDanu}" FontSize="18" Margin="5,0,0,0" Foreground="DarkRed"></TextBlock>
                         <TextBlock Text="KM" FontSize="18" Margin="5,0,0,0" Foreground="DarkRed"></TextBlock>
                     </StackPanel>
-                    
+
                     <!--
                     <TextBlock
                     Name="UkupnaCijena"                  
@@ -111,7 +113,7 @@
                     FontSize="18">
                     </TextBlock>
                     -->
-                    
+
                     <TextBlock
                     Text="U cijenu je uključen PDV od 17.00%"
                     FontSize="12"
@@ -124,5 +126,4 @@
         </Grid>
 
     </Grid>
-
 </Page>

@@ -5,6 +5,7 @@
     xmlns:local="using:ProjekatRentACar.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Loaded="Page_Loaded"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -28,19 +29,19 @@
     <StackPanel Grid.Row="1" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <StackPanel Margin="10,5,5,5" Height="Auto" Width="Auto">
         <TextBlock  Text="Valuta" FontSize="24"></TextBlock>
-            <ComboBox MaxWidth="500"  Margin="0,10,5,10"  PlaceholderText="Valuta">
-                    <ComboBoxItem Name="cbx" IsSelected="True">Bosna i Hercegovina - Konvertibilna Marka</ComboBoxItem>
+                <ComboBox Name="ValuteCombo" MaxWidth="500"  Margin="0,10,5,10"  PlaceholderText="Valuta">
+                    <ComboBoxItem Name="cbx" IsSelected="True">Bosna i Hercegovina - Konvertibilna marka</ComboBoxItem>
                 </ComboBox>
      </StackPanel>
         <StackPanel Margin="10,30,5,5" Height="Auto" Width="Auto">
             <TextBlock  Text="Lokacijske usluge" FontSize="24"></TextBlock>
-            <ToggleSwitch/>
+            <ToggleSwitch Name="LokacijaToggle"/>
             </StackPanel>
     
   
     <StackPanel Margin="10,30,5,5" Height="Auto" Width="Auto">
         <TextBlock  Text="Notifikacije" FontSize="24"></TextBlock>
-        <ToggleSwitch ></ToggleSwitch>
+        <ToggleSwitch Name="NotifikacijeToggle"></ToggleSwitch>
                 <!--<ToggleSwitch FocusVisualSecondaryBrush="DarkRed"></ToggleSwitch>-->
     </StackPanel>
     </StackPanel>

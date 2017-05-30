@@ -114,7 +114,18 @@
     <Compile Include="Migrations\20170529180428_InitialMigration.designer.cs">
       <DependentUpon>20170529180428_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20170530015327_Migracija.cs" />
+    <Compile Include="Migrations\20170530015327_Migracija.designer.cs">
+      <DependentUpon>20170530015327_Migracija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20170530074757_PostavkeMigracija.cs" />
+    <Compile Include="Migrations\20170530074757_PostavkeMigracija.designer.cs">
+      <DependentUpon>20170530074757_PostavkeMigracija.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\InformacijeDBContextModelSnapshot.cs" />
+    <Compile Include="Migrations\ONamaDbContextModelSnapshot.cs" />
+    <Compile Include="Migrations\PostavkeDbContextModelSnapshot.cs" />
+    <Compile Include="Models\DefaultPodaci.cs" />
     <Compile Include="Models\Informacije.cs" />
     <Compile Include="Models\InformacijeDBContext.cs" />
     <Compile Include="Models\Korisnik.cs" />
@@ -125,9 +136,13 @@
     <Compile Include="Models\Menadzer.cs" />
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Models\Najam.cs" />
+    <Compile Include="Models\ONama.cs" />
+    <Compile Include="Models\ONamaDbContext.cs" />
     <Compile Include="Models\Oprema.cs" />
     <Compile Include="Models\Osoba.cs" />
     <Compile Include="Models\PDFGenerator.cs" />
+    <Compile Include="Models\Postavke.cs" />
+    <Compile Include="Models\PostavkeDbContext.cs" />
     <Compile Include="Models\Proba.cs" />
     <Compile Include="Models\RegistracijaDataSource.cs" />
     <Compile Include="Models\Uposlenik.cs" />

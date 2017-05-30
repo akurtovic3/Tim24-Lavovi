@@ -15,6 +15,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Microsoft.WindowsAzure.MobileServices;
+using ProjekatRentACar.Models;
+using Microsoft.Data.Entity;
 
 namespace ProjekatRentACar
 {
@@ -37,6 +39,15 @@ namespace ProjekatRentACar
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            using (var db = new InformacijeDBContext())
+            using (var db2 = new ONamaDbContext())
+            using (var db3 = new PostavkeDbContext())
+            {
+                db.Database.ApplyMigrations();
+                db2.Database.ApplyMigrations();
+                db3.Database.ApplyMigrations();
+                DefaultPodaci.Initialize(db, db2, db3);
+            }
         }
         public static Frame splitViewFrame = null;
         /// <summary>

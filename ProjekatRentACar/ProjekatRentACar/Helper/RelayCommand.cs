@@ -12,9 +12,9 @@ namespace ProjekatRentACar.Helper
         private readonly Func<T, bool> _canExecuteMethod;
         private readonly Action<T> _executeMethod;
         #region Constructors
-        public RelayCommand(Action<T> executeMethod)
-        : this(executeMethod, null)
+        public RelayCommand(Action<T> executeMethod): this(executeMethod, null)
         {
+
         }
         public RelayCommand(Action<T> executeMethod, Func<T, bool> canExecuteMethod)
         {

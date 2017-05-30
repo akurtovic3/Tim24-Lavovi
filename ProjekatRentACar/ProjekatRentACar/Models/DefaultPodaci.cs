@@ -36,12 +36,12 @@ namespace ProjekatRentACar.Models
                 );
                 context1.SaveChanges();
             }
-            if (context2.postavke.Any())
+            if (!context2.postavke.Any())
             {
                 context2.postavke.AddRange(
                 new Postavke()
                 {
-                    Valuta = "Bosna i Hercegovina - Konvertibilna markaaaaaaaa",
+                    Valuta = "Bosna i Hercegovina - Konvertibilna marka",
                     Lokacija = false,
                     Notifikacije = true,
                 }

@@ -29,6 +29,7 @@ namespace ProjekatRentACar.Views
         {
             this.InitializeComponent();
             DataContext = new PostavkeViewModel();
+            NavigationCacheMode = NavigationCacheMode.Required;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -39,13 +40,12 @@ namespace ProjekatRentACar.Views
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            using (var db = new PostavkeDbContext())
+            /*using (var db = new PostavkeDbContext())
             {
-                Debug.WriteLine(db.postavke.Select(x => x.Valuta).ToList<string>().Count);
                 ValuteCombo.SelectedItem = db.postavke.Select(x => x.Valuta).ToList<string>().ElementAt(3);
                 LokacijaToggle.IsOn = db.postavke.Select(x => x.Lokacija).ToList<bool>().ElementAt(0);
                 NotifikacijeToggle.IsOn = db.postavke.Select(x => x.Notifikacije).ToList<bool>().ElementAt(0);
-            }
+            }*/
         }
     }
 }

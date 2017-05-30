@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjekatRentACar.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -26,5 +27,13 @@ namespace ProjekatRentACar.Views
         {
             this.InitializeComponent();
         }
-    }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            using (var db = new InformacijeDBContext())
+            {
+                tekstPrivatnost.Text = db.Informacije.Select(x => x.Privatnost).ToList<String>().ElementAt(0); 
+            }
+        }
+    }  
 }

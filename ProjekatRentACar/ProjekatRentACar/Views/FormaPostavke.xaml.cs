@@ -1,4 +1,5 @@
-﻿using ProjekatRentACar.ViewModels;
+﻿using ProjekatRentACar.Models;
+using ProjekatRentACar.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -33,6 +34,16 @@ namespace ProjekatRentACar.Views
         {
             base.OnNavigatedTo(e);
             MainPageViewModel.Instance.changeSelectedItemTo(6);
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            using (var db = new PostavkeDbContext())
+            {
+                ValuteCombo.SelectedItem = db.postavke.Select(x => x.Valuta).ToList<string>().ElementAt(0);
+                LokacijaToggle.IsOn = db.postavke.Select(x => x.Lokacija).ToList<bool>().ElementAt(0);
+                NotifikacijeToggle.IsOn = db.postavke.Select(x => x.Notifikacije).ToList<bool>().ElementAt(0);
+            }
         }
     }
 }

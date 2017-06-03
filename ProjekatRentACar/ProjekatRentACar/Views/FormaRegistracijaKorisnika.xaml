@@ -22,7 +22,7 @@
         </Grid.RowDefinitions>
 
         <RelativePanel Grid.Row="0" Background="DarkRed" Height="50">
-            <TextBlock Text="PRIVATNOST" 
+            <TextBlock Text="REGISTRACIJA" 
                        Foreground="White" 
                        
                        FontSize="18" 
@@ -33,7 +33,9 @@
             </TextBlock>
         </RelativePanel>
 
-        <Grid Grid.Row="1" Name="MainGrid"  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Center">
+        <ScrollViewer Grid.Row="1">
+
+            <Grid Name="MainGrid"  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
@@ -69,7 +71,10 @@
             <TextBox BorderThickness="2" BorderBrush="{Binding Errors[Adresa], Converter={StaticResource ErrorToColorConverter}}" MaxWidth="500" Margin="5,10,5,10" Grid.Row="7" Grid.ColumnSpan="2" PlaceholderText="Adresa" Text="{Binding Adresa, Mode=TwoWay}"></TextBox>
             <Button Background="DarkRed" Foreground="White" HorizontalAlignment="Stretch" Margin="5,10,5,10" Grid.Row="8" Grid.ColumnSpan="2" Content="Registriraj me" Command="{Binding Registriraj}"></Button>
 
-        </Grid>
+    </Grid>
+    </ScrollViewer>
+
 
     </Grid>
+        
 </Page>

@@ -17,9 +17,21 @@ namespace ProjekatRentACar.ViewModels
         public string Valuta
         {
             get { return valuta; }
-            set { valuta = value; }
+            set
+            {
+                valuta = value;
+                OnNotifyPropertyChanged("Valuta");
+                using (var db = new PostavkeDbContext())
+                {
+                    var r = db.postavke.SingleOrDefault(b => b.PostavkeId == 1);
+                    if (r != null)
+                    {
+                        r.Valuta = valuta; // update
+                        db.SaveChanges();
+                    }
+                }
+            }
         }
-
 
         private bool notifikacija;
 

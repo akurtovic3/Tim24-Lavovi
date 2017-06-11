@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -9,7 +8,7 @@ using Windows.Data.Json;
 
 namespace ProjekatRentACar.Models
 {
-    public class NajmoviKorisnikaDataSource
+    public class SvaIznamjljenaVozilaDataSource
     {
         private List<NajamWebModel> najmovi
         {
@@ -29,11 +28,11 @@ namespace ProjekatRentACar.Models
         }
 
 
-        public async Task preuzmiNajmove(int korisnikID, Action callback)
+        public async Task preuzmiTrenutneNajmove(Action callback)
         {
             Najmovi = new List<NajamWebModel>();
             HttpClient httpClient = new HttpClient();
-            string urlString = "http://lavovi.space/api/lista_iznajmljenih_vozila.php?korisnik_id=" + korisnikID.ToString();
+            string urlString = "http://lavovi.space/api/trenutno_iznajmljenja_vozila.php";
             string response = await httpClient.GetStringAsync(new Uri(urlString));
             JsonArray value = JsonArray.Parse(response).GetArray();
             for (uint i = 0; i < value.Count; i++)
@@ -46,7 +45,7 @@ namespace ProjekatRentACar.Models
                 }
                 if (value.GetObjectAt(i).TryGetValue("pocetni_datum", out jsonValue))
                 {
-                    noviNajam.PocetniDatum =  DateTime.ParseExact(jsonValue.GetString().Replace("\"",""), "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+                    noviNajam.PocetniDatum = DateTime.ParseExact(jsonValue.GetString().Replace("\"", ""), "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
                 }
                 if (value.GetObjectAt(i).TryGetValue("krajnji_datum", out jsonValue))
                 {
@@ -75,6 +74,4 @@ namespace ProjekatRentACar.Models
             callback();
         }
     }
-
-   
 }

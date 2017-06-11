@@ -80,7 +80,6 @@ namespace ProjekatRentACar.ViewModels
                     try
                     {
                         UserAnalytics user = new UserAnalytics();
-                        //Treba pokupiti pravi email kada se user loguje u aplikaciju
                         user.email = noviKorisnik.Email;
                         userTableObj.InsertAsync(user);
                     }

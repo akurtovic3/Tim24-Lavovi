@@ -152,6 +152,8 @@
     <Compile Include="Models\PostavkeDbContext.cs" />
     <Compile Include="Models\Proba.cs" />
     <Compile Include="Models\RegistracijaDataSource.cs" />
+    <Compile Include="Models\SvaIznamjljenaVozilaDataSource.cs" />
+    <Compile Include="Models\UploadVozilaDataSource.cs" />
     <Compile Include="Models\Uposlenik.cs" />
     <Compile Include="Models\VozilaDataSource.cs" />
     <Compile Include="Models\Vozilo.cs" />

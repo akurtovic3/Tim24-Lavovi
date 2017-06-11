@@ -31,13 +31,19 @@ namespace ProjekatRentACar.Views
         public FormaRacunUposlenika()
         {
             this.InitializeComponent();
-            DataContext = new RacunUposlenikaViewModel();
 
             probe.Add(new Proba("Polo", "Od: 01.01.2017.", "Do: 05.01.2017", "/Assets/polo.png", "Korisnik: Almedin Mrnđić", "Lokacija Vracanja: Sarajevo/Residence Inn", "Lokacija Vracanja: Sarajevo/Residence Inn"));
             probe.Add(new Proba("Golf", "Od: 01.01.2017.", "Do: 05.01.2017", "/Assets/polo.png", "Korisnik: Senadin Terović", "Lokacija Vracanja: Sarajevo/Residence Inn", "Lokacija Vracanja: Sarajevo/Residence Inn"));
             probe.Add(new Proba("Renault", "Od: 01.01.2017.", "Do: 05.01.2017", "/Assets/polo.png", "Korisnik: Ehvan Građanin", "Lokacija Vracanja: Sarajevo/Residence Inn", "Lokacija Vracanja: Sarajevo/Residence Inn"));
             probe.Add(new Proba("Peugeot", "Od: 01.01.2017.", "Do: 05.01.2017", "/Assets/polo.png", "Korisnik: Cogo Emir", "Lokacija Vracanja: Sarajevo/Residence Inn", "Lokacija Vracanja: Sarajevo/Residence Inn"));
             probe.Add(new Proba("Mercedes", "Od: 01.01.2017.", "Do: 05.01.2017", "/Assets/polo.png", "Korisnik: Neko Treći", "Lokacija Vracanja: Sarajevo/Residence Inn", "Lokacija Vracanja: Sarajevo/Residence Inn"));
+
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            DataContext = new RacunUposlenikaViewModel(e.Parameter as Uposlenik);
 
         }
     }

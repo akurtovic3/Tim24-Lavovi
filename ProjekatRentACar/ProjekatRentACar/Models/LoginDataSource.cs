@@ -111,7 +111,9 @@ namespace ProjekatRentACar.Models
             (Medalje)(Convert.ToInt32(rating)), id);
                 }else if(role == "2")
                 {
-                    noviUposlenik = new Uposlenik();
+                    noviUposlenik = new Uposlenik(id, ime,prezime, DateTime.ParseExact(datum_rodjenja, "yyyy-MM-dd",
+                                       System.Globalization.CultureInfo.InvariantCulture), telefon, email, adresa, DateTime.ParseExact(datum_zaposlenja, "yyyy-MM-dd",
+                                       System.Globalization.CultureInfo.InvariantCulture));
                 }
               
 

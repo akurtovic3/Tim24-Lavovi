@@ -58,6 +58,22 @@ namespace ProjekatRentACar.Models
             }
         }
 
+        private int id;
+
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+            }
+        }
+
+
         public PDFGenerator Generator
         {
             get
@@ -71,17 +87,16 @@ namespace ProjekatRentACar.Models
             }
         }
 
-        /*
-        public Uposlenik(string ime, string prezime, DateTime datum_rodjenja, string telefon, string email, string adresa,
-           int postanski_broj, string korisnicko_ime, string sifra, Image slika,DateTime datum_zaposlenja,float plata) : base(ime, prezime, datum_rodjenja, telefon, email, adresa, postanski_broj, korisnicko_ime, sifra, slika)
+        
+        public Uposlenik(int id,string ime, string prezime, DateTime datum_rodjenja, string telefon, string email, string adresa,
+              DateTime datum_zaposlenja) : base(ime, prezime, datum_rodjenja, telefon, email, adresa)
         {
-            Plata = plata;
-            datumZaposlenja = datum_zaposlenja;
-            Oprema = new List<Oprema>();
+            this.id = id;
+            this.datumZaposlenja = datumZaposlenja;
             Vozila = new List<Vozilo>();
         }
 
-    */
+    
         public void dodajVozilo(Vozilo v)
         {
             Vozila.Add(v);

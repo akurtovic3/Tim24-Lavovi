@@ -89,9 +89,14 @@ namespace ProjekatRentACar.ViewModels
                         Debug.WriteLine(ex.Message);
                     }
                     navigacija.Navigate(typeof(FormaKorisnickiRacun), noviKorisnik);
+                }else if(loginDS.role == "2")
+                {
+                    Uposlenik noviUposlenik = LoginDS.noviUposlenik;
+                    navigacija.Navigate(typeof(FormaRacunUposlenika), noviUposlenik);
                 }
-                
-            }else
+
+            }
+            else
             {
                 showMessageBox();
             }

@@ -18,10 +18,9 @@ namespace ProjekatRentACar.ViewModels
 {
     class UnosNovogVozilaViewModel : INotifyPropertyChanged
     {
-        private Vozilo novoVozilo;
-
         public event PropertyChangedEventHandler PropertyChanged;
 
+        private Vozilo novoVozilo;
         public Vozilo NovoVozilo
         {
             get { return novoVozilo; }
@@ -42,6 +41,15 @@ namespace ProjekatRentACar.ViewModels
             }
         }
 
+        public string Snaga { get; set; }
+        public string Kilometraza { get; set; }
+        public string BrojSjedista { get; set; }
+        public string BrojVrata { get; set; }
+        public string Godiste { get; set; }
+        public string Kubikaza { get; set; }
+        public string Popust { get; set; }
+        public string CijenaPoDanu { get; set; }
+
         public UnosNovogVozilaViewModel()
         {
             novoVozilo = new Vozilo();
@@ -49,10 +57,19 @@ namespace ProjekatRentACar.ViewModels
             DodajSliku = new RelayCommand<object>(dodavanjeSlike);
         }
 
-        public void unosVozila(object parameter)
+        public async void unosVozila(object parameter)
         {
+            NovoVozilo.BrojSjedista = Convert.ToInt32(BrojSjedista);
+            NovoVozilo.BrojVrata = Convert.ToInt32(BrojVrata);
+            NovoVozilo.Snaga = Convert.ToInt32(Snaga);
+            NovoVozilo.Kilometraza = Convert.ToInt32(Kilometraza);
+            NovoVozilo.Godiste = Convert.ToInt32(Godiste);
+            NovoVozilo.Popust = Convert.ToInt32(Popust);
+            NovoVozilo.Kubikaza = Convert.ToDouble(Kubikaza);
+            NovoVozilo.CijenaPoDanu = Convert.ToDouble(CijenaPoDanu);
+         
             MessageDialog msd = new MessageDialog("Uspješno ste unijeli novo vozilo");
-            msd.ShowAsync();
+            await msd.ShowAsync();
         }
 
         public async void dodavanjeSlike(object parameter)
@@ -70,13 +87,12 @@ namespace ProjekatRentACar.ViewModels
                 // Application now has read/write access to the picked file
                 var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read);
                 Slika = new BitmapImage();
-                Slika.SetSource(stream);
-                
+                Slika.SetSource(stream);             
             }
             else
             {
                 MessageDialog msd = new MessageDialog("Učitavanje slike nije uspjelo");
-                msd.ShowAsync();
+                await msd.ShowAsync();
             }
         }
 

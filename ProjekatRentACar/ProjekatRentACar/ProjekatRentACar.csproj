@@ -159,6 +159,7 @@
     <Compile Include="ViewModels\PomocIKontaktViewModel.cs" />
     <Compile Include="ViewModels\PostavkeViewModel.cs" />
     <Compile Include="ViewModels\RacunUposlenikaViewModel.cs" />
+    <Compile Include="ViewModels\UnosNovogVozilaViewModel.cs" />
     <Compile Include="ViewModels\VozilaViewModel.cs" />
     <Compile Include="Views\FormaDetaljiLokacije.xaml.cs">
       <DependentUpon>FormaDetaljiLokacije.xaml</DependentUpon>

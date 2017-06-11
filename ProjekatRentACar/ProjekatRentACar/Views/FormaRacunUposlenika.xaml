@@ -33,7 +33,7 @@
         </Grid.RowDefinitions>
 
         <RelativePanel Grid.Row="0" Background="DarkRed" Height="50">
-            <TextBlock Text="PRIVATNOST" 
+            <TextBlock Text="RAČUN UPOSLENIKA" 
                        Foreground="White" 
                        
                        FontSize="18" 

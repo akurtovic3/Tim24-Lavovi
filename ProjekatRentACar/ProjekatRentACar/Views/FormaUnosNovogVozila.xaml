@@ -7,70 +7,97 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <ScrollViewer>
-        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Center">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-            </Grid.RowDefinitions>
-            
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" MinWidth="230" MaxWidth="300"></ColumnDefinition>
-                <ColumnDefinition Width="Auto" MinWidth="230" MaxWidth="300"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" ></RowDefinition>
+            <RowDefinition Height="*" ></RowDefinition>
+        </Grid.RowDefinitions>
 
-            <TextBlock Text="Informacije o vozilu" FontSize="20" Margin="10,20,10,5" Grid.ColumnSpan="2"></TextBlock>
-            <Button Background="White" BorderBrush="DarkRed" Margin="5,10,5,10" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3">
-                <Image Stretch="Fill" Source="/Assets/02-dacia-sandero-mink.png" MaxHeight="124" MaxWidth="300" Height="124" Width="200"></Image>
-            </Button>
-            <ComboBox MaxWidth="300" Margin="5,10,5,10" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" SelectedIndex="0">
-                <ComboBoxItem>Dacia</ComboBoxItem>
-            </ComboBox>
-            <ComboBox MaxWidth="300" Margin="5,10,5,10" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" SelectedIndex="0">
-                <ComboBoxItem>Sandero</ComboBoxItem>
-            </ComboBox>
-            <ComboBox MaxWidth="300" Margin="5,10,5,10" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" SelectedIndex="0">
-                <ComboBoxItem>Monovolumen</ComboBoxItem>
-            </ComboBox>
-            <TextBox MaxWidth="300" Text="2014" Margin="5,10,5,10" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Stretch"></TextBox>
-            <TextBox MaxWidth="300" Text="77 kW" Margin="5,10,5,10" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch"></TextBox>
-            <TextBox MaxWidth="300" Text="1.9" Margin="5,10,5,10" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Stretch"></TextBox>
-            <ComboBox MaxWidth="300" Margin="5,10,5,10" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Stretch" SelectedIndex="0">
-                <ComboBoxItem>Benzin</ComboBoxItem>
-            </ComboBox>
-            <ComboBox MaxWidth="300" Margin="5,10,5,10" Grid.Row="6" Grid.Column="0" HorizontalAlignment="Stretch" SelectedIndex="0">
-                <ComboBoxItem>Manuelni</ComboBoxItem>
-            </ComboBox>
-            <TextBox MaxWidth="300" Text="97.000 km" Margin="5,10,5,10" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Stretch"></TextBox>
-            <TextBox MaxWidth="300" Text="5" Margin="5,10,5,10" Grid.Row="7" Grid.Column="0" HorizontalAlignment="Stretch"></TextBox>
-            <TextBox MaxWidth="300" Text="5" Margin="5,10,5,10" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Stretch"></TextBox>
-            <TextBlock Text="Detaljne informacije" FontSize="20" Grid.Row="8" Margin="10,20,10,5" Grid.ColumnSpan="2"></TextBlock>
-            <ListView Grid.Row="9">
-                <CheckBox Content="Zračni jastuci"></CheckBox>
-                <CheckBox Content="ABS"></CheckBox>
-                <CheckBox Content="Klima"></CheckBox>
-                <CheckBox Content="Navigacija"></CheckBox>
-                <CheckBox Content="Kožna sjedišta"></CheckBox>
-                <CheckBox Content="ESP"></CheckBox>
-                <CheckBox Content="El. podizači stakala"></CheckBox>
-                <CheckBox Content="Metalik"></CheckBox>
-            </ListView>
-            <TextBlock Text="Informacije o cijeni i iznajmljivanju" FontSize="20" Grid.Row="10" Margin="10,20,10,5" Grid.ColumnSpan="2"></TextBlock>
-            <TextBox MaxWidth="300" Text="56 KM/dan" Margin="5,10,5,10" Grid.Row="11" Grid.Column="0" HorizontalAlignment="Stretch"></TextBox>
-            <TextBox MaxWidth="300" Text="Popust: 0%" Margin="5,10,5,10" Grid.Row="11" Grid.Column="1" HorizontalAlignment="Stretch"></TextBox>
-            <Button Grid.ColumnSpan="2" Grid.Row="12" Margin="5,10,5,30" Content="Unesi vozilo" Background="DarkRed" Foreground="White" HorizontalAlignment="Stretch"></Button>
-            
-        </Grid>
-    </ScrollViewer>
+        <RelativePanel Grid.Row="0" Background="DarkRed" Height="50">
+            <TextBlock Text="UNOS VOZILA" 
+                       Foreground="White" 
+                       
+                       FontSize="18" 
+                       RelativePanel.AlignVerticalCenterWithPanel="True" 
+                       RelativePanel.AlignLeftWithPanel="True"
+                       Margin="0,0,0,0" 
+                       FontWeight="Bold">
+            </TextBlock>
+        </RelativePanel>
+
+        <ScrollViewer Grid.Row="1">
+            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" MinWidth="230" MaxWidth="300"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto" MinWidth="230" MaxWidth="300"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Informacije o vozilu" FontSize="20" Margin="10,20,10,5" Grid.ColumnSpan="2"></TextBlock>
+                <Button Background="White" Command="{Binding DodajSliku}" BorderBrush="DarkRed" Margin="5,10,5,10" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3">
+                    <Image Source="{Binding Slika, Mode=TwoWay}" Name="SlikaVozila" Stretch="Fill" MaxHeight="124" MaxWidth="300" Height="124" Width="200"></Image>
+                </Button>
+                <TextBox MaxWidth="300" Margin="5,10,5,10" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" PlaceholderText="Proizvodjac" Text="{Binding NovoVozilo.Proizvodjac, Mode=TwoWay}">
+                </TextBox>
+                <TextBox MaxWidth="300" Margin="5,10,5,10" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" PlaceholderText="Model" Text="{Binding NovoVozilo.Model, Mode=TwoWay}">
+                </TextBox>
+                <ComboBox MaxWidth="300" Margin="5,10,5,10" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" SelectedIndex="0" SelectedItem="{Binding NovoVozilo.Tip, Mode=TwoWay}">
+                    <ComboBoxItem>Kompakt</ComboBoxItem>
+                    <ComboBoxItem>Limuzina</ComboBoxItem>
+                    <ComboBoxItem>Terenac</ComboBoxItem>
+                    <ComboBoxItem>Karavan</ComboBoxItem>
+                    <ComboBoxItem>Kupe</ComboBoxItem>
+                    <ComboBoxItem>Kombi</ComboBoxItem>
+                </ComboBox>
+                <TextBox MaxWidth="300" PlaceholderText="Godiste" Margin="5,10,5,10" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Stretch" Text="{Binding NovoVozilo.Godiste, Mode=TwoWay}"></TextBox>
+                <TextBox MaxWidth="300" PlaceholderText="Snaga (u kW)" Margin="5,10,5,10" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" Text="{Binding NovoVozilo.Snaga, Mode=TwoWay}"></TextBox>
+                <TextBox MaxWidth="300" PlaceholderText="Kubikaza" Margin="5,10,5,10" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Stretch" Text="{Binding NovoVozilo.Kubikaza, Mode=TwoWay}"></TextBox>
+                <ComboBox MaxWidth="300" Margin="5,10,5,10" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Stretch" SelectedIndex="0"
+                          SelectedItem="{Binding NovoVozilo.VrstaGoriva, Mode=TwoWay}">
+                    <ComboBoxItem>Benzin</ComboBoxItem>
+                    <ComboBoxItem>Dizel</ComboBoxItem>
+                    <ComboBoxItem>Plin</ComboBoxItem>
+                    <ComboBoxItem>Hibrid</ComboBoxItem>
+                </ComboBox>
+                <ComboBox MaxWidth="300" Margin="5,10,5,10" Grid.Row="6" Grid.Column="0" HorizontalAlignment="Stretch" SelectedIndex="0" SelectedItem="{Binding NovoVozilo.VrstaMjenjaca, Mode=TwoWay}">
+                    <ComboBoxItem>Automatski</ComboBoxItem>
+                    <ComboBoxItem>Manuelni</ComboBoxItem>
+                </ComboBox>
+                <TextBox MaxWidth="300" PlaceholderText="Kilometraza" Text="{Binding NovoVozilo.Kilometraza, Mode=TwoWay}" Margin="5,10,5,10" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Stretch"></TextBox>
+                <TextBox MaxWidth="300" PlaceholderText="Broj sjedista" Text="{Binding NovoVozilo.BrojSjedista, Mode=TwoWay}" Margin="5,10,5,10" Grid.Row="7" Grid.Column="0" HorizontalAlignment="Stretch"></TextBox>
+                <TextBox MaxWidth="300" PlaceholderText="Broj vrata" Text="{Binding NovoVozilo.BrojVrata, Mode=TwoWay}" Margin="5,10,5,10" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Stretch"></TextBox>
+                <TextBlock Text="Detaljne informacije" FontSize="20" Grid.Row="8" Margin="10,20,10,5" Grid.ColumnSpan="2"></TextBlock>
+                <ListView Grid.Row="9">
+                    <CheckBox Content="Zračni jastuci"></CheckBox>
+                    <CheckBox Content="ABS"></CheckBox>
+                    <CheckBox Content="Klima" IsChecked="{Binding NovoVozilo.Klima, Mode=TwoWay}"></CheckBox>
+                    <CheckBox Content="Navigacija" IsChecked="{Binding NovoVozilo.Navigacija, Mode=TwoWay}"></CheckBox>
+                    <CheckBox Content="Kožna sjedišta"></CheckBox>
+                    <CheckBox Content="ESP"></CheckBox>
+                    <CheckBox Content="El. podizači stakala"></CheckBox>
+                    <CheckBox Content="Metalik"></CheckBox>
+                </ListView>
+                <TextBlock Text="Informacije o cijeni i iznajmljivanju" FontSize="20" Grid.Row="10" Margin="10,20,10,5" Grid.ColumnSpan="2"></TextBlock>
+                <TextBox MaxWidth="300" PlaceholderText="Cijena po danu (u KM)" Text="{Binding NovoVozilo.CijenaPoDanu, Mode=TwoWay}" Margin="5,10,5,10" Grid.Row="11" Grid.Column="0" HorizontalAlignment="Stretch"></TextBox>
+                <TextBox MaxWidth="300" PlaceholderText="Popust (u %)" Text="{Binding NovoVozilo.Popust, Mode=TwoWay}" Margin="5,10,5,10" Grid.Row="11" Grid.Column="1" HorizontalAlignment="Stretch"></TextBox>
+                <Button Grid.ColumnSpan="2" Grid.Row="12" Margin="5,10,5,30" Content="Unesi vozilo" Command="{Binding UnesiVozilo}" Background="DarkRed" Foreground="White" HorizontalAlignment="Stretch"></Button>
+
+            </Grid>
+        </ScrollViewer>
+    </Grid>
 </Page>

@@ -26,51 +26,86 @@
         </DataTemplate>
     </Page.Resources>
 
-    <Pivot x:Name="rootPivot">
-        <PivotItem Header="Opšti podaci">
-            <!--Pivot content goes here-->
-            <ScrollViewer>
-                <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" ></RowDefinition>
+            <RowDefinition Height="*" ></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <RelativePanel Grid.Row="0" Background="DarkRed" Height="50">
+            <TextBlock Text="PRIVATNOST" 
+                       Foreground="White" 
+                       
+                       FontSize="18" 
+                       RelativePanel.AlignVerticalCenterWithPanel="True" 
+                       RelativePanel.AlignLeftWithPanel="True"
+                       Margin="0,0,0,0" 
+                       FontWeight="Bold">
+            </TextBlock>
+            <Button Name="NavigationButton" 
+                    Command="{Binding DodajVozilo}"
+                    FontFamily="Segoe MDL2 Assets" 
+                    RelativePanel.AlignRightWithPanel="True"
+                    Margin="0,0,30,0"
+                    Content="&#xE109;" 
+                    Width="50"
+                    Height="50"
+                    FontSize="18"
+                    Background="DarkRed"
+                    Foreground="White">
+            </Button>
+        </RelativePanel>
+
+        <ScrollViewer Grid.Row="1">
+
+        <Pivot x:Name="rootPivot">
+            <PivotItem Header="Opšti podaci">
+                <!--Pivot content goes here-->
+                <ScrollViewer>
+                    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
 
 
-                    <StackPanel>
-                        <Image Height="150" Width="150" Source="/Assets/kartice.png"></Image>
-                    </StackPanel>
+                        <StackPanel>
+                            <Image Height="150" Width="150" Source="/Assets/kartice.png"></Image>
+                        </StackPanel>
 
 
 
-                    <StackPanel Grid.Column="1">
-                        <TextBlock Text="Ime: NekoIme" Margin="10"></TextBlock>
-                        <TextBlock Text="Prezime: NekoPrezime" Margin="10"></TextBlock>
-                        <TextBlock Text="Datum rodjenja: 07.maj.1996" Margin="10"></TextBlock>
-                        <TextBlock Text="Broj telefona: 061111111" Margin="10"></TextBlock>
-                        <TextBlock Text="Email: mailkorisnika@gmail.com" Margin="10"></TextBlock>
-                        <TextBlock Text="Država: BiH" Margin="10"></TextBlock>
-                        <TextBlock Text="Ulica: Safeta Zajke" Margin="10"></TextBlock>
-                        <TextBlock Text="Poštanski broj: 71000" Margin="10"></TextBlock>
-                        <TextBlock Text="Uposlenik od: 02.05.1996." Margin="10"></TextBlock>
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="Ime: NekoIme" Margin="10"></TextBlock>
+                            <TextBlock Text="Prezime: NekoPrezime" Margin="10"></TextBlock>
+                            <TextBlock Text="Datum rodjenja: 07.maj.1996" Margin="10"></TextBlock>
+                            <TextBlock Text="Broj telefona: 061111111" Margin="10"></TextBlock>
+                            <TextBlock Text="Email: mailkorisnika@gmail.com" Margin="10"></TextBlock>
+                            <TextBlock Text="Država: BiH" Margin="10"></TextBlock>
+                            <TextBlock Text="Ulica: Safeta Zajke" Margin="10"></TextBlock>
+                            <TextBlock Text="Poštanski broj: 71000" Margin="10"></TextBlock>
+                            <TextBlock Text="Uposlenik od: 02.05.1996." Margin="10"></TextBlock>
 
-                    </StackPanel>
+                        </StackPanel>
 
 
-                </Grid>
-            </ScrollViewer>
-        </PivotItem>
-        <PivotItem Header="Lista iznajmljenih vozila">
-            <!--Pivot content goes here-->
-            <GridView  
+                    </Grid>
+                </ScrollViewer>
+            </PivotItem>
+            <PivotItem Header="Lista iznajmljenih vozila">
+                <!--Pivot content goes here-->
+                <GridView  
                  ItemTemplate="{StaticResource VoziloDataTemplate}" 
                   ItemsSource="{x:Bind probe}">
-            </GridView>
-        </PivotItem>
-    </Pivot>
+                </GridView>
+            </PivotItem>
+        </Pivot>
 
+        </ScrollViewer>
+
+    </Grid>
 
 </Page>

@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using ProjekatRentACar.ViewModels;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -30,6 +31,7 @@ namespace ProjekatRentACar.Views
         public FormaRacunUposlenika()
         {
             this.InitializeComponent();
+            DataContext = new RacunUposlenikaViewModel();
 
             probe.Add(new Proba("Polo", "Od: 01.01.2017.", "Do: 05.01.2017", "/Assets/polo.png", "Korisnik: Almedin Mrnđić", "Lokacija Vracanja: Sarajevo/Residence Inn", "Lokacija Vracanja: Sarajevo/Residence Inn"));
             probe.Add(new Proba("Golf", "Od: 01.01.2017.", "Do: 05.01.2017", "/Assets/polo.png", "Korisnik: Senadin Terović", "Lokacija Vracanja: Sarajevo/Residence Inn", "Lokacija Vracanja: Sarajevo/Residence Inn"));

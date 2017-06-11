@@ -152,6 +152,7 @@
     <Compile Include="ViewModels\DetaljiLokacijeViewModel.cs" />
     <Compile Include="ViewModels\DetaljiVozilaViewModel.cs" />
     <Compile Include="ViewModels\InformacijeViewModel.cs" />
+    <Compile Include="ViewModels\KorisnickiRacunViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\NadjiLokacijuViewModel.cs" />
     <Compile Include="ViewModels\OdabirLokacijeIDatumaViewModel.cs" />

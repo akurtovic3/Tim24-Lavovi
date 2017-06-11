@@ -1,4 +1,5 @@
 ﻿using ProjekatRentACar.Models;
+using ProjekatRentACar.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -32,11 +33,19 @@ namespace ProjekatRentACar.Views
         {
             this.InitializeComponent();
 
+
             probe.Add(new Proba("Polo", "Od: 01.01.2017.", "Do: 05.01.2017", "/Assets/polo.png"));
             probe.Add(new Proba("Golf", "Od: 01.01.2017.", "Do: 05.01.2017", "/Assets/polo.png"));
             probe.Add(new Proba("Renault", "Od: 01.01.2017.", "Do: 05.01.2017", "/Assets/polo.png"));
             probe.Add(new Proba("Peugeot", "Od: 01.01.2017.", "Do: 05.01.2017", "/Assets/polo.png"));
             probe.Add(new Proba("Mercedes", "Od: 01.01.2017.", "Do: 05.01.2017", "/Assets/polo.png"));
+
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            DataContext = new KorisnickiRacunViewModel((e.Parameter as Korisnik));
 
         }
     }

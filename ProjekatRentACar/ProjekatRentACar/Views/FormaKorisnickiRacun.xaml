@@ -25,7 +25,6 @@
 
     <Pivot x:Name="rootPivot">
         <PivotItem Header="Opšti podaci">
-            <!--Pivot content goes here-->
             <ScrollViewer>
                 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
                     <Grid.RowDefinitions>
@@ -49,14 +48,13 @@
 
 
                     <StackPanel Grid.Column="1">
-                        <TextBlock Text="Ime: NekoIme" Margin="10"></TextBlock>
-                        <TextBlock Text="Prezime: NekoPrezime" Margin="10"></TextBlock>
+                        <TextBlock Text="{Binding TrenutniKorisnik.Ime}" Margin="10"></TextBlock>
+                        <TextBlock Text="{Binding TrenutniKorisnik.Prezime}" Margin="10"></TextBlock>
                         <TextBlock Text="Datum rodjenja: 07.maj.1996" Margin="10"></TextBlock>
-                        <TextBlock Text="Broj telefona: 061111111" Margin="10"></TextBlock>
-                        <TextBlock Text="Email: mailkorisnika@gmail.com" Margin="10"></TextBlock>
-                        <TextBlock Text="Država: BiH" Margin="10"></TextBlock>
-                        <TextBlock Text="Ulica: Safeta Zajke" Margin="10"></TextBlock>
-                        <TextBlock Text="Poštanski broj: 71000" Margin="10"></TextBlock>
+                        <TextBlock Text="{Binding TrenutniKorisnik.Telefon}" Margin="10"></TextBlock>
+                        <TextBlock Text="{Binding TrenutniKorisnik.Email}" Margin="10"></TextBlock>
+                        <TextBlock Text="{Binding TrenutniKorisnik.Drzava}" Margin="10"></TextBlock>
+                        <TextBlock Text="{Binding TrenutniKorisnik.Ulica}" Margin="10"></TextBlock>
                     </StackPanel>
 
 

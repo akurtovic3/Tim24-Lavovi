@@ -50,8 +50,8 @@ namespace ProjekatRentACar.Models
 
         public string Email
         {
-            get { return Email; }
-            set { Email = value; }
+            get { return email; }
+            set { email = value; }
         }
 
         public string Adresa

@@ -107,7 +107,7 @@
                         Mode=TwoWay, 
                         Converter={StaticResource DateTimeToDateTimeOffsetConverter}}"
                     ></DatePicker>
-                    <TimePicker 
+                    <TimePicker Time="{Binding SatRezervacije, Mode=TwoWay}"
                     HorizontalAlignment="Stretch"
                     Margin="5,10,5,10"
                    ></TimePicker>
@@ -139,7 +139,7 @@
                         Mode=TwoWay, 
                         Converter={StaticResource DateTimeToDateTimeOffsetConverter}}"
                     ></DatePicker>
-                    <TimePicker 
+                    <TimePicker Time="{Binding SatVracanja, Mode=TwoWay}"
                     HorizontalAlignment="Stretch"
                     Margin="5,10,5,10"
                    ></TimePicker>

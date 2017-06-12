@@ -75,7 +75,29 @@ namespace ProjekatRentACar.ViewModels
             }
         }
 
+        private DateTime satRezervacije;
 
+        public DateTime SatRezervacije
+        {
+            get { return satRezervacije; }
+            set
+            {
+                satRezervacije = value;
+                OnNotifyPropertyChanged("SatRezervacije");
+            }
+        }
+
+        private DateTime satVracanja;
+
+        public DateTime SatVracanja
+        {
+            get { return satVracanja; }
+            set
+            {
+                satVracanja = value;
+                OnNotifyPropertyChanged("SatVracanja");
+            }
+        }
 
         public OdabirLokacijeIDatumaViewModel()
         {
@@ -111,11 +133,19 @@ namespace ProjekatRentACar.ViewModels
 
         public bool moguLiSePrikazatiPonude(object parametar)
         {
-            return true;
+            return true; 
         }
 
         public async void prikaziPonude(object parametar)
         {
+            DatumRezervacije.AddHours(SatRezervacije.Hour);
+            DatumRezervacije.AddMinutes(SatRezervacije.Minute);
+            DatumRezervacije.AddSeconds(SatRezervacije.Second);
+
+            DatumVracanja.AddHours(SatVracanja.Hour);
+            DatumVracanja.AddMinutes(SatVracanja.Minute);
+            DatumVracanja.AddSeconds(SatVracanja.Second);
+
             this.IsValidationEnabled = true;
             this.ValidateProperties();
             Erori = new ObservableCollection<string>(this.Errors.Errors.Values.SelectMany(x => x).ToList());
@@ -126,7 +156,14 @@ namespace ProjekatRentACar.ViewModels
                 await dialog.ShowAsync();
             }
 
-            if ((erori == null || erori.Count == 0) && DatumRezervacije.AddDays(1) <= datumVracanja)
+            if (DateTime.Compare(DateTime.Now, DatumRezervacije) > 0 || DateTime.Compare(DateTime.Now, DatumVracanja) >= 0)
+            {
+                var dialog = new MessageDialog("Datumi moraju biti u budućnosti!");
+                await dialog.ShowAsync();
+            }
+
+
+            if ((erori == null || erori.Count == 0) && DatumRezervacije.AddDays(1) <= datumVracanja && (!(DateTime.Compare(DateTime.Now, DatumRezervacije) > 0 || DateTime.Compare(DateTime.Now, DatumVracanja) >= 0)))
             {
                 Najam noviNajam = new Najam();
                 noviNajam.MjestoPreuzimanja = PocetnaLokacija;

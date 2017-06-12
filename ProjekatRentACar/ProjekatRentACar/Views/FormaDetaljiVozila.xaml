@@ -50,18 +50,14 @@
                         <StackPanel Orientation="Vertical" Grid.Row="1">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                 <Image Source="/Assets/Ikone/lik.png" Width="16" Height="16"></Image>
-                                <!--<Image Grid.Row="0" Height="200" Width="200" >
-                                    <Image.Source>
-                                        <BitmapImage UriSource="{Binding odabranoVozilo.Slika}"></BitmapImage>
-                                    </Image.Source>
-                                </Image>-->
-                                <TextBlock Text="5"></TextBlock>
+   
+                                <TextBlock Text="{Binding osoba}" Margin="2"></TextBlock>
                                 <Image Source="/Assets/Ikone/torba.png" Width="16" Height="16"></Image>
-                                <TextBlock Text="3"></TextBlock>
+                                <TextBlock Text="{Binding kofer}" Margin="2"></TextBlock>
                                 <Image Source="/Assets/Ikone/mjenjac.png" Width="16" Height="16"></Image>
-                                <TextBlock Text="A"></TextBlock>
+                                <TextBlock Text="{Binding mjenjac}" Margin="2"></TextBlock>
                                 <Image Source="/Assets/Ikone/vrata.png" Width="16" Height="16"></Image>
-                                <TextBlock Text="4"></TextBlock>
+                                <TextBlock Text="{Binding vrata}" Margin="2"></TextBlock>
                             </StackPanel>
                             <StackPanel Margin="10" HorizontalAlignment="Center" Grid.Row="1" Orientation="Horizontal">
                                 <TextBlock Text="{Binding najam.Vozilo.Proizvodjac}" FontSize="24"></TextBlock>

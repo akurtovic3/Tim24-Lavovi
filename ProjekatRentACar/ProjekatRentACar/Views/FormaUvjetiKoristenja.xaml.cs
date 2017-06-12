@@ -32,7 +32,7 @@ namespace ProjekatRentACar.Views
         {
             using (var db = new InformacijeDBContext())
             {
-                tekstUsloviKoristenja.Text = db.Informacije.Select(x => x.UsloviKoristenja).ToList<String>().ElementAt(0);
+                //tekstUsloviKoristenja.Text = db.Informacije.Select(x => x.UsloviKoristenja).ToList<String>().ElementAt(0);
             }
         }
     }

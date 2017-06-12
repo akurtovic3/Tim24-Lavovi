@@ -28,7 +28,7 @@
         <StackPanel Grid.Row="1" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
             <TextBlock 
             Text="E-mail podrška"
-            FontSize="32"
+            FontSize="24"
             Margin="20,15,0,5"
         ></TextBlock>
             <Button 
@@ -39,7 +39,7 @@
             Height="Auto"
             Background="Transparent"
             BorderThickness="0"
-            FontSize="24"
+            FontSize="20"
             Command="{Binding Rezervacije}"
         ></Button>
             <Button 
@@ -50,7 +50,7 @@
             Height="Auto"
             Background="Transparent"
             BorderThickness="0"
-            FontSize="24"
+            FontSize="20"
             Command="{Binding BrigaOKorisnicima}"
         ></Button>
             <Button 
@@ -61,12 +61,12 @@
             Height="Auto"
             Background="Transparent"
             BorderThickness="0"
-            FontSize="24"
+            FontSize="20"
             Command="{Binding TehnickaPodrska}"
         ></Button>
             <TextBlock 
             Text="Telefonska podrška"
-            FontSize="32"
+            FontSize="24"
             Margin="20,15,0,5"
         ></TextBlock>
             <!--<TextBlock 
@@ -83,7 +83,7 @@
             Height="Auto"
             Background="Transparent"
             BorderThickness="0"
-            FontSize="24"
+            FontSize="20"
             Command="{Binding Broj}"
         ></Button>
         </StackPanel>

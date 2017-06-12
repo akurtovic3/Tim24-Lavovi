@@ -28,7 +28,8 @@
         
         <StackPanel Grid.Row="1" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
             <Button 
-            Content="O nama" 
+            Content="O nama"
+            FontSize="24"
             Margin="20,15,20,0" 
             HorizontalAlignment="Stretch"
             HorizontalContentAlignment="Left"
@@ -38,6 +39,7 @@
             </Button>
             <Button 
             Content="Privatnost" 
+                FontSize="24"
             Margin="20,0,20,0"
             HorizontalAlignment="Stretch" 
             HorizontalContentAlignment="Left"
@@ -48,6 +50,7 @@
             <Button 
             Content="Uslovi korištenja" 
             Margin="20,0,20,0"
+                FontSize="24"
             HorizontalAlignment="Stretch" 
             HorizontalContentAlignment="Left"
             BorderThickness="0"

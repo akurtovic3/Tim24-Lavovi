@@ -29,9 +29,68 @@
         
         <Grid Grid.Row="1" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
             <ScrollViewer>
-                <!--<TextBlock Margin="10" FontSize="16" TextWrapping="Wrap" Text="You are being presented this Privacy Policy because you are visiting an application that is either (a) owned and operated by Tim  Lavovi™, Inc.) or (b) includes content, including but not limited to registration and other forms, owned by Tim Lavovi or drawn from an application owned and operated by Tim Lavovi. When you provide your Personal Information to Tim Lavovi, you expressly accept this Privacy Policy and provide full consent to the collection, storage and processing of your Personal Information by Tim Lavovi, and to the use and disclosure of your Personal Information to Software Advice Affiliates and third parties in accordance with the terms set out in this Policy. Software Advice Affiliate is any legal entity that controls, is controlled by or is under common control with Software Advice. Software Advice is committed to protecting the privacy of our visitors' personally identifiable information. The following privacy policy (Privacy Policy) explains our online information practices, use of the information you provide us and the choices you can make about the way your information is used by Software Advice. By using the Website and providing personally identifiable information about yourself, you do hereby consent to (1) our Terms of Use, (2) our collection, use, and sharing of data as described in this Privacy Policy; (3) the notice, choice, access, and security we are providing, as described above; and (4) the methods we have described to notify you of changes to this Privacy Policy."-->
-                <TextBlock x:Name="tekstUsloviKoristenja" Margin="10" FontSize="16" TextWrapping="Wrap"
-    ></TextBlock>
+                <TextBlock Margin="10" FontSize="16" TextWrapping="Wrap" Text="1. Ovlašteno upravljanje vozilom – unajmljenim vozilom mogu upravljati samo osobe starije od osobe 21 godinu, koje posjeduju ispravnu vozačku dozvolu najmanje dvije godine ( 2 x 365 dana ).
+
+2. Pod nikakvim okolnostima unajmljeno vozilo ne smije voziti, ili se istim koristiti:
+
+osoba koja nije navedena kao korisnik na Ugovoru o najmu
+za plaćeni prijevoz putnika i dobara
+po ugovoru zaključenom na osnovi lažnih izjava ili osobnih podataka
+za utrke, ispitivanja izdržljivosti, ispitivanja brzine ili poduke vožnje
+za pogon ili vuču nekog drugog vozila ili objekta
+osoba pod utjecajem alkohola, sredstava za smirenje, sredstava za spavanje, barbiturata, narkotika, halucinogenih i ostalih droga
+dok vozilo nije u voznom stanju ili je preopterećeno, ili se nije poštovalo ograničenje broja putnika i prtljage navedeno u dokumentima vozila
+van prometnica I, II i III reda
+nepoštivanjem ograničenja brzine ili drugih prometnih pravila određenih zakonom zemlje u kojoj se vozilo vozi i brzinom većom od dozvoljene - 90km/h za ceste I. reda, 50 km/h na cestama II. I III. reda, 130 km/h po autocestama
+kršenjem zakonskih uvjeta i uredbi koje se odnose na korištenje, tovarenje ili stanje vozila ili u bilo kakve ilegalne svrhe
+Navedena ograničenja su kumulativna i svako od njih se primjenjuje na svako korištenje, upravljanje i vožnju iznajmljenog vozila. Fleet rent a car se ne smatra odgovornim za bilo kakvu štetu ili gubitak uzrokovan nepoštivanjem navedenih ograničenja od strane korisnika .
+
+3. Preuzimanje i vraćanje unajmljenog vozila – jedini ovlašteni za raspolaganje vozilom i iznajmljivanjem istog je Fleet rent a car, a korisnik ga preuzima u ispravnom tehničkom stanju. Korisnik se obavezuje vratiti vozilo sa svim gumama, alatom i opremom navedenom na Ugovoru o najmu i Check out – check – in obrascu, u istom stanju u kakvom je i preuzeto, izuzev uobičajenog prirodnog trošenja, u točno vrijeme i na mjesto navedeno na strani 1. Ugovora o najmu. Vozila se iznajmljuju po dnevnoj cijeni u skladu s dogovorenom tarifom, gdje jedan dan znači bilo koji period od 24 sata od početka ugovora o najmu. Poslije isteka tog vremena, naplatit će se dodatni dan.
+
+4. Plaćanje računa – Korisnik se obavezuje podmiriti račun u roku od 8 dana od primitka računa ili u slučaju gotovinskog plaćanja, u trenutku vraćanja vozila kao što je dogovoreno na strani 1 Ugovora o najmu: vrijeme, kilometražu i druge troškove dogovorene Ugovorom o najmu. Iznos se plaća u skladu s tarifom koja je na snazi u vrijeme potpisivanja Ugovora. U slučaju kašnjenja s plaćanjem, naplaćuje se zakonska zatezna kamata i troškovi opomena. U slučaju da se vozilo vrati na lokaciju različitu od one gdje je preuzeto, konačni obračun koji napravi lokacija gdje je vozilo vraćeno podliježe odobrenju lokacije koja je izdala vozilo i koja zadržava pravo da pošalje ispravljeni račun. Potpisivanjem ovog Ugovora, korisnik pristaje da, na teret njegove kreditne kartice ili nekim drugim načinom plaćanja, Fleet rent a car naplati sve troškove popravka, kvarova ili gubitka koji su otkriveni nakon što je vozilo vraćeno, a korisnik nije o tome izvijestio iznajmljivača u skladu s procedurom o povratu vozila. Korisnik se smatra odgovornim za sve prometne prekršaje počinjene za vrijeme najma. U slučaju da korisnik te kazne ne plati, Fleet rent a car će ih naplatiti korisniku, zajedno sa administrativnim troškovima. Fleet rent a car zadržava pravo da naplati gore navedene troškove bez da prethodno obavijesti iznajmljivača. Državni porezi, takse i sl. će se naplatiti sukladno važećoj zakonskoj regulativi. Korisnik svojim potpisom na ovom ugovoru podrazumijeva tj. prihvaća da su obveznici odgovorni za plaćanje svih stavki ovog ugovora o najmu:
+
+unajmljivač
+vozač – za slučaj da unajmljivač odbija u cijelosti ili dijelom platiti obvezu po ovom ugovoru o najmu vozila
+dodatni vozač - za slučaj da unajmljivač il vozač odbiju u cijelosti ili dijelom platiti obvezu po ovom ugovoru o najmu vozila
+5. Produžetak najma - u slučaju da je korisniku vozilo potrebno duže nego što je dogovoreno vrijeme najma, korisnik je dužan najmanje 24 sata prije završetka najma, dobiti pismenu suglasnost Fleet rent a car-a. U slučaju neispunjavanja ovog uvjeta, smatra se da je korisnik protupravno prisvojio vozilo. U tom slučaju Fleet rent a car zadržava pravo da upotrijebi sve zakonske mjere kako bi korisniku oduzeo predmetno vozilo. U slučaju kada korisnik vrati vozilo poslije datuma navedenog prilikom sklapanja ugovora o najmu, a u toku najma je došlo do promjene cijena, zaračunavaju se nove cijene od dana predviđenog vraćanja vozila.
+
+6. Kilometraža – broj kilometara dok se vozilo nalazi u najmu dogovorenom ovim Ugovorom o najmu, odredit će se očitavanjem tvornički instaliranog mjerača kilometara.
+
+7. Gorivo – sva vozila se iznajmljuju sa punim spremnikom goriva. Ako se vozilo iznajmi korisniku, isti se smatra odgovornim za trošak goriva od vremena kad vozilo napusti poslovnicu do vremena kad se vozilo vrati u poslovnicu Fleet rent a car-a. Fleet rent a car zadržava pravo zaračunavanja usluge punjenja goriva prema odluci Uprave.
+
+8. Održavanje vozila – korisnik pristaje održavati vozilo u dobrom stanju i redovito provjeravati motor i ulje automatskog mjenjača, ako postoji u unajmljenom vozilu, kao i vodu u radijatoru, akumulatoru i pritisak u gumama. Korisnik se smatra odgovornim za podmirivanje sve štete uzrokovane nedovoljnim održavanjem vozila. U slučaju da iznajmljeno vozilo za vrijeme najma dostigne kilometražu na kojoj je predviđen redovni servis, korisnik mora obavijestiti Fleet rent a car i staviti vozilo na raspolaganje kako bi bilo moguće obaviti servis. Fleet rent a car korisniku stavlja na raspolaganje zamjensko vozilo.
+
+9. Kvarovi – popravci ili zamjene dijelova vozila moraju se obavljati samo kod ovlaštenog servisera uz prethodno pismeno odobrenje Fleet rent a car-a. Povrat troškova se vrši uz predočenje računa ovlaštene radionice koja je obavila popravak, međutim, zamjenski dijelovi se moraju obavezno predočiti. U slučaju da se popravak obavi van ovlaštene radionice, a zamjenski dijelovi nisu predočeni, troškovi se neće refundirati. U slučaju da se bilo koji dio vozila zamjeni ili izgubi, naplatit će se odšteta u iznosu trostruke tržišne cijene tog dijela.
+
+10. Dokumenti – sva vozila se iznajmljuju sa potrebnim dokumentima. Korisnik se drži odgovornim za navedene dokumente. U slučaju da unajmljivač izgubi dokumente, ključeve, registracijske pločice i sl. korisnik će snositi troškove izrade novih po cijenama definiranim cjenikom.
+
+11. Osiguranje putnika – za dodatnu dnevnu nadoplatu, iznos koji se određuje po važećoj tarifi, putnici su osigurani do iznosa police osiguranja u slučaju smrti ili onesposobljenosti kao posljedice nezgode uzrokovane vozilom Fleet rent a car-a.
+
+12. Osiguranje vozila - Sva vozila nad kojima Fleet rent a car ima pravo raspolaganja su osigurana protiv odgovornosti za štetu prouzročeno trećoj osobi. Odbitna franšiza ovisi o grupi vozila i određena je važećom tarifom po odluci Uprave Fleet rent a car-a i navedena je na ugovoru. U slučaju bilo kakve štete za koju je odgovoran korisnik ili u slučaju štete uzrokovane korisnikovim nepoznavanjem jednog ili više uvjeta o najmu, korisnik je dužan podmiriti štetu do punog iznosa vrijednosti, osim u slučaju da se odgovornost otkupi dnevnom nadoplatom određenom po aktivnoj tarifi Fleet rent a car-a. Dnevna nadoplata osiguranja niti u kojem slučaju ne pokriva:
+
+štetu na gumama
+štetu na donjem postroju vozila, mjenjaču i spojki, unutrašnjosti vozila i vjetrobranu uzrokovanu nemarom vozača
+štetu na motoru uzrokovanu nedostatkom ulja, ulijevanjem krive vrste goriva ili nemarnom korištenju vozila
+štetu koju je napravio vozač pod utjecajem alkohola, droge ili sl. opojnih sredstava
+štetu koju je napravio neovlašteni vozač
+bilo koje oštećenje na vozilu koje nije prijavljeno nadležnoj policijskoj postaji
+Korisnik se drži odgovornim za sva navedena oštećenja. Fleet rent a car neće prihvatiti nikakvu odgovornost za štetu ili gubitak nastao dok je vozilo bilo u najmu kod korisnika koji nije ispunjavao ovdje navedene uvjete, korisnik se obavezuje podmiriti svu štetu nastalu na vozilu Fleet rent a car za vrijeme dok je isti koristio navedeno vozilo.
+
+13. Požar i krađa – Korisnik preuzima odgovornost za bilo kakav gubitak ili štetu na vozilu nastalu nemarom ili u slučaju da je korisnik na bilo koji način ignorirao uvjete naznačene u ugovoru. Izbjegavanje plaćanja odgovornosti za cijelu vrijednost vozila dobiva korisnik plaćanjem dnevnog dodatka za svakih 24 sata upotrebe vozila unaprijed, po važećem cjeniku te tako snosi odgovornost do visine ugovorne franšize. Visina odbitne franšize ovisi o grupi vozila.
+
+14. Oštećenja – svako oštećenje se odmah mora prijaviti najbližoj policijskoj postaji i poslovnici Fleet rent a car-a koja je iznajmila vozilo i korisnik se obvezuje ne voziti dok je vozilo u nevoznom stanju. Izvještaj – posebni obrazac, koji se nalazi sa dokumentima vozila, te svoju izjavu o oštećenju mora se popuniti sa svim detaljima o nezgodi (oštećenju) i mora se odmah poslati u poslovnicu koja je iznajmila vozilo. Korisnik je dužan surađivati u istrazi i postupku obrade nezgode. Korisnik se smatra odgovornim za sve troškove ako se nisu poštovali uvjeti iz ovog članka. Ako bude nužno, korisnik će dobiti zamjensko vozilo.
+
+15. Gubitak imovine – Fleet rent a car se ne smatra odgovornim za štetu ili gubitak imovine korisnika ili imovinu ostalih osoba, pohranjenu ili prevoženu u ili na iznajmljenom vozilu, servisnom vozilu ili poslovnim prostorijama Fleet rent a car-a. Potpisivanjem ovog ugovora, korisnik se izričito odriče svakog zahtjeva za odštetom od strane Fleet rent a car-a u slučaju gore navedene štete ili gubitka.
+
+16. Promjene Ugovora o najmu – niti jedan uvjet i odredba ovog ugovora ne može se mijenjati ili odbaciti bez pismene suglasnosti Fleet rent a car-a.
+
+17. Svi zaposlenici Fleet rent a car-a imaju pravo kontrolirati bilo koje vozilo u bilo koje vrijeme. Ako se ustanovi da je korisnik prekršio bilo koji od uvjeta ovog Ugovora , zaposlenici su ovlašteni oduzeti vozilo. Fleet rent a car bezuvjetno zadržava pravo raskida ugovora o najmu, bilo kada i bilo gdje i prije isteka ugovora o najmu, bez ikakve obaveze da je dužan nadoknaditi štetu korisniku.
+
+18. Važno! Korisnik se i nakon završetka najma smatra odgovornim za počinjene prometne prekršaje učinjene tokom najma.
+
+19. U ovim uvjetima Fleet rent a car je definiran kao kompanija sa sjedištem u Zagrebu, Andrije Hebranga 32, OIB 59504443231, za područje Hrvatske i čija je jedna od poslovnih djelatnosti iznajmljivanje vozila.
+
+20. Korisnik svojim potpisom bezuvjetno prihvaća standardne uvjete te jamči točnost svih gore navedenih podataka i prihvaća nadležnost suda u Zagrebu za slučaj sudskog spora."></TextBlock>
             </ScrollViewer>
         </Grid>
 

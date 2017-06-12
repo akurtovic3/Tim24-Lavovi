@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Media.Imaging;
 using ProjekatRentACar.Views;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Windows.Storage.Streams;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace ProjekatRentACar.ViewModels
 {
@@ -49,16 +51,23 @@ namespace ProjekatRentACar.ViewModels
         public string Kubikaza { get; set; }
         public string Popust { get; set; }
         public string CijenaPoDanu { get; set; }
+        private UploadVozilaDataSource uploadDS;
+
+        private byte[] byteArray;
 
         public UnosNovogVozilaViewModel()
         {
             novoVozilo = new Vozilo();
             UnesiVozilo = new RelayCommand<object>(unosVozila);
             DodajSliku = new RelayCommand<object>(dodavanjeSlike);
+            uploadDS = new UploadVozilaDataSource();
         }
 
-        public async void unosVozila(object parameter)
+        public  void unosVozila(object parameter)
         {
+
+            //Treba prvo ispitati validaciju, pa ako prođe validacija, tek onda pokrenuti ovaj kod ispod...
+            /*
             NovoVozilo.BrojSjedista = Convert.ToInt32(BrojSjedista);
             NovoVozilo.BrojVrata = Convert.ToInt32(BrojVrata);
             NovoVozilo.Snaga = Convert.ToInt32(Snaga);
@@ -67,9 +76,22 @@ namespace ProjekatRentACar.ViewModels
             NovoVozilo.Popust = Convert.ToInt32(Popust);
             NovoVozilo.Kubikaza = Convert.ToDouble(Kubikaza);
             NovoVozilo.CijenaPoDanu = Convert.ToDouble(CijenaPoDanu);
-         
-            MessageDialog msd = new MessageDialog("Uspješno ste unijeli novo vozilo");
-            await msd.ShowAsync();
+         */
+            uploadDS.unesiVozilo(novoVozilo, byteArray, callback).GetAwaiter();
+        }
+
+
+
+
+        private void callback()
+        {
+            showMessageBox();
+        }
+
+        private async void showMessageBox()
+        {
+            MessageDialog ms = new MessageDialog(uploadDS.ErrorText);
+            await ms.ShowAsync();
         }
 
         public async void dodavanjeSlike(object parameter)
@@ -85,9 +107,14 @@ namespace ProjekatRentACar.ViewModels
             if (file != null)
             {
                 // Application now has read/write access to the picked file
-                var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read);
+                var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read); 
                 Slika = new BitmapImage();
-                Slika.SetSource(stream);             
+                Slika.SetSource(stream);
+
+                var dr = new DataReader(stream.GetInputStreamAt(0));
+                byteArray = new byte[stream.Size];
+                await dr.LoadAsync((uint)stream.Size);
+                dr.ReadBytes(byteArray);
             }
             else
             {
@@ -100,5 +127,9 @@ namespace ProjekatRentACar.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(memberName));
         }
+
+
+       
+
     }
 }

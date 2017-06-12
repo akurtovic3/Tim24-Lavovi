@@ -27,18 +27,11 @@ namespace ProjekatRentACar.Views
 
     public sealed partial class FormaKorisnickiRacun : Page
     {
-        public ObservableCollection<Proba> probe = new ObservableCollection<Proba>();
 
         public FormaKorisnickiRacun()
         {
             this.InitializeComponent();
-
-
-            probe.Add(new Proba("Polo", "Od: 01.01.2017.", "Do: 05.01.2017", "/Assets/polo.png"));
-            probe.Add(new Proba("Golf", "Od: 01.01.2017.", "Do: 05.01.2017", "/Assets/polo.png"));
-            probe.Add(new Proba("Renault", "Od: 01.01.2017.", "Do: 05.01.2017", "/Assets/polo.png"));
-            probe.Add(new Proba("Peugeot", "Od: 01.01.2017.", "Do: 05.01.2017", "/Assets/polo.png"));
-            probe.Add(new Proba("Mercedes", "Od: 01.01.2017.", "Do: 05.01.2017", "/Assets/polo.png"));
+            
 
         }
 

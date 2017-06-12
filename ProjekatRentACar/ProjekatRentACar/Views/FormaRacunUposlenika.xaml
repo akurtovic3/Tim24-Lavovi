@@ -9,18 +9,22 @@
     mc:Ignorable="d">
 
     <Page.Resources>
-        <DataTemplate x:Key="VoziloDataTemplate" x:DataType="model:Proba">
+        <DataTemplate x:Key="VoziloDataTemplate" x:DataType="model:NajamWebModel">
             <StackPanel Margin="5" Height="Auto" Width="Auto" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <StackPanel>
-                    <Image Height="100" Width="100" Source="{x:Bind SlikaPath}" ></Image>
-                    <TextBlock Margin="5" Text="{x:Bind Naziv}"></TextBlock>
+                    <Image Height="100" Width="100" >
+                        <Image.Source>
+                            <BitmapImage UriSource="{Binding Slika}"></BitmapImage>
+                        </Image.Source>
+                    </Image>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="5" Text="{Binding Proizvodjac}"></TextBlock>
+                        <TextBlock Margin="5" Text="{Binding Model}"></TextBlock>
+                    </StackPanel>
                 </StackPanel>
                 <StackPanel>
-                    <TextBlock Margin="5,5,5,15" Text="{x:Bind OdDatum}"></TextBlock>
-                    <TextBlock Margin="5,5,5,5" Text="{x:Bind DoDatum}"></TextBlock>
-                    <TextBlock Margin="5,5,5,5" Text="{x:Bind ImeKorisnika}"></TextBlock>
-                    <TextBlock Margin="5,5,5,5" Text="{x:Bind LokacijaPreuzimanja}"></TextBlock>
-                    <TextBlock Margin="5,5,5,5" Text="{x:Bind LokacijaVracanja}"></TextBlock>
+                    <TextBlock Margin="5,5,5,15" Text="{Binding PocetniDatum}"></TextBlock>
+                    <TextBlock Margin="5,5,5,5" Text="{Binding KrajnjiDatum}"></TextBlock>
                 </StackPanel>
             </StackPanel>
         </DataTemplate>
@@ -79,15 +83,14 @@
 
 
                         <StackPanel Grid.Column="1">
-                            <TextBlock Text="Ime: NekoIme" Margin="10"></TextBlock>
-                            <TextBlock Text="Prezime: NekoPrezime" Margin="10"></TextBlock>
-                            <TextBlock Text="Datum rodjenja: 07.maj.1996" Margin="10"></TextBlock>
-                            <TextBlock Text="Broj telefona: 061111111" Margin="10"></TextBlock>
-                            <TextBlock Text="Email: mailkorisnika@gmail.com" Margin="10"></TextBlock>
-                            <TextBlock Text="Država: BiH" Margin="10"></TextBlock>
-                            <TextBlock Text="Ulica: Safeta Zajke" Margin="10"></TextBlock>
-                            <TextBlock Text="Poštanski broj: 71000" Margin="10"></TextBlock>
-                            <TextBlock Text="Uposlenik od: 02.05.1996." Margin="10"></TextBlock>
+                                <TextBlock Text="{Binding TrenutniUposlenik.Ime}" Margin="10"></TextBlock>
+                                <TextBlock Text="{Binding TrenutniUposlenik.Prezime}" Margin="10"></TextBlock>
+                                <TextBlock Text="Datum rodjenja: 07.maj.1996" Margin="10"></TextBlock>
+                                <TextBlock Text="{Binding TrenutniUposlenik.Telefon}" Margin="10"></TextBlock>
+                                <TextBlock Text="{Binding TrenutniUposlenik.Email}" Margin="10"></TextBlock>
+                                <TextBlock Text="{Binding TrenutniUposlenik.Drzava}" Margin="10"></TextBlock>
+                                <TextBlock Text="{Binding TrenutniUposlenik.Ulica}" Margin="10"></TextBlock>
+                                <TextBlock Text="Uposlenik od: 02.05.1996." Margin="10"></TextBlock>
 
                         </StackPanel>
 
@@ -99,7 +102,7 @@
                 <!--Pivot content goes here-->
                 <GridView  
                  ItemTemplate="{StaticResource VoziloDataTemplate}" 
-                  ItemsSource="{x:Bind probe}">
+                  ItemsSource="{Binding Najmovi}">
                 </GridView>
             </PivotItem>
         </Pivot>

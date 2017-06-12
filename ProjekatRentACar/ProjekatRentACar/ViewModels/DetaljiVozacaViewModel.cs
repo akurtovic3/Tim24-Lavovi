@@ -26,7 +26,7 @@ namespace ProjekatRentACar.ViewModels
         
 
         private bool prihvaceno;
-        public bool Prihvaceno { get { return prihvaceno; } set { prihvaceno = value; OnNotifyPropertyChanged("Slika"); } }
+        public bool Prihvaceno { get { return prihvaceno; } set { prihvaceno = value; OnNotifyPropertyChanged("Prihvaceno"); } }
 
 
         private void OnNotifyPropertyChanged([CallerMemberName] string memberName = "")

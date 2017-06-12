@@ -4,8 +4,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:ProjekatRentACar.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:helper="using:ProjekatRentACar.Helper"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+
+    <Page.Resources>
+        <helper:ErrorToColorConverter x:Key="ErrorToColorConverter"></helper:ErrorToColorConverter>
+    </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -49,15 +54,15 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Text="Informacije o vozilu" FontSize="20" Margin="10,20,10,5" Grid.ColumnSpan="2"></TextBlock>
-                <Button Background="LightGray" Command="{Binding DodajSliku}" BorderBrush="DarkRed" Margin="5,10,5,10" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3">
+                <Button BorderBrush="{Binding Errors[Ime], Converter={StaticResource ErrorToColorConverter}}" Command="{Binding DodajSliku}" Margin="5,10,5,10" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3">
                     <Image Grid.Row="0" Source="{Binding Slika, Mode=TwoWay}" Name="SlikaVozila" Stretch="Fill" MaxHeight="124" MaxWidth="300" Height="124" Width="200"></Image>
 
                 </Button>
-                <TextBox MaxWidth="300" Margin="5,10,5,10" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" PlaceholderText="Proizvođač" Text="{Binding NovoVozilo.Proizvodjac, Mode=TwoWay}">
+                <TextBox MaxWidth="300" Margin="5,10,5,10" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" PlaceholderText="Proizvođač" Text="{Binding Proizvodjac, Mode=TwoWay}" BorderBrush="{Binding Errors[Proizvodjac], Converter={StaticResource ErrorToColorConverter}}">
                 </TextBox>
-                <TextBox MaxWidth="300" Margin="5,10,5,10" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" PlaceholderText="Model" Text="{Binding NovoVozilo.Model, Mode=TwoWay}">
+                <TextBox MaxWidth="300" Margin="5,10,5,10" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" PlaceholderText="Model" Text="{Binding Model, Mode=TwoWay}" BorderBrush="{Binding Errors[Model], Converter={StaticResource ErrorToColorConverter}}">
                 </TextBox>
-                <ComboBox MaxWidth="300" Margin="5,10,5,10" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch"  SelectedItem="{Binding NovoVozilo.Tip, Mode=TwoWay}" PlaceholderText="Tip vozila">
+                <ComboBox MaxWidth="300" Margin="5,10,5,10" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch"  SelectedItem="{Binding Tip, Mode=TwoWay}" PlaceholderText="Tip vozila" BorderBrush="{Binding Errors[Tip], Converter={StaticResource ErrorToColorConverter}}">
                     <ComboBoxItem>Kompakt</ComboBoxItem>
                     <ComboBoxItem>Limuzina</ComboBoxItem>
                     <ComboBoxItem>Terenac</ComboBoxItem>
@@ -65,37 +70,55 @@
                     <ComboBoxItem>Kupe</ComboBoxItem>
                     <ComboBoxItem>Kombi</ComboBoxItem>
                 </ComboBox>
-                <TextBox MaxWidth="300" PlaceholderText="Godište" Margin="5,10,5,10" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Stretch" Text="{Binding Godiste, Mode=TwoWay}"></TextBox>
-                <TextBox MaxWidth="300" PlaceholderText="Snaga (u kW)" Margin="5,10,5,10" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" Text="{Binding Snaga, Mode=TwoWay}"></TextBox>
-                <TextBox MaxWidth="300" PlaceholderText="Kubikaža" Margin="5,10,5,10" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Stretch" Text="{Binding Kubikaza, Mode=TwoWay}"></TextBox>
-                <ComboBox MaxWidth="300" Margin="5,10,5,10" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Stretch" PlaceholderText="Vrsta goriva"
-                          SelectedItem="{Binding NovoVozilo.VrstaGoriva, Mode=TwoWay}">
+                <TextBox MaxWidth="300" PlaceholderText="Godište" Margin="5,10,5,10" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Stretch" Text="{Binding Godiste, Mode=TwoWay}"
+                         BorderBrush="{Binding Errors[Godiste], Converter={StaticResource ErrorToColorConverter}}"></TextBox>
+                <TextBox MaxWidth="300" PlaceholderText="Snaga (u kW)" Margin="5,10,5,10" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" Text="{Binding Snaga, Mode=TwoWay}"
+                         BorderBrush="{Binding Errors[Snaga], Converter={StaticResource ErrorToColorConverter}}"></TextBox>
+                <TextBox MaxWidth="300" PlaceholderText="Kubikaža" Margin="5,10,5,10" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Stretch" Text="{Binding Kubikaza, Mode=TwoWay}"
+                         BorderBrush="{Binding Errors[Kubikaza], Converter={StaticResource ErrorToColorConverter}}"></TextBox>
+                <ComboBox MaxWidth="300" Margin="5,10,5,10" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Stretch" PlaceholderText="Vrsta goriva" BorderBrush="{Binding Errors[VrstaGoriva], Converter={StaticResource ErrorToColorConverter}}"
+                          SelectedItem="{Binding VrstaGoriva, Mode=TwoWay}">
                     <ComboBoxItem>Benzin</ComboBoxItem>
                     <ComboBoxItem>Dizel</ComboBoxItem>
                     <ComboBoxItem>Plin</ComboBoxItem>
                     <ComboBoxItem>Hibrid</ComboBoxItem>
                 </ComboBox>
-                <ComboBox MaxWidth="300" Margin="5,10,5,10" Grid.Row="6" Grid.Column="0" HorizontalAlignment="Stretch" PlaceholderText="Vrsta mjenjača" SelectedItem="{Binding NovoVozilo.VrstaMjenjaca, Mode=TwoWay}">
+                <ComboBox MaxWidth="300" Margin="5,10,5,10" Grid.Row="6" Grid.Column="0" HorizontalAlignment="Stretch" PlaceholderText="Vrsta mjenjača" SelectedItem="{Binding VrstaMjenjaca, Mode=TwoWay}"
+                          BorderBrush="{Binding Errors[VrstaMjenjaca], Converter={StaticResource ErrorToColorConverter}}">
                     <ComboBoxItem>Automatski</ComboBoxItem>
                     <ComboBoxItem>Manuelni</ComboBoxItem>
                 </ComboBox>
-                <TextBox MaxWidth="300" PlaceholderText="Kilometraža" Text="{Binding Kilometraza, Mode=TwoWay}" Margin="5,10,5,10" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Stretch"></TextBox>
-                <TextBox MaxWidth="300" PlaceholderText="Broj sjedišta" Text="{Binding BrojSjedista, Mode=TwoWay}" Margin="5,10,5,10" Grid.Row="7" Grid.Column="0" HorizontalAlignment="Stretch"></TextBox>
-                <TextBox MaxWidth="300" PlaceholderText="Broj vrata" Text="{Binding BrojVrata, Mode=TwoWay}" Margin="5,10,5,10" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Stretch"></TextBox>
+                
+                <TextBox MaxWidth="300" PlaceholderText="Kilometraža" Text="{Binding Kilometraza, Mode=TwoWay}" Margin="5,10,5,10" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Stretch"
+                         BorderBrush="{Binding Errors[Kilometraza], Converter={StaticResource ErrorToColorConverter}}"></TextBox>
+                
+                <TextBox MaxWidth="300" PlaceholderText="Broj sjedišta" Text="{Binding BrojSjedista, Mode=TwoWay}" Margin="5,10,5,10" Grid.Row="7" Grid.Column="0" HorizontalAlignment="Stretch"
+                         BorderBrush="{Binding Errors[BrojSjedista], Converter={StaticResource ErrorToColorConverter}}"></TextBox>
+                
+                <TextBox MaxWidth="300" PlaceholderText="Broj vrata" Text="{Binding BrojVrata, Mode=TwoWay}" Margin="5,10,5,10" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Stretch"
+                         BorderBrush="{Binding Errors[BrojVrata], Converter={StaticResource ErrorToColorConverter}}"></TextBox>
+                
                 <TextBlock Text="Detaljne informacije" FontSize="20" Grid.Row="8" Margin="10,20,10,5" Grid.ColumnSpan="2"></TextBlock>
                 <ListView Grid.Row="9">
                     <CheckBox Content="Zračni jastuci"></CheckBox>
                     <CheckBox Content="ABS"></CheckBox>
-                    <CheckBox Content="Klima" IsChecked="{Binding NovoVozilo.Klima, Mode=TwoWay}"></CheckBox>
+                    <CheckBox Content="Klima" IsChecked="{Binding Klima, Mode=TwoWay}"></CheckBox>
                     <CheckBox Content="Navigacija" IsChecked="{Binding NovoVozilo.Navigacija, Mode=TwoWay}"></CheckBox>
                     <CheckBox Content="Kožna sjedišta"></CheckBox>
                     <CheckBox Content="ESP"></CheckBox>
                     <CheckBox Content="El. podizači stakala"></CheckBox>
                     <CheckBox Content="Metalik"></CheckBox>
                 </ListView>
-                <TextBlock Text="Informacije o cijeni i iznajmljivanju" FontSize="20" Grid.Row="10" Margin="10,20,10,5" Grid.ColumnSpan="2"></TextBlock>
-                <TextBox MaxWidth="300" PlaceholderText="Cijena po danu (u KM)" Text="{Binding CijenaPoDanu, Mode=TwoWay}" Margin="5,10,5,10" Grid.Row="11" Grid.Column="0" HorizontalAlignment="Stretch"></TextBox>
-                <TextBox MaxWidth="300" PlaceholderText="Popust (u %)" Text="{Binding Popust, Mode=TwoWay}" Margin="5,10,5,10" Grid.Row="11" Grid.Column="1" HorizontalAlignment="Stretch"></TextBox>
+                
+                <TextBlock Text="Informacije o cijeni i iznajmljivanju" FontSize="20" Grid.Row="10" Margin="10,20,10,5" Grid.ColumnSpan="2"
+                          ></TextBlock>
+                
+                <TextBox MaxWidth="300" PlaceholderText="Cijena po danu (u KM)" Text="{Binding CijenaPoDanu, Mode=TwoWay}" Margin="5,10,5,10" Grid.Row="11" Grid.Column="0" HorizontalAlignment="Stretch"
+                         BorderBrush="{Binding Errors[CijenaPoDanu], Converter={StaticResource ErrorToColorConverter}}"></TextBox>
+                
+                <TextBox MaxWidth="300" PlaceholderText="Popust (u %)" Text="{Binding Popust, Mode=TwoWay}" Margin="5,10,5,10" Grid.Row="11" Grid.Column="1" HorizontalAlignment="Stretch"
+                         BorderBrush="{Binding Errors[Popust], Converter={StaticResource ErrorToColorConverter}}"></TextBox>
+                
                 <Button Grid.ColumnSpan="2" Grid.Row="12" Margin="5,10,5,30" Content="Unesi vozilo" Command="{Binding UnesiVozilo}" Background="DarkRed" Foreground="White" HorizontalAlignment="Stretch"></Button>
 
             </Grid>

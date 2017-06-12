@@ -15,7 +15,7 @@
     </Grid.RowDefinitions>
 
     <RelativePanel Grid.Row="0" Background="DarkRed" Height="50">
-        <TextBlock Text="DETALJI VOZAČA" 
+        <TextBlock Text="PODACI O VOZAČU" 
                        Foreground="White" 
                        
                        FontSize="18" 
@@ -49,8 +49,8 @@
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                    <TextBlock Margin="5,30,5,10" Text="{Binding ime}"></TextBlock>
-                    <TextBlock Margin="5,5,5,10" Text="{Binding prezime}" Grid.Row="1" ></TextBlock>
+                    <TextBox Margin="5,30,5,10" Text="{Binding ime}"></TextBox>
+                    <TextBox Margin="5,5,5,10" Text="{Binding prezime}" Grid.Row="1" ></TextBox>
                 <Grid Grid.Row="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>
@@ -66,16 +66,23 @@
                         <ComboBoxItem Content="+385"></ComboBoxItem>
                         <ComboBoxItem Content="+382"></ComboBoxItem>
                     </ComboBox>
-                        <TextBlock VerticalAlignment="Center" Grid.Column="1"  Margin="5,5,5,10" Text="{Binding telefon}"></TextBlock>
+                        <TextBox VerticalAlignment="Center" Grid.Column="1"  Margin="5,5,5,10" Text="{Binding telefon}"></TextBox>
                 </Grid>
 
 
 
-                    <TextBlock IsTapEnabled="False" Margin="5,5,5,10" Text="{Binding email}" Grid.Row="3"></TextBlock>
+                    <TextBox IsTapEnabled="False" Margin="5,5,5,10" Text="{Binding email}" Grid.Row="3"></TextBox>
                 <ScrollViewer  Margin="5,5,5,10" BorderBrush="DarkRed" BorderThickness="1" MaxWidth="400" MaxHeight="100"  Grid.Row="4" >
-                    <TextBlock   TextWrapping="Wrap" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae ante ut felis interdum bibendum nec eget ex. Donec dolor eros, fringilla ac cursus vestibulum, sagittis at libero. Morbi eget nulla sit amet justo posuere volutpat vitae et tortor. Ut scelerisque, neque nec fermentum consequat, elit ex posuere urna, eget aliquet urna diam sed nunc. Praesent iaculis lorem nisl, eget venenatis ipsum mattis et. Ut dignissim suscipit elit, in interdum est. Quisque arcu lacus, aliquet quis cursus quis, convallis ut dolor. Fusce id sapien lectus. Maecenas quis enim posuere, elementum mauris non, tempor magna. Donec lobortis posuere neque, sit amet finibus nisl fermentum a. Duis elementum nibh malesuada est condimentum, vitae tincidunt justo suscipit. Ut id sollicitudin leo. Maecenas feugiat dapibus enim non vulputate. Sed auctor imperdiet arcu, sit amet porta diam venenatis nec. Nullam enim neque, malesuada vitae scelerisque ac, sollicitudin vel ante. Maecenas porttitor nulla quis augue hendrerit, non ultrices mi convallis."></TextBlock>
+                        <TextBlock   TextWrapping="Wrap"  Text="-----------  UGOVOR O NAJMU AUTOMOBILA  -----------
+Članak 1.
+LAVOVI Rent a car (u daljnjem tekstu: iznajmljivač) iznajmljuje osobno vozilo korisniku pod gore navedenim imenom i prezimenom ( u daljnjem tekstu: korisnik). 
+
+Članak 2.
+Ovim ugovorom se ugovara da je korisnik jedina ovlaštena osoba koja će koristiti osobni automobil iz članka 1 ovog ugovora, za vrijeme trajanja najma.
+Korisnik se obvezuje da će osobni automobil koji je predmet najma koristiti sukladno zakonu o sigurnosti prometa na cestama.
+Korisnik se obvezuje da će osobno vozilo koje je predmet najma koristiti samo za vlastite potrebe."></TextBlock>
                 </ScrollViewer>
-                <CheckBox  Margin="5,5,5,10" Grid.Row="5" IsChecked="False" Content="Prihvatam sve uslove navedene u ugovoru."></CheckBox>
+                <CheckBox IsChecked="{Binding Prihvaceno, Mode=TwoWay}" Margin="5,5,5,10" Grid.Row="5" Content="Prihvatam sve uslove navedene u ugovoru."></CheckBox>
                 
             </Grid>
         </ScrollViewer>
@@ -85,6 +92,7 @@
             <Button 
                 Name="DugmeDalje" 
                 Content="Dalje"
+                Command="{Binding Dalje}"
                 Foreground="White"
                 Background="DarkRed"
                 Margin="10"

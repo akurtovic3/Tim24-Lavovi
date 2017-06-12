@@ -167,6 +167,7 @@
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\NadjiLokacijuViewModel.cs" />
     <Compile Include="ViewModels\OdabirLokacijeIDatumaViewModel.cs" />
+    <Compile Include="ViewModels\PlacanjeViewModel.cs" />
     <Compile Include="ViewModels\PomocIKontaktViewModel.cs" />
     <Compile Include="ViewModels\PostavkeViewModel.cs" />
     <Compile Include="ViewModels\RacunUposlenikaViewModel.cs" />

@@ -14,11 +14,12 @@ namespace ProjekatRentACar.Helper
         public object Convert(object value, Type targetType, object parameter, string language)
         {
             ICollection<string> errors = value as ICollection<string>;
-            if (errors.Count == 0)
+            if (errors.Count != 0)
             {
-                return (new SolidColorBrush(Colors.Gray));
+                return (new SolidColorBrush(Colors.DarkRed));
+                
             }
-            return (new SolidColorBrush(Colors.DarkRed));
+            return (new SolidColorBrush(Colors.Gray));
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)

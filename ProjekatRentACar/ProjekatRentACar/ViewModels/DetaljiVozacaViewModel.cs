@@ -10,6 +10,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
+using Windows.UI.Popups;
+
+
 namespace ProjekatRentACar.ViewModels
 {
     public class DetaljiVozacaViewModel : INotifyPropertyChanged
@@ -20,10 +23,11 @@ namespace ProjekatRentACar.ViewModels
         public string telefon { get; set; }
         public string email { get; set; }
 
+        
+
         private bool prihvaceno;
         public bool Prihvaceno { get { return prihvaceno; } set { prihvaceno = value; OnNotifyPropertyChanged("Slika"); } }
 
-        NavigationService navigacija;
 
         private void OnNotifyPropertyChanged([CallerMemberName] string memberName = "")
         {
@@ -34,6 +38,8 @@ namespace ProjekatRentACar.ViewModels
 
 
         public Najam najam { get; set; }
+        NavigationService navigacija;
+
         public DetaljiVozacaViewModel(Najam najam)
         {
             this.najam = najam;
@@ -42,15 +48,33 @@ namespace ProjekatRentACar.ViewModels
             prezime = App._prezime;
             telefon = App._telefon;
             email = App._email;
-            Dalje = new RelayCommand<object>(idiNaPlacanje);
+
+            Dalje = new RelayCommand<object>(idiDalje);
             navigacija = new NavigationService();
+            Prihvaceno = false;
+        }
+
+        private void idiDalje(object parameter)
+        {
+            if (Prihvaceno)
+            {
+                navigacija.Navigate(typeof(FormaPlacanje));
+            }else
+            {
+                showMessageDialog();
+            }
+
+        }
+        private async void showMessageDialog()
+        {
+            MessageDialog ms = new MessageDialog("Morate pristati na uslove navedene u ugovoru!");
+            await ms.ShowAsync();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void idiNaPlacanje(object parameter)
-        {
-            if (prihvaceno) navigacija.Navigate(typeof(FormaPlacanje), najam);
-        }
+
+
+        
     }
 }

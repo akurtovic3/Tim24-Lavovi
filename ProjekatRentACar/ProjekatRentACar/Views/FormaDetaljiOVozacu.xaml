@@ -49,8 +49,8 @@
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                    <TextBox Margin="5,30,5,10" Text="{Binding ime}"></TextBox>
-                    <TextBox Margin="5,5,5,10" Text="{Binding prezime}" Grid.Row="1" ></TextBox>
+                    <TextBlock Margin="5,30,5,10" Text="{Binding ime}"></TextBlock>
+                    <TextBlock Margin="5,5,5,10" Text="{Binding prezime}" Grid.Row="1" ></TextBlock>
                 <Grid Grid.Row="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>
@@ -61,17 +61,16 @@
                     </Grid.ColumnDefinitions>
 
 
-                    <ComboBox Margin="5,5,5,10" VerticalAlignment="Center">
-                        <ComboBoxItem Content="+387" IsSelected="True"></ComboBoxItem>
-                        <ComboBoxItem Content="+385"></ComboBoxItem>
-                        <ComboBoxItem Content="+382"></ComboBoxItem>
-                    </ComboBox>
-                        <TextBox VerticalAlignment="Center" Grid.Column="1"  Margin="5,5,5,10" Text="{Binding telefon}"></TextBox>
+
+                    
+                        <TextBlock VerticalAlignment="Center" Grid.Column="0"  Margin="5,5,5,10" Text="{Binding telefon}"></TextBlock>
+
+                  
                 </Grid>
 
 
 
-                    <TextBox IsTapEnabled="False" Margin="5,5,5,10" Text="{Binding email}" Grid.Row="3"></TextBox>
+                    <TextBlock IsTapEnabled="False" Margin="5,5,5,10" Text="{Binding email}" Grid.Row="3"></TextBlock>
                 <ScrollViewer  Margin="5,5,5,10" BorderBrush="DarkRed" BorderThickness="1" MaxWidth="400" MaxHeight="100"  Grid.Row="4" >
                         <TextBlock   TextWrapping="Wrap"  Text="-----------  UGOVOR O NAJMU AUTOMOBILA  -----------
 Članak 1.
@@ -82,6 +81,9 @@ Ovim ugovorom se ugovara da je korisnik jedina ovlaštena osoba koja će koristi
 Korisnik se obvezuje da će osobni automobil koji je predmet najma koristiti sukladno zakonu o sigurnosti prometa na cestama.
 Korisnik se obvezuje da će osobno vozilo koje je predmet najma koristiti samo za vlastite potrebe."></TextBlock>
                 </ScrollViewer>
+
+                <CheckBox  Margin="5,5,5,10" Grid.Row="5" IsChecked="{Binding PristanakNaUvjete, Mode=TwoWay}" Content="Prihvatam sve uslove navedene u ugovoru."></CheckBox>
+
                 <CheckBox IsChecked="{Binding Prihvaceno, Mode=TwoWay}" Margin="5,5,5,10" Grid.Row="5" Content="Prihvatam sve uslove navedene u ugovoru."></CheckBox>
                 
             </Grid>

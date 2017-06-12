@@ -112,7 +112,6 @@ ZoomLevel="12" MapServiceToken="F9u7a5IM3q0reFEYocwP~xd4aIuwYinaWatKst7Umow~ArQ9
                         <Maps:MapItemsControl.ItemTemplate>
                             <DataTemplate >
                                 <StackPanel Maps:MapControl.Location="{Binding LokacijaMjesta}" >
-                                    <!--<TextBlock  Margin="-25,-50,0,0" FontWeight="Bold" HorizontalAlignment="Center" Foreground="DarkRed" Text="{Binding Naziv}"></TextBlock>-->
                                     <Image  Margin="-25,-50,0,0"  Height="50" Width="50"  Source="/Assets/car-pin.png"></Image>
                                 </StackPanel>
                             </DataTemplate>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjekatRentACar.Models;
+using ProjekatRentACar.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +27,12 @@ namespace ProjekatRentACar.Views
         public FormaDetaljiOVozacu()
         {
             this.InitializeComponent();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            DataContext = new DetaljiVozacaViewModel(e.Parameter as Najam);
         }
     }
 }

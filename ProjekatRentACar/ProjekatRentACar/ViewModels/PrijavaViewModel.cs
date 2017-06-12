@@ -71,12 +71,16 @@ namespace ProjekatRentACar.ViewModels
 
         private  void loginLoaded()
         {
-            if(loginDS.isError == false)
+            if (loginDS.isError == false)
             {
                 //Pošalji u azure
+                App.daLiJeKorisnikPrijavljen = true;
+                App.role = loginDS.role;
                 if (loginDS.role == "1")
                 {
+
                     Korisnik noviKorisnik = LoginDS.noviKorisnik;
+                    App.unesiKorisnika(noviKorisnik.Id, noviKorisnik.Ime, noviKorisnik.Prezime, noviKorisnik.Telefon, noviKorisnik.Email);
                     try
                     {
                         UserAnalytics user = new UserAnalytics();
@@ -91,6 +95,8 @@ namespace ProjekatRentACar.ViewModels
                 }else if(loginDS.role == "2")
                 {
                     Uposlenik noviUposlenik = LoginDS.noviUposlenik;
+                    App.unesiKorisnika(noviUposlenik.Id, noviUposlenik.Ime, noviUposlenik.Prezime, noviUposlenik.Telefon, noviUposlenik.Email);
+
                     navigacija.Navigate(typeof(FormaRacunUposlenika), noviUposlenik);
                 }
 

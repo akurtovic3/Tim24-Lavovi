@@ -8,6 +8,8 @@ using System.Windows.Input;
 using ProjekatRentACar.Views;
 using ProjekatRentACar.Models;
 using System.Collections.ObjectModel;
+using Windows.UI.Xaml.Navigation;
+using System.Diagnostics;
 
 namespace ProjekatRentACar.ViewModels
 {
@@ -19,17 +21,33 @@ namespace ProjekatRentACar.ViewModels
         private SvaIznamjljenaVozilaDataSource NajmoviDB;
         public ObservableCollection<NajamWebModel> Najmovi { get; set; }
 
-        public RacunUposlenikaViewModel(Uposlenik uposlenik)
+        public RacunUposlenikaViewModel()
         {
             DodajVozilo = new RelayCommand<object>(unosVozila);
             navigacija = new NavigationService();
-            TrenutniUposlenik = uposlenik;
             NajmoviDB = new SvaIznamjljenaVozilaDataSource();
-            NajmoviDB.preuzmiTrenutneNajmove(najmoviLoaded).GetAwaiter();
             Najmovi = new ObservableCollection<NajamWebModel>();
+            Debug.WriteLine(App.splitViewFrame.BackStack.Count);
+            foreach(PageStackEntry s in App.splitViewFrame.BackStack)
+            {
+                Debug.WriteLine(s);
+            }
+               
+
         }
+
+        public void preuzmiNajmove(Uposlenik uposlenik)
+        {
+            TrenutniUposlenik = uposlenik;
+            NajmoviDB.preuzmiTrenutneNajmove(najmoviLoaded).GetAwaiter();
+
+        }
+
+
+
         private void najmoviLoaded()
         {
+            Najmovi.Clear();
             foreach (NajamWebModel n in NajmoviDB.Najmovi)
             {
                 Najmovi.Add(n);

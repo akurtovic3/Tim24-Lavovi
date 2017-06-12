@@ -13,16 +13,22 @@ namespace ProjekatRentACar.ViewModels
         private NajmoviKorisnikaDataSource NajmoviDS;
         public ObservableCollection<NajamWebModel> Najmovi { get; set; }
         public Korisnik TrenutniKorisnik { get; set; }
-        public KorisnickiRacunViewModel(Korisnik korisnik)
+        public KorisnickiRacunViewModel()
         {
             Najmovi = new ObservableCollection<NajamWebModel>();
-            TrenutniKorisnik = korisnik;
             NajmoviDS = new NajmoviKorisnikaDataSource();
+        }
+
+        public void preuzmiNajmove(Korisnik korisnik)
+        {
+            TrenutniKorisnik = korisnik;
             NajmoviDS.preuzmiNajmove(TrenutniKorisnik.Id, NajmoviLoaded).GetAwaiter();
+
         }
 
         private void NajmoviLoaded()
         {
+            Najmovi.Clear();
             foreach (NajamWebModel n in NajmoviDS.Najmovi)
             {
                 Najmovi.Add(n);

@@ -18,6 +18,8 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Prism.Windows.Validation;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Diagnostics;
 
 namespace ProjekatRentACar.ViewModels
 {
@@ -118,6 +120,7 @@ namespace ProjekatRentACar.ViewModels
         }
 
         private UploadVozilaDataSource uploadDS;
+        private string imeSlike { get; set; }
 
         private byte[] byteArray;
 
@@ -194,6 +197,7 @@ namespace ProjekatRentACar.ViewModels
                 var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read); 
                 Slika = new BitmapImage();
                 Slika.SetSource(stream);
+                NovoVozilo.Slika = file.Name;
 
                 var dr = new DataReader(stream.GetInputStreamAt(0));
                 byteArray = new byte[stream.Size];
@@ -211,9 +215,5 @@ namespace ProjekatRentACar.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(memberName));
         }
-
-
-       
-
     }
 }

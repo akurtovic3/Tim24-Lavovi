@@ -40,10 +40,14 @@ namespace ProjekatRentACar
 
             //staviti da se vidi back
             var currentView = SystemNavigationManager.GetForCurrentView();
+            
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
 
             nav = new NavigationService();
+
+
+
 
             DataContext = MainPageViewModel.Instance;
 
@@ -58,7 +62,7 @@ namespace ProjekatRentACar
 
         private void ThisPage_BackRequested(object sender, BackRequestedEventArgs e)
         {
-            nav.GoBack();  // treba dodati da se selektira ikona u meniju        
+            nav.GoBack(); 
         }
     }
 }

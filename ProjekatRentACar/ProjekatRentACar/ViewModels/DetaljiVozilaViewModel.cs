@@ -26,7 +26,13 @@ namespace ProjekatRentACar.ViewModels
 
         void prikaziOpremu(object parameter)
         {
-            navigacija.Navigate(typeof(FormaDetaljiOVozacu));
+            if (App.daLiJeKorisnikPrijavljen)
+            {
+                navigacija.Navigate(typeof(FormaDetaljiOVozacu), najam);
+            }else
+            {
+                navigacija.Navigate(typeof(FormaPrijava));
+            }
         }
     }
 }

@@ -30,10 +30,9 @@
         </DataTemplate>
     </Page.Resources>
 
-    <Pivot x:Name="rootPivot">
+    <Pivot x:Name="rootPivot" HorizontalAlignment="Center" HorizontalContentAlignment="Center">
         <PivotItem Header="Opšti podaci">
-            <ScrollViewer>
-                <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                <Grid HorizontalAlignment="Center"  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
@@ -44,12 +43,8 @@
 
 
                     <StackPanel>
-                        <Image Height="150" Width="150" Source="/Assets/kartice.png"></Image>
-                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                            <Image Height="40" Width="40" Opacity="0.5"  Source="/Assets/bronze-medal.png"></Image>
-                            <Image Height="40" Width="40" Opacity="0.5"  Source="/Assets/bronze-medal.png"></Image>
-                            <Image Height="50" Width="50" Source="/Assets/bronze-medal.png"></Image>
-                        </StackPanel>
+                        <Image Height="150" Width="150" Source="/Assets/slikaneka.png"></Image>
+                       
                     </StackPanel>
 
 
@@ -66,7 +61,6 @@
 
 
                 </Grid>
-            </ScrollViewer>
         </PivotItem>
         <PivotItem Header="Historija iznamljivanja">
             <!--Pivot content goes here-->

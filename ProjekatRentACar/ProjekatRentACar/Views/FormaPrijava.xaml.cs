@@ -33,6 +33,7 @@ namespace ProjekatRentACar.Views
         {
             base.OnNavigatedTo(e);
             MainPageViewModel.Instance.changeSelectedItemTo(1);
+           
         }
 
         private void PBox_PasswordChanged(object sender, RoutedEventArgs e)

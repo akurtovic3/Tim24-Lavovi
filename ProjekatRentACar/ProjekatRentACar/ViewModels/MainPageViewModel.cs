@@ -39,7 +39,13 @@ namespace ProjekatRentACar.ViewModels
                 case 1:
                     if (App.daLiJeKorisnikPrijavljen)
                     {
-                        NavigationService.Navigate(typeof(FormaKorisnickiRacun));
+                        if(App.role == "1")
+                        {
+                            NavigationService.Navigate(typeof(FormaKorisnickiRacun));
+                        }else if(App.role == "2")
+                        {
+                            NavigationService.Navigate(typeof(FormaRacunUposlenika));
+                        }
                     }
                     else
                     {

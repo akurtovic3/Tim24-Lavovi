@@ -61,12 +61,8 @@
                     </Grid.ColumnDefinitions>
 
 
-                    <ComboBox Margin="5,5,5,10" VerticalAlignment="Center">
-                        <ComboBoxItem Content="+387" IsSelected="True"></ComboBoxItem>
-                        <ComboBoxItem Content="+385"></ComboBoxItem>
-                        <ComboBoxItem Content="+382"></ComboBoxItem>
-                    </ComboBox>
-                        <TextBlock VerticalAlignment="Center" Grid.Column="1"  Margin="5,5,5,10" Text="{Binding telefon}"></TextBlock>
+                    
+                        <TextBlock VerticalAlignment="Center" Grid.Column="0"  Margin="5,5,5,10" Text="{Binding telefon}"></TextBlock>
                 </Grid>
 
 
@@ -75,7 +71,7 @@
                 <ScrollViewer  Margin="5,5,5,10" BorderBrush="DarkRed" BorderThickness="1" MaxWidth="400" MaxHeight="100"  Grid.Row="4" >
                     <TextBlock   TextWrapping="Wrap" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae ante ut felis interdum bibendum nec eget ex. Donec dolor eros, fringilla ac cursus vestibulum, sagittis at libero. Morbi eget nulla sit amet justo posuere volutpat vitae et tortor. Ut scelerisque, neque nec fermentum consequat, elit ex posuere urna, eget aliquet urna diam sed nunc. Praesent iaculis lorem nisl, eget venenatis ipsum mattis et. Ut dignissim suscipit elit, in interdum est. Quisque arcu lacus, aliquet quis cursus quis, convallis ut dolor. Fusce id sapien lectus. Maecenas quis enim posuere, elementum mauris non, tempor magna. Donec lobortis posuere neque, sit amet finibus nisl fermentum a. Duis elementum nibh malesuada est condimentum, vitae tincidunt justo suscipit. Ut id sollicitudin leo. Maecenas feugiat dapibus enim non vulputate. Sed auctor imperdiet arcu, sit amet porta diam venenatis nec. Nullam enim neque, malesuada vitae scelerisque ac, sollicitudin vel ante. Maecenas porttitor nulla quis augue hendrerit, non ultrices mi convallis."></TextBlock>
                 </ScrollViewer>
-                <CheckBox  Margin="5,5,5,10" Grid.Row="5" IsChecked="False" Content="Prihvatam sve uslove navedene u ugovoru."></CheckBox>
+                <CheckBox  Margin="5,5,5,10" Grid.Row="5" IsChecked="{Binding PristanakNaUvjete, Mode=TwoWay}" Content="Prihvatam sve uslove navedene u ugovoru."></CheckBox>
                 
             </Grid>
         </ScrollViewer>
@@ -90,6 +86,7 @@
                 Margin="10"
                 Width="100"
                 Height="45"
+                Command="{Binding Dalje}"
                 RelativePanel.AlignRightWithPanel="True">
             </Button>
 

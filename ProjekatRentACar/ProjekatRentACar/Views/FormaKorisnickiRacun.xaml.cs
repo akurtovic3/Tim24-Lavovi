@@ -8,6 +8,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -45,7 +46,6 @@ namespace ProjekatRentACar.Views
             {
                 (DataContext as KorisnickiRacunViewModel).preuzmiNajmove(e.Parameter as Korisnik);
                 App.splitViewFrame.BackStack.RemoveAt(App.splitViewFrame.BackStack.Count - 1);
-
             }
         }
     }

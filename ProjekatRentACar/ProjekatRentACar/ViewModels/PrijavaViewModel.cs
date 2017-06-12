@@ -71,11 +71,14 @@ namespace ProjekatRentACar.ViewModels
 
         private  void loginLoaded()
         {
-            if(loginDS.isError == false)
+            if (loginDS.isError == false)
             {
                 //Pošalji u azure
+                App.daLiJeKorisnikPrijavljen = true;
+                App.role = loginDS.role;
                 if (loginDS.role == "1")
                 {
+
                     Korisnik noviKorisnik = LoginDS.noviKorisnik;
                     try
                     {

@@ -134,6 +134,7 @@
     <Compile Include="Models\Informacije.cs" />
     <Compile Include="Models\InformacijeDBContext.cs" />
     <Compile Include="Models\Korisnik.cs" />
+    <Compile Include="Models\KorisnikWebModel.cs" />
     <Compile Include="Models\ListaVozilaProba.cs" />
     <Compile Include="Models\LoginDataSource.cs" />
     <Compile Include="Models\Lokacija.cs" />
@@ -263,6 +264,7 @@
     <Content Include="Assets\bronze-medal.png" />
     <Content Include="Assets\kartice.png" />
     <Content Include="Assets\polo.png" />
+    <Content Include="Assets\slikaneka.png" />
     <Content Include="Assets\volvo_s60.png" />
     <Content Include="Assets\Vozila\ml.png" />
     <Content Include="Properties\Default.rd.xml" />

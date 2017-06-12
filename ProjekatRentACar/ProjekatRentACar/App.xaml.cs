@@ -35,7 +35,9 @@ namespace ProjekatRentACar
         /// 
         public static MobileServiceClient MobileService = new MobileServiceClient("https://ProjekatRentACar.azurewebsites.net");
 
+
         public static bool daLiJeKorisnikPrijavljen = false;
+        public static string role = "1";
         public App()
         {
             this.InitializeComponent();

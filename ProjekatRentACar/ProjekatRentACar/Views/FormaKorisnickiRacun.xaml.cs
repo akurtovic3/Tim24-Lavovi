@@ -31,15 +31,22 @@ namespace ProjekatRentACar.Views
         public FormaKorisnickiRacun()
         {
             this.InitializeComponent();
-            
+            NavigationCacheMode = NavigationCacheMode.Required;
+            DataContext = new KorisnickiRacunViewModel();
 
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            DataContext = new KorisnickiRacunViewModel((e.Parameter as Korisnik));
+            MainPageViewModel.Instance.changeSelectedItemTo(1);
 
+            if (!(e.Parameter == null || string.IsNullOrWhiteSpace(e.Parameter.ToString())) && e.NavigationMode != NavigationMode.Back)
+            {
+                (DataContext as KorisnickiRacunViewModel).preuzmiNajmove(e.Parameter as Korisnik);
+                App.splitViewFrame.BackStack.RemoveAt(App.splitViewFrame.BackStack.Count - 1);
+
+            }
         }
     }
 }

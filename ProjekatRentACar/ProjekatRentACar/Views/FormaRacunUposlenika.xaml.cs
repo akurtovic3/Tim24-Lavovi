@@ -25,26 +25,26 @@ namespace ProjekatRentACar.Views
     /// </summary>
     public sealed partial class FormaRacunUposlenika : Page
     {
-        public ObservableCollection<Proba> probe = new ObservableCollection<Proba>();
 
 
         public FormaRacunUposlenika()
         {
             this.InitializeComponent();
 
-            probe.Add(new Proba("Polo", "Od: 01.01.2017.", "Do: 05.01.2017", "/Assets/polo.png", "Korisnik: Almedin Mrnđić", "Lokacija Vracanja: Sarajevo/Residence Inn", "Lokacija Vracanja: Sarajevo/Residence Inn"));
-            probe.Add(new Proba("Golf", "Od: 01.01.2017.", "Do: 05.01.2017", "/Assets/polo.png", "Korisnik: Senadin Terović", "Lokacija Vracanja: Sarajevo/Residence Inn", "Lokacija Vracanja: Sarajevo/Residence Inn"));
-            probe.Add(new Proba("Renault", "Od: 01.01.2017.", "Do: 05.01.2017", "/Assets/polo.png", "Korisnik: Ehvan Građanin", "Lokacija Vracanja: Sarajevo/Residence Inn", "Lokacija Vracanja: Sarajevo/Residence Inn"));
-            probe.Add(new Proba("Peugeot", "Od: 01.01.2017.", "Do: 05.01.2017", "/Assets/polo.png", "Korisnik: Cogo Emir", "Lokacija Vracanja: Sarajevo/Residence Inn", "Lokacija Vracanja: Sarajevo/Residence Inn"));
-            probe.Add(new Proba("Mercedes", "Od: 01.01.2017.", "Do: 05.01.2017", "/Assets/polo.png", "Korisnik: Neko Treći", "Lokacija Vracanja: Sarajevo/Residence Inn", "Lokacija Vracanja: Sarajevo/Residence Inn"));
-
+            NavigationCacheMode = NavigationCacheMode.Required;
+            DataContext = new RacunUposlenikaViewModel();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            DataContext = new RacunUposlenikaViewModel(e.Parameter as Uposlenik);
+            MainPageViewModel.Instance.changeSelectedItemTo(1);
 
+            if (!(e.Parameter == null || string.IsNullOrWhiteSpace(e.Parameter.ToString())) && e.NavigationMode != NavigationMode.Back)
+            {
+                (DataContext as RacunUposlenikaViewModel).preuzmiNajmove(e.Parameter as Uposlenik);
+                App.splitViewFrame.BackStack.RemoveAt(App.splitViewFrame.BackStack.Count - 1);
+            }
         }
     }
 }

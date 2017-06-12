@@ -15,6 +15,8 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Windows.Storage.Streams;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.IO;
+using System.Diagnostics;
 
 namespace ProjekatRentACar.ViewModels
 {
@@ -52,6 +54,7 @@ namespace ProjekatRentACar.ViewModels
         public string Popust { get; set; }
         public string CijenaPoDanu { get; set; }
         private UploadVozilaDataSource uploadDS;
+        private string imeSlike { get; set; }
 
         private byte[] byteArray;
 
@@ -110,6 +113,7 @@ namespace ProjekatRentACar.ViewModels
                 var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read); 
                 Slika = new BitmapImage();
                 Slika.SetSource(stream);
+                NovoVozilo.Slika = file.Name;
 
                 var dr = new DataReader(stream.GetInputStreamAt(0));
                 byteArray = new byte[stream.Size];
@@ -127,9 +131,5 @@ namespace ProjekatRentACar.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(memberName));
         }
-
-
-       
-
     }
 }

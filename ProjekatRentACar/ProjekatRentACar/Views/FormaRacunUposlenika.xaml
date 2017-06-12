@@ -62,11 +62,10 @@
 
         <ScrollViewer Grid.Row="1">
 
-        <Pivot x:Name="rootPivot">
-            <PivotItem Header="Opšti podaci">
-                <!--Pivot content goes here-->
-                <ScrollViewer>
-                    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <Pivot x:Name="rootPivot" HorizontalAlignment="Center" HorizontalContentAlignment="Center">
+                <PivotItem Header="Opšti podaci">
+                    <!--Pivot content goes here-->
+                    <Grid HorizontalAlignment="Center" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"></RowDefinition>
                         </Grid.RowDefinitions>
@@ -77,35 +76,32 @@
 
 
                         <StackPanel>
-                            <Image Height="150" Width="150" Source="/Assets/kartice.png"></Image>
+                            <Image Height="150" Width="150" Source="/Assets/slikaneka.png"></Image>
                         </StackPanel>
 
 
 
                         <StackPanel Grid.Column="1">
-                                <TextBlock Text="{Binding TrenutniUposlenik.Ime}" Margin="10"></TextBlock>
-                                <TextBlock Text="{Binding TrenutniUposlenik.Prezime}" Margin="10"></TextBlock>
-                                <TextBlock Text="Datum rodjenja: 07.maj.1996" Margin="10"></TextBlock>
-                                <TextBlock Text="{Binding TrenutniUposlenik.Telefon}" Margin="10"></TextBlock>
-                                <TextBlock Text="{Binding TrenutniUposlenik.Email}" Margin="10"></TextBlock>
-                                <TextBlock Text="{Binding TrenutniUposlenik.Drzava}" Margin="10"></TextBlock>
-                                <TextBlock Text="{Binding TrenutniUposlenik.Ulica}" Margin="10"></TextBlock>
-                                <TextBlock Text="Uposlenik od: 02.05.1996." Margin="10"></TextBlock>
+                            <TextBlock Text="{Binding TrenutniUposlenik.Ime}" Margin="10"></TextBlock>
+                            <TextBlock Text="{Binding TrenutniUposlenik.Prezime}" Margin="10"></TextBlock>
+                            <TextBlock Text="Datum rodjenja: 07.maj.1996" Margin="10"></TextBlock>
+                            <TextBlock Text="{Binding TrenutniUposlenik.Telefon}" Margin="10"></TextBlock>
+                            <TextBlock Text="{Binding TrenutniUposlenik.Email}" Margin="10"></TextBlock>
+                            <TextBlock Text="{Binding TrenutniUposlenik.Adresa}" Margin="10"></TextBlock>
+                            <TextBlock Text="Uposlenik od: 02.05.1996." Margin="10"></TextBlock>
 
                         </StackPanel>
 
 
                     </Grid>
-                </ScrollViewer>
-            </PivotItem>
-            <PivotItem Header="Lista iznajmljenih vozila">
-                <!--Pivot content goes here-->
-                <GridView  
+                </PivotItem>
+                <PivotItem Header="Lista iznajmljenih vozila">
+                    <GridView  
                  ItemTemplate="{StaticResource VoziloDataTemplate}" 
                   ItemsSource="{Binding Najmovi}">
-                </GridView>
-            </PivotItem>
-        </Pivot>
+                    </GridView>
+                </PivotItem>
+            </Pivot>
 
         </ScrollViewer>
 

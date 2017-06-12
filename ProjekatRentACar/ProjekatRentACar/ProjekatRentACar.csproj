@@ -255,6 +255,7 @@
     <Content Include="Assets\bronze-medal.png" />
     <Content Include="Assets\kartice.png" />
     <Content Include="Assets\polo.png" />
+    <Content Include="Assets\racs_logo.png" />
     <Content Include="Assets\volvo_s60.png" />
     <Content Include="Assets\Vozila\ml.png" />
     <Content Include="Properties\Default.rd.xml" />

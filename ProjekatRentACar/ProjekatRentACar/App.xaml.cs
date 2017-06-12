@@ -38,6 +38,22 @@ namespace ProjekatRentACar
 
         public static bool daLiJeKorisnikPrijavljen = false;
         public static string role = "1";
+        public static int _id;
+        public static string _ime;
+        public static string _prezime;
+        public static string _telefon;
+        public static string _email;
+
+        public static void unesiKorisnika(int id, string ime, string prezime, string telefon, string email)
+        {
+            _id = id;
+            _ime = ime;
+            _prezime = prezime;
+            _telefon = telefon;
+            _email = email;
+        }
+
+
         public App()
         {
             this.InitializeComponent();

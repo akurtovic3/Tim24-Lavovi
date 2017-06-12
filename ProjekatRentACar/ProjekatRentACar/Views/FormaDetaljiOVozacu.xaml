@@ -49,8 +49,8 @@
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <TextBox Margin="5,30,5,10" Text="Senadin"></TextBox>
-                <TextBox Margin="5,5,5,10" Text="Terovic" Grid.Row="1" ></TextBox>
+                    <TextBlock Margin="5,30,5,10" Text="{Binding ime}"></TextBlock>
+                    <TextBlock Margin="5,5,5,10" Text="{Binding prezime}" Grid.Row="1" ></TextBlock>
                 <Grid Grid.Row="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>
@@ -66,12 +66,12 @@
                         <ComboBoxItem Content="+385"></ComboBoxItem>
                         <ComboBoxItem Content="+382"></ComboBoxItem>
                     </ComboBox>
-                    <TextBox VerticalAlignment="Center" Grid.Column="1"  Margin="5,5,5,10" Text="0613463860"></TextBox>
+                        <TextBlock VerticalAlignment="Center" Grid.Column="1"  Margin="5,5,5,10" Text="{Binding telefon}"></TextBlock>
                 </Grid>
-                
-                
 
-                <TextBox Margin="5,5,5,10" Text="neko@gmail.com" Grid.Row="3"></TextBox>
+
+
+                    <TextBlock IsTapEnabled="False" Margin="5,5,5,10" Text="{Binding email}" Grid.Row="3"></TextBlock>
                 <ScrollViewer  Margin="5,5,5,10" BorderBrush="DarkRed" BorderThickness="1" MaxWidth="400" MaxHeight="100"  Grid.Row="4" >
                     <TextBlock   TextWrapping="Wrap" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae ante ut felis interdum bibendum nec eget ex. Donec dolor eros, fringilla ac cursus vestibulum, sagittis at libero. Morbi eget nulla sit amet justo posuere volutpat vitae et tortor. Ut scelerisque, neque nec fermentum consequat, elit ex posuere urna, eget aliquet urna diam sed nunc. Praesent iaculis lorem nisl, eget venenatis ipsum mattis et. Ut dignissim suscipit elit, in interdum est. Quisque arcu lacus, aliquet quis cursus quis, convallis ut dolor. Fusce id sapien lectus. Maecenas quis enim posuere, elementum mauris non, tempor magna. Donec lobortis posuere neque, sit amet finibus nisl fermentum a. Duis elementum nibh malesuada est condimentum, vitae tincidunt justo suscipit. Ut id sollicitudin leo. Maecenas feugiat dapibus enim non vulputate. Sed auctor imperdiet arcu, sit amet porta diam venenatis nec. Nullam enim neque, malesuada vitae scelerisque ac, sollicitudin vel ante. Maecenas porttitor nulla quis augue hendrerit, non ultrices mi convallis."></TextBlock>
                 </ScrollViewer>
@@ -99,15 +99,13 @@
                     <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <TextBlock
-                    Name="UkupnaCijena"
-                    Text="Ukupno 318.45 KM"
-                    Foreground="DarkRed"
-                    Grid.Row="0"
-                    FontSize="18">
-                </TextBlock>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <TextBlock Text="Ukupno" FontSize="18" Foreground="DarkRed"></TextBlock>
+                        <TextBlock Text="{Binding najam.Cijena}" FontSize="18" Margin="5,0,0,0" Foreground="DarkRed"></TextBlock>
+                        <TextBlock Text="KM" FontSize="18" Margin="5,0,0,0" Foreground="DarkRed"></TextBlock>
+                    </StackPanel>
 
-                <TextBlock
+                    <TextBlock
                     Text="U cijenu je uključen PDV od 17.00%"
                     FontSize="12"
                     Grid.Row="1"

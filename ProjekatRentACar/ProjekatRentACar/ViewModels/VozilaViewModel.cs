@@ -19,6 +19,19 @@ namespace ProjekatRentACar.ViewModels
         private VozilaDataSource vozilaDS;
         NavigationService navigacija;
 
+        private static VozilaViewModel instance;
+        public static VozilaViewModel Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new VozilaViewModel();
+                }
+                return instance;
+            }
+        }
+
         private Vozilo odabranoVozilo { get; set; }
         public Vozilo OdabranoVozilo
         {
@@ -30,7 +43,9 @@ namespace ProjekatRentACar.ViewModels
             {
                 odabranoVozilo = value;
                 najam.Vozilo = odabranoVozilo;
-                navigacija.Navigate(typeof(FormaDetaljiVozila), najam);
+                Dictionary<Najam, ObservableCollection<Vozilo>> d = new Dictionary<Najam, ObservableCollection<Vozilo>>();
+                d.Add(najam, vozila);
+                navigacija.Navigate(typeof(FormaDetaljiVozila), d);
             }
         }
 
@@ -54,6 +69,10 @@ namespace ProjekatRentACar.ViewModels
             VozilaDS = new VozilaDataSource();
             navigacija = new NavigationService();
             vozilaDS.preuzmiVozila(najam.PocetniDatum, najam.KrajniDatum, vozilaLoaded).GetAwaiter();
+        }
+
+        public VozilaViewModel()
+        {
         }
 
         private void vozilaLoaded()

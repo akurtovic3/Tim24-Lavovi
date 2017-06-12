@@ -16,8 +16,7 @@ namespace ProjekatRentACar.Helper
             ICollection<string> errors = value as ICollection<string>;
             if (errors.Count != 0)
             {
-                return (new SolidColorBrush(Colors.DarkRed));
-                
+                return (new SolidColorBrush(Colors.DarkRed));      
             }
             return (new SolidColorBrush(Colors.Gray));
         }

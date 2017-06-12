@@ -63,8 +63,8 @@
                                 <TextBlock Text="{Binding najam.Vozilo.Proizvodjac}" FontSize="24"></TextBlock>
                                 <TextBlock Margin="5,0,0,0" Text="{Binding najam.Vozilo.Model}" FontSize="24"></TextBlock>
                             </StackPanel>
-                            <TextBlock Text="ili Hyundai Tucson ili slično vozilo" HorizontalAlignment="Center"></TextBlock>
-                            <TextBlock Text="Iz kategorije SUV" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock Text="{Binding PrijedlogVozila}" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock Text="{Binding Kategorija}" HorizontalAlignment="Center"></TextBlock>
                         </StackPanel>
 
                         <StackPanel Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Left" Margin="0,25,0,0">

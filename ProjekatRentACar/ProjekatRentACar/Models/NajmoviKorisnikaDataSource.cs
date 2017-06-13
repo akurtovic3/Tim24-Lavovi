@@ -48,7 +48,7 @@ namespace ProjekatRentACar.Models
                 {
                     noviNajam.PocetniDatum =  DateTime.ParseExact(jsonValue.GetString().Replace("\"",""), "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
                 }
-                if (value.GetObjectAt(i).TryGetValue("krajnji_datum", out jsonValue))
+                if (value.GetObjectAt(i).TryGetValue("krajni_datum", out jsonValue))
                 {
                     noviNajam.KrajnjiDatum = DateTime.ParseExact(jsonValue.ToString().Replace("\"", ""), "yyyy-MM-dd",
                                        System.Globalization.CultureInfo.InvariantCulture);

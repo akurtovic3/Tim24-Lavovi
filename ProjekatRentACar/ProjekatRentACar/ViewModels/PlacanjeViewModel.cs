@@ -16,6 +16,7 @@ namespace ProjekatRentACar.ViewModels
     class PlacanjeViewModel : ValidatableBindableBase
     {
         public ICommand Plati { get; set; }
+        private UploadNajmaDataSource UploadDS;
 
         private string imeNaKartici;
         [Required]
@@ -26,7 +27,7 @@ namespace ProjekatRentACar.ViewModels
         }
 
         private string brojKartice;
-        [Required]
+        [Required, CreditCard, BrojcanaValidacija]
         public string BrojKartice
         {
             get { return brojKartice; }
@@ -42,7 +43,7 @@ namespace ProjekatRentACar.ViewModels
         }
 
         private string cvcBroj;
-        [Required]
+        [Required, MinLength(4), MaxLength(4), BrojcanaValidacija]
         public string CVCBroj
         {
             get { return cvcBroj; }
@@ -57,9 +58,10 @@ namespace ProjekatRentACar.ViewModels
         {
             this.najam = najam;
             Plati = new RelayCommand<object>(obavijestiOPlacanju);
+            UploadDS = new UploadNajmaDataSource();
         }
 
-        public async void obavijestiOPlacanju(object parameter)
+        public  void obavijestiOPlacanju(object parameter)
         {
             this.ValidateProperties();
             erori = new ObservableCollection<string>(Errors.Errors.Values.SelectMany(x => x).ToList());
@@ -68,9 +70,21 @@ namespace ProjekatRentACar.ViewModels
             {
                 // treba uradit insert najma u bazu
 
-                var msd = new MessageDialog("Uspješno ste iznajmili vozilo");
-                await msd.ShowAsync();
+                UploadDS.uploadNajam(najam, callback).GetAwaiter();
+
+                //var msd = new MessageDialog("Uspješno ste iznajmili vozilo");
+                //await msd.ShowAsync();
             }
+        }
+        private async void callback()
+        {
+            string poruka = "Uspješno ste unajmili vozilo!";
+            if (UploadDS.error == true) 
+            {
+                poruka = "Došlo je do greške, pokušajte ponovo.";
+            }
+            MessageDialog ms = new MessageDialog(poruka);
+            await ms.ShowAsync();
         }
     }
 }

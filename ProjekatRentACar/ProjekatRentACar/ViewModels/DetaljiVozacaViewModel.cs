@@ -58,7 +58,7 @@ namespace ProjekatRentACar.ViewModels
         {
             if (Prihvaceno)
             {
-                navigacija.Navigate(typeof(FormaPlacanje));
+                navigacija.Navigate(typeof(FormaPlacanje), najam);
             }else
             {
                 showMessageDialog();

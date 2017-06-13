@@ -50,13 +50,13 @@
                     </Grid.ColumnDefinitions>
 
                     <Image Margin="10,40,10,10" Source="/Assets/kartice.png" Height="100" Stretch="Uniform"></Image>
-                    <TextBox Text="{Binding ImeNaKartici}" Margin="10" PlaceholderText="Ime na kreditnoj kartici" 
+                    <TextBox Text="{Binding ImeNaKartici,Mode=TwoWay}" Margin="10" PlaceholderText="Ime na kreditnoj kartici" 
                              BorderBrush="{Binding Errors[ImeNaKartici], Converter={StaticResource ErrorToColorConverter}}" Grid.Row="1"></TextBox>
-                    <TextBox Text="{Binding BrojKartice}" Margin="10" PlaceholderText="Broj kartice" Grid.Row="2"
+                    <TextBox Text="{Binding BrojKartice,Mode=TwoWay}" Margin="10" PlaceholderText="Broj kartice" Grid.Row="2"
                              BorderBrush="{Binding Errors[BrojKartice], Converter={StaticResource ErrorToColorConverter}}"></TextBox>
-                    <DatePicker Date="{Binding Datum}" Margin="10" Grid.Row="3" DayVisible="False" 
+                    <DatePicker Date="{Binding Datum,Mode=TwoWay}" Margin="10" Grid.Row="3" DayVisible="False" 
                              BorderBrush="{Binding Errors[Datum], Converter={StaticResource ErrorToColorConverter}}"></DatePicker>
-                    <TextBox Text="{Binding CVCBroj}" Margin="10" PlaceholderText="CVC broj" Grid.Row="4"
+                    <TextBox Text="{Binding CVCBroj,Mode=TwoWay}" Margin="10" PlaceholderText="CVC broj" Grid.Row="4"
                              BorderBrush="{Binding Errors[CVCBroj], Converter={StaticResource ErrorToColorConverter}}"></TextBox>
 
                 </Grid>

@@ -32,7 +32,7 @@ namespace ProjekatRentACar.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            DataContext = new DetaljiVozacaViewModel(e.Parameter as Najam);
+            DataContext = new PlacanjeViewModel(e.Parameter as Najam);
         }
     }
 }

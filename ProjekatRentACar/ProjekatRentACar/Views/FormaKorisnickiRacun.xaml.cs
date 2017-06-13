@@ -46,6 +46,9 @@ namespace ProjekatRentACar.Views
             {
                 (DataContext as KorisnickiRacunViewModel).preuzmiNajmove(e.Parameter as Korisnik);
                 App.splitViewFrame.BackStack.RemoveAt(App.splitViewFrame.BackStack.Count - 1);
+            }else
+            {
+                (DataContext as KorisnickiRacunViewModel).preuzmiNajmove();
             }
         }
     }

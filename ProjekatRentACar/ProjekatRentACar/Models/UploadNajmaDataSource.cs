@@ -16,18 +16,16 @@ namespace ProjekatRentACar.Models
         public async Task uploadNajam(Najam najam, Action callback)
         {
             HttpClient httpClient = new HttpClient();
-            //Najam.Korisnik.Id zašto nema???
-            string urlString = "lavovi.space/api/dodaj_najam.php?pocetni_datum=" + najam.PocetniDatum + "&krajni_datum=" + najam.KrajniDatum + "&cijena=" + najam.Cijena + "&mjesto_preuzimanja=" + najam.MjestoPreuzimanja.Id + "&mjesto_vracanja=" + najam.MjestoVracanja.Id + "&vozilo=" + najam.Vozilo.Id + "&korisnik=";// +najam.Korisnik.Id;
+            string urlString = "http://www.lavovi.space/api/dodaj_najam.php?pocetni_datum='"  + najam.PocetniDatum.ToString("yyyy-MM-dd") + "'&krajni_datum='" + najam.KrajniDatum.ToString("yyyy-MM-dd") + "'&cijena=" + najam.Cijena + "&mjesto_preuzimanja=" + najam.MjestoPreuzimanja.Id + "&mjesto_vracanja=" + najam.MjestoVracanja.Id + "&vozilo=" + najam.Vozilo.Id + "&korisnik=" + App._id;
             string response = await httpClient.GetStringAsync(new Uri(urlString));
-            JsonArray value = JsonArray.Parse(response).GetArray();
-            for (uint i = 0; i < value.Count; i++)
-            {
+            JsonObject value = JsonObject.Parse(response).GetObject();
+           
                 IJsonValue jsonValue;
-                if (value.GetObjectAt(i).TryGetValue("error", out jsonValue))
+                if (value.TryGetValue("error", out jsonValue))
                 {
                     error = jsonValue.GetBoolean();
                 }
-            }
+            
             callback();
         }
 

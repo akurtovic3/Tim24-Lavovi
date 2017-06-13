@@ -26,6 +26,11 @@ namespace ProjekatRentACar.ViewModels
 
         }
 
+        public void preuzmiNajmove()
+        {
+            NajmoviDS.preuzmiNajmove(TrenutniKorisnik.Id, NajmoviLoaded).GetAwaiter();
+        }
+
         private void NajmoviLoaded()
         {
             Najmovi.Clear();

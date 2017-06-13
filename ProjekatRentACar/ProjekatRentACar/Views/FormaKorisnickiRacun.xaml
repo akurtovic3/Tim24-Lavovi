@@ -30,47 +30,68 @@
         </DataTemplate>
     </Page.Resources>
 
-    <Pivot x:Name="rootPivot" HorizontalAlignment="Center" HorizontalContentAlignment="Center">
-        <PivotItem Header="Opšti podaci">
-                <Grid HorizontalAlignment="Center"  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" ></RowDefinition>
+            <RowDefinition Height="*" ></RowDefinition>
+        </Grid.RowDefinitions>
 
-
-                    <StackPanel>
-                        <Image Height="150" Width="150" Source="/Assets/slikaneka.png"></Image>
+        <RelativePanel Grid.Row="0" Background="DarkRed" Height="50">
+            <TextBlock Text="KORISNIČKI RAČUN" 
+                       Foreground="White" 
                        
-                    </StackPanel>
+                       FontSize="18" 
+                       RelativePanel.AlignVerticalCenterWithPanel="True" 
+                       RelativePanel.AlignLeftWithPanel="True"
+                       Margin="0,0,0,0" 
+                       FontWeight="Bold">
+            </TextBlock>
+        </RelativePanel>
+
+        <Grid Grid.Row="1">
+            <Pivot x:Name="rootPivot" HorizontalAlignment="Center" HorizontalContentAlignment="Center">
+                <PivotItem Header="Opšti podaci">
+                    <Grid HorizontalAlignment="Center"  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+
+                        <StackPanel>
+                            <Image Height="150" Width="150" Source="/Assets/slikaneka.png"></Image>
+
+                        </StackPanel>
 
 
 
-                    <StackPanel Grid.Column="1">
-                        <TextBlock Text="{Binding TrenutniKorisnik.Ime}" Margin="10"></TextBlock>
-                        <TextBlock Text="{Binding TrenutniKorisnik.Prezime}" Margin="10"></TextBlock>
-                        <TextBlock Text="Datum rodjenja: 07.maj.1996" Margin="10"></TextBlock>
-                        <TextBlock Text="{Binding TrenutniKorisnik.Telefon}" Margin="10"></TextBlock>
-                        <TextBlock Text="{Binding TrenutniKorisnik.Email}" Margin="10"></TextBlock>
-                        <TextBlock Text="{Binding TrenutniKorisnik.Drzava}" Margin="10"></TextBlock>
-                        <TextBlock Text="{Binding TrenutniKorisnik.Ulica}" Margin="10"></TextBlock>
-                    </StackPanel>
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="{Binding TrenutniKorisnik.Ime}" Margin="10"></TextBlock>
+                            <TextBlock Text="{Binding TrenutniKorisnik.Prezime}" Margin="10"></TextBlock>
+                            <TextBlock Text="Datum rodjenja: 07.maj.1996" Margin="10"></TextBlock>
+                            <TextBlock Text="{Binding TrenutniKorisnik.Telefon}" Margin="10"></TextBlock>
+                            <TextBlock Text="{Binding TrenutniKorisnik.Email}" Margin="10"></TextBlock>
+                            <TextBlock Text="{Binding TrenutniKorisnik.Drzava}" Margin="10"></TextBlock>
+                            <TextBlock Text="{Binding TrenutniKorisnik.Ulica}" Margin="10"></TextBlock>
+                        </StackPanel>
 
 
-                </Grid>
-        </PivotItem>
-        <PivotItem Header="Historija iznamljivanja">
-            <!--Pivot content goes here-->
-            <GridView  
+                    </Grid>
+                </PivotItem>
+
+
+                <PivotItem Header="Historija iznamljivanja">
+                    <!--Pivot content goes here-->
+                    <GridView  
                  ItemTemplate="{StaticResource VoziloDataTemplate}" 
                   ItemsSource="{Binding Najmovi}">
-            </GridView>
-        </PivotItem>
-    </Pivot>
+                    </GridView>
+                </PivotItem>
+            </Pivot>
 
-
-    
+        </Grid>
+    </Grid>
 </Page>
